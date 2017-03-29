@@ -36,5 +36,4 @@ public class Darkness {
 	public void postInit( FMLPostInitializationEvent e ) {
 		proxy.postInit();
 	}
-
 }
