@@ -1,13 +1,13 @@
 [
 {
-  "modid": "exoticpermutations",
-  "name": "Exotic Permutations",
-  "description": "A new mod with many things",
+  "modid": "darkness",
+  "name": "Darkness",
+  "description": "A Darkness to steal the light.",
   "version": "0.01",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["Nuclearsmilz"],
+  "authorList": ["Nuke"],
   "credits": "The Forge, MCP, and FML guys, for making it possible",
   "logoFile": "",
   "screenshots": [],

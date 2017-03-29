@@ -1,4 +1,4 @@
-package nuke.exoticpermutations;
+package nuke.darkness;
 
 public class References {
 	public static final String MODID = "exoticpermutations";

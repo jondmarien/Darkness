@@ -1,9 +1,11 @@
-package nuke.exoticpermutations.proxy;
+package nuke.darkness.proxy;
 
+import net.minecraft.client.*;
+import net.minecraft.client.entity.*;
 import net.minecraft.entity.player.*;
-import nuke.exoticpermutations.*;
+import nuke.darkness.*;
 
-public class ServerProxy extends CommonProxy {
+public class ClientProxy extends CommonProxy {
 
 	/**
 	 * Finds items, blocks, config, creates them and registers with GameRegistry
@@ -33,12 +35,13 @@ public class ServerProxy extends CommonProxy {
 		if (ep instanceof EntityPlayerMP) {
 			EntityPlayerMP epMP = (EntityPlayerMP) ep;
 			return epMP.interactionManager.isCreative();
-		}
+		} else if (ep instanceof EntityPlayerSP) { return Minecraft.getMinecraft().playerController
+		        .isInCreativeMode(); }
 		return false;
 	}
 
 	@Override
 	public boolean isDedicatedServer() {
-		return true;
+		return false;
 	}
 }

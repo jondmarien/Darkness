@@ -1,4 +1,4 @@
-package nuke.exoticpermutations;
+package nuke.darkness;
 
 import net.minecraft.entity.player.*;
 
