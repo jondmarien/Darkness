@@ -1,44 +1,29 @@
 package nuke.darkness.proxy;
 
-import net.minecraft.entity.player.*;
-import nuke.darkness.*;
+import net.minecraftforge.fml.common.event.*;
 
 public class ServerProxy extends CommonProxy {
 
 	/**
 	 * Finds items, blocks, config, creates them and registers with GameRegistry
 	 */
-	public void preInit() {
-		super.preInit();
+	public void preInit(FMLPreInitializationEvent e) {
+		super.preInit(e);
 
 	}
 
 	/**
 	 * Exotic Permutations mod setup. Recipes, send messages, etc.
 	 */
-	public void init() {
-		super.init();
+	public void init(FMLInitializationEvent e) {
+		super.init(e);
 
 	}
 
 	/**
 	 * Interaction with other mods
 	 */
-	public void postInit() {
-		super.postInit();
-	}
-
-	@Override
-	public boolean playerIsInCreativeMode( EntityPlayer ep ) {
-		if (ep instanceof EntityPlayerMP) {
-			EntityPlayerMP epMP = (EntityPlayerMP) ep;
-			return epMP.interactionManager.isCreative();
-		}
-		return false;
-	}
-
-	@Override
-	public boolean isDedicatedServer() {
-		return true;
+	public void postInit(FMLPostInitializationEvent e) {
+		super.postInit(e);
 	}
 }
