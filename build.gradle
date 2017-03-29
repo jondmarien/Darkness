@@ -11,9 +11,9 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
-version = "1.0"
-group = "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+version = "0.01"
+group = "nuke.darkness" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "darkness"
 
 sourceCompatibility = targetCompatibility = "1.6" // Need this here so eclipse task generates correctly.
 compileJava {
@@ -35,6 +35,7 @@ minecraft {
 
 repositories {
     maven {
+		// where to find the JEI files (runtime or api)
         name = 'DVS1 Maven FS'
         url = 'http://dvs1.progwml6.com/files/maven'
     }
@@ -62,8 +63,10 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
+	// for api
     deobfCompile "mezz.jei:jei_1.11.2:4.2.10.250:api"
-    runtime "mezz.jei:jei_1.11.2:4.2.10.250"
+    // full mod for build/runtime
+	runtime "mezz.jei:jei_1.11.2:4.2.10.250"
 }
 
 processResources {

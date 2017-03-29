@@ -4,7 +4,7 @@ import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.Mod.*;
 import net.minecraftforge.fml.common.event.*;
 
-@Mod(modid = References.MODID, version = References.VERSION, name = References.NAME)
+@Mod(modid = References.MODID, version = References.VERSION, name = References.NAME, serverSideOnly = false)
 public class Darkness {
 
 	@Mod.Instance(References.MODID)
