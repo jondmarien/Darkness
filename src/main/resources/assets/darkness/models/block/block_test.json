@@ -1,12 +1,6 @@
 {
-  "parent": "block/cube_all",
+  "parent": "item/generated",
   "textures": {
-    "down": "darkness:blocks/block_test_face0"
-	"up": "darkness:blocks/block_test_face1"
-	"north": "darkness:blocks/block_test_face2"
-	"east": "darkness:blocks/block_test_face3"
-	"south": "darkness:blocks/block_test_face4"
-	"west": "darkness:blocks/block_test_face5"
-	"particle": "darkness:blocks/block_test_face0"
+    "layer0": "darkness:blocks/block_test_face0"
   }
 }

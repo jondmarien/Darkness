@@ -116,6 +116,7 @@ public class BlockBase extends Block implements IModeledBlock {
 		return isFullCube;
 	}
 
+	@Override
 	public void initModel() {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0,
 		        new ModelResourceLocation(getRegistryName().toString(), "inventory"));

@@ -13,7 +13,6 @@ public class ModBlocks {
 	public static Block block_test;
 
 	public static void init() {
-		//blocks.add(block_test = (new BlockBase(Material.ROCK, "block_test", "pickaxe", 1, 1.0F, 10.0F, SoundType.STONE)).setLightOpacity(16));
 		blocks.add(block_test = (new BlockTest(Material.ROCK, "block_test", "pickaxe", 1, 1.0F, 10.0F, SoundType.STONE, true)).setLightOpacity(16));
 		
 	}
