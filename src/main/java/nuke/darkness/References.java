@@ -3,7 +3,7 @@ package nuke.darkness;
 public class References {
 	public static final String MODID = "darkness";
 	public static final String NAME = "Darkness";
-	public static final String VERSION = "0.01";
+	public static final String VERSION = "0.0.1";
 	public static final String DEPENDENCIES = "";
 	//public static final String DEPENDENCIES = "required-after:Forge@[13.20.0.2260,)";
 	

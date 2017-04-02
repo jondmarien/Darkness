@@ -1,6 +1,7 @@
 package nuke.darkness.proxy;
 
 import net.minecraftforge.fml.common.event.*;
+import nuke.darkness.reg.*;
 
 public class ClientProxy extends CommonProxy {
 
@@ -8,7 +9,8 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void preInit( FMLPreInitializationEvent e ) {
 		super.preInit(e);
-		
+		ModBlocks.registerRenderer();
+		ModItems.registerRenderer();
 	}
 
 	//Recipes
