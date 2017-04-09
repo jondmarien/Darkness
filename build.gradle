@@ -1,36 +1,36 @@
 buildscript {
     repositories {
         jcenter()
-        maven { url = "http://files.minecraftforge.net/maven" }
+        
+        maven { 
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+       }
     }
+    
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
     }
 }
+
 apply plugin: 'net.minecraftforge.gradle.forge'
-//Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
-version = "0.0.1"
-group = "nuke.darkness" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group = "nuke.darkness" 
 archivesBaseName = "darkness"
+version = "0.0.1"
 
-sourceCompatibility = targetCompatibility = "1.6" // Need this here so eclipse task generates correctly.
+sourceCompatibility = targetCompatibility = "1.8"
 compileJava {
-    sourceCompatibility = targetCompatibility = "1.6"
+    sourceCompatibility = targetCompatibility = "1.8"
 }
 
 minecraft {
     version = "1.11.2-13.20.0.2260"
     runDir = "run"
+    mappings = "snapshot_20170405"
     
-    // the mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   snapshot are built nightly.
-    // stable_#            stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = "snapshot_20170206"
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+    // makeObfSourceJar = false
 }
 
 repositories {
@@ -42,52 +42,93 @@ repositories {
 }
 
 dependencies {
-    // you may put jars on which you depend on in ./libs
-    // or you may define them like so..
-    //compile "some.group:artifact:version:classifier"
-    //compile "some.group:artifact:version"
-      
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // the 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
-    //provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // the deobf configurations:  'deobfCompile' and 'deobfProvided' are the same as the normal compile and provided,
-    // except that these dependencies get remapped to your current MCP mappings
-    //deobfCompile 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-    //deobfProvided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
-	// for api
-    deobfCompile "mezz.jei:jei_1.11.2:4.2.10.250:api"
-    // full mod for build/runtime
-	// runtime "mezz.jei:jei_1.11.2:4.2.10.250"
+    deobfCompile "mezz.jei:jei_1.11.2:4.3.1.257"
+    //deobfCompile "com.github.Azanor:Baubles:${version_baubles}"
+    compile files('libs/')
 }
 
 processResources {
-    // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
 
-    // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
                 
-        // replace version and mcversion
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
-        
-    // copy everything else except the mcmod.info
+
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
 }
 
+//Pulls the build version from a Java file.
+String getVersionFromJava(File file) {
+
+    String release = "0";
+    String update = "0";
+    String patch = "0";
+
+    String build = System.getenv("BUILD_NUMBER") ? System.getenv("BUILD_NUMBER") : "0";
+    def outfile = "";
+    def ln = System.getProperty("line.separator")
+
+    String prefix = "public static final String VERSION_NUMBER = \"";
+    file.eachLine {
+        String s ->
+
+            String v = s.trim();
+
+        if (v.startsWith(prefix)) {
+
+            v = v.substring(prefix.length(), v.length() - 2);
+            String[] pts = v.split("\\.");
+
+            release = pts[0];
+            update = pts[1];
+            patch = pts[2];
+            s = s.replaceAll(".0\";", ".${build}\";");
+        }
+
+        outfile += (s + ln);
+    }
+
+    file.write(outfile);
+
+    return "${version_minecraft}-$release.$update.$patch.$build";
+}
+
+//Creates the source jar.
+task sourcesJar(type: Jar, dependsOn: classes) {
+
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+//Creates the JavaDoc jar.
+task javadocJar(type: Jar, dependsOn: javadoc) {
+
+    from javadoc.destinationDir
+    classifier = 'javadoc'
+}
+
+//Creates the deobfuscated jar.
+task deobfJar(type: Jar) {
+
+    from sourceSets.main.output
+    classifier = "deobf"
+}
+
+//Adds the deobf, source and javadoc jars to the build artifacts.
+artifacts {
+
+    archives deobfJar
+    archives sourcesJar
+    archives javadocJar
+}
+
+
+// generates BlockModel JSON & ItemModel JSON
 ext.args = [:]
 
 ext.requireArgument = {String property, String displayValue ->

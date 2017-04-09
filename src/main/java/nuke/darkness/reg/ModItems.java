@@ -12,7 +12,7 @@ public class ModItems {
 	public static Item item_test;
 
 	public static void init() {
-		//items.add(item_test = (new ItemTest(Material.ROCK, "block_test", "pickaxe", 1, 1.0F, 10.0F, SoundType.STONE, true)).setLightOpacity(16));
+		items.add(item_test = (new ItemBase("item_test", true)));
 		
 	}
 

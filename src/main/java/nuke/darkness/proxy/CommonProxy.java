@@ -12,7 +12,7 @@ public class CommonProxy {
 
 	public void init( FMLInitializationEvent e ) {
 		//TERegistry.registerTEs();
-		//ModRecipes.registerRecipes();
+		//ModRecipes.registerRecipes(); 
 	}
 
 	public void postInit( FMLPostInitializationEvent e ) {

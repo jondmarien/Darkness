@@ -46,6 +46,11 @@ public class Darkness {
 		public ItemStack getTabIconItem() {
 			return new ItemStack(Item.getItemFromBlock(ModBlocks.block_test));
 		}
+		
+		@Override
+		public boolean hasSearchBar() {
+			return true;
+		}
 	};
 
 	public static String prependModID( String name ) {

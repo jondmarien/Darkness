@@ -8,6 +8,7 @@ import net.minecraft.item.*;
 import net.minecraft.util.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
+import net.minecraftforge.fml.relauncher.*;
 import nuke.darkness.*;
 
 public class BlockBase extends Block implements IModeledBlock {
@@ -26,8 +27,8 @@ public class BlockBase extends Block implements IModeledBlock {
 	 * @param sound i.e SoundType.GROUND
 	 * @param addToTab i.e. true
 	 */
-	public BlockBase(Material mat, String name, String toolUsed, int toolStrength, float hardness,
-	        float resistance, SoundType sound, boolean addToTab)
+	public BlockBase(Material mat, String name, String toolUsed, int toolStrength, float hardness, float resistance,
+	        SoundType sound, boolean addToTab)
 	{
 		super(mat);
 		this.setUnlocalizedName(name);
@@ -36,7 +37,7 @@ public class BlockBase extends Block implements IModeledBlock {
 		this.setHardness(hardness);
 		this.setResistance(resistance);
 		this.setSoundType(sound);
-		if(addToTab) this.setCreativeTab(Darkness.darkness);
+		if (addToTab) this.setCreativeTab(Darkness.darkness);
 
 		GameRegistry.register(this);
 		GameRegistry.register(itemBlock = (new ItemBlock(this).setRegistryName(this.getRegistryName())));
@@ -53,8 +54,8 @@ public class BlockBase extends Block implements IModeledBlock {
 	 * @param slippery i.e. true
 	 * @param addToTab i.e. true
 	 */
-	public BlockBase(Material mat, String name, String toolUsed, int toolStrength, float hardness,
-	        float resistance, SoundType sound,  boolean addToTab, boolean slippery)
+	public BlockBase(Material mat, String name, String toolUsed, int toolStrength, float hardness, float resistance,
+	        SoundType sound, boolean addToTab, boolean slippery)
 	{
 		super(mat);
 		this.setUnlocalizedName(name);
@@ -63,7 +64,7 @@ public class BlockBase extends Block implements IModeledBlock {
 		this.setHardness(hardness);
 		this.setResistance(resistance);
 		this.setSoundType(sound);
-		if(addToTab) this.setCreativeTab(Darkness.darkness);
+		if (addToTab) this.setCreativeTab(Darkness.darkness);
 		if (slippery) this.slipperiness = 0.98F;
 
 		GameRegistry.register(this);
@@ -78,19 +79,19 @@ public class BlockBase extends Block implements IModeledBlock {
 	 * @param sound i.e SoundType.GROUND
 	 * @param addToTab i.e. true
 	 */
-	public BlockBase(Material mat, String name, float hardness, float resistance, SoundType sound,  boolean addToTab) {
+	public BlockBase(Material mat, String name, float hardness, float resistance, SoundType sound, boolean addToTab) {
 		super(mat);
 		this.setUnlocalizedName(name);
 		this.setRegistryName(Darkness.prependModID(name));
 		this.setHardness(hardness);
 		this.setResistance(resistance);
 		this.setSoundType(sound);
-		if(addToTab) this.setCreativeTab(Darkness.darkness);
+		if (addToTab) this.setCreativeTab(Darkness.darkness);
 
 		GameRegistry.register(this);
 		GameRegistry.register(itemBlock = (new ItemBlock(this).setRegistryName(this.getRegistryName())));
 	}
-	
+
 	public BlockBase setIsOpaqueCube( boolean bool ) {
 		isOpaqueCube = bool;
 		return this;
@@ -100,7 +101,7 @@ public class BlockBase extends Block implements IModeledBlock {
 		isFullCube = bool;
 		return this;
 	}
-	
+
 	@Override
 	public boolean isOpaqueCube( IBlockState ibs ) {
 		return isOpaqueCube;
@@ -114,6 +115,11 @@ public class BlockBase extends Block implements IModeledBlock {
 	@Override
 	public boolean isFullBlock( IBlockState ibs ) {
 		return isFullCube;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public BlockRenderLayer getBlockLayer() {
+		return brlayer;
 	}
 
 	@Override

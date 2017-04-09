@@ -1,3 +1,5 @@
 tile.block_test.name=Test Block
 
 itemGroup.darkness=Darkness
+
+item.item_test.name=Test Item
