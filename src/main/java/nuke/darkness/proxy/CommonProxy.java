@@ -6,8 +6,7 @@ import nuke.darkness.reg.*;
 public class CommonProxy {
 
 	public void preInit( FMLPreInitializationEvent e ) {
-		ModBlocks.init();
-		ModItems.init();
+		ModStuffs.init();
 	}
 
 	public void init( FMLInitializationEvent e ) {

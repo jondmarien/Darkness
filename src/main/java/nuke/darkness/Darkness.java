@@ -44,7 +44,7 @@ public class Darkness {
 		@Override
 		@SideOnly(Side.CLIENT)
 		public ItemStack getTabIconItem() {
-			return new ItemStack(Item.getItemFromBlock(ModBlocks.block_test));
+			return new ItemStack(Item.getItemFromBlock(ModStuffs.block_test));
 		}
 		
 		@Override
