@@ -35,7 +35,7 @@ public class Darkness {
 		this.proxy.postInit(e);
 	}
 
-	public static CreativeTabs darkness = new CreativeTabs("darkness") {
+	public static CreativeTabs darkTab = new CreativeTabs("darkness") {
 		@Override
 		public String getTabLabel() {
 			return "darkness";

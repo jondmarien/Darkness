@@ -18,7 +18,7 @@ public class ItemAxeBase extends ItemTool implements IModeledItem {
 		super(tmat, Sets.newHashSet(new Block[] { Blocks.PLANKS }));
 		setUnlocalizedName(name);
 		setRegistryName(Darkness.prependModID(name));
-		if (addToTab) setCreativeTab(Darkness.darkness);
+		if (addToTab) setCreativeTab(Darkness.darkTab);
 		setHarvestLevel("axe", this.toolMaterial.getHarvestLevel());
 		this.damageVsEntity = this.toolMaterial.getDamageVsEntity() + 4.0f;
 		this.attackSpeed = -2.7f;
@@ -29,7 +29,7 @@ public class ItemAxeBase extends ItemTool implements IModeledItem {
 		super(tmat, Sets.newHashSet(new Block[] { Blocks.PLANKS }));
 		setUnlocalizedName(name);
 		setRegistryName(Darkness.prependModID(name));
-		if (addToTab) setCreativeTab(Darkness.darkness);
+		if (addToTab) setCreativeTab(Darkness.darkTab);
 		setHarvestLevel("axe", this.toolMaterial.getHarvestLevel());
 		this.damageVsEntity = this.toolMaterial.getDamageVsEntity() + 4.0f;
 		this.attackSpeed = -2.7f;

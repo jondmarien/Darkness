@@ -5,8 +5,9 @@ tile.block_test.name=Test Block
 
 
 //Items
-item.ingot_darkrunic.name=Dark Runic Ingot
+item.scroll_bag.name=Scroll Bag
 
+item.ingot_darkrunic.name=Dark Runic Ingot
 item.sword_darkrunic.name=Dark Runic Sword
 item.shovel_darkrunic.name=Dark Runic Shovel
 item.pickaxe_darkrunic.name=Dark Runic Pickaxe

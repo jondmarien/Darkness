@@ -4,12 +4,17 @@ import java.util.*;
 
 import net.minecraft.block.*;
 import net.minecraft.block.material.*;
+import net.minecraft.init.*;
 import net.minecraft.item.*;
 import net.minecraft.item.Item.*;
+import net.minecraft.item.ItemArmor.*;
 import net.minecraft.util.text.*;
 import net.minecraftforge.common.util.*;
+import net.minecraftforge.fluids.*;
 import nuke.darkness.*;
 import nuke.darkness.blocks.*;
+import nuke.darkness.blocks.fluids.*;
+import nuke.darkness.fluids.*;
 import nuke.darkness.items.*;
 
 public class ModStuffs {
@@ -17,23 +22,37 @@ public class ModStuffs {
 	public static ArrayList<Item> items = new ArrayList<Item>();
 
 	public static ToolMaterial tool_mat_darkrunic;
+	public static ArmorMaterial armor_mat_darkrunic_cloth;
 
 	public static EnumRarity tool_rarity_darkrunic;
 
-	public static Block block_test;
+	public static Block block_test, block_molten_dark_runic;
+	
+	public static Fluid fluid_molten_darkrunic;
 
-	public static Item sword_darkrunic, pickaxe_darkrunic, axe_darkrunic, hoe_darkrunic, shovel_darkrunic, ingot_darkrunic;
+	public static Item bag, sword_darkrunic, pickaxe_darkrunic, axe_darkrunic, hoe_darkrunic, shovel_darkrunic,
+	        ingot_darkrunic;
 
 	public static void init() {
 		// Tool Materials
-		tool_mat_darkrunic = EnumHelper.addToolMaterial(Darkness.prependModID("test"), 2, 180, 5.5f, 1.5f, 20);
+		tool_mat_darkrunic = EnumHelper.addToolMaterial(Darkness.prependModID("test"), 4, 290, 6.3f, 2.1f, 20);
+		armor_mat_darkrunic_cloth = EnumHelper.addArmorMaterial(Darkness.prependModID("darkrunic_cloth"),
+		        Darkness.prependModID("darkrunic_cloth"), 20, new int[]
+		        { 2, 4, 6, 3 }, 20, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
 		tool_rarity_darkrunic = EnumHelper.addRarity("special", TextFormatting.AQUA, "Special");
 
 		// Blocks
 		blocks.add(block_test = (new BlockTest(Material.ROCK, "block_test", "pickaxe", 1, 1.0F, 10.0F, SoundType.STONE,
 		        true)).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16));
 
+		
+		//Fluids
+		FluidRegistry.registerFluid(fluid_molten_darkrunic = new FluidMoltenDarkRunic());
+		blocks.add(block_molten_dark_runic = (new BlockMoltenDarkRunic("darkrunic", false)));
+		FluidRegistry.addBucketForFluid(fluid_molten_darkrunic);
+		
 		// Items
+		items.add(bag = new ItemBase("scroll_bag", true));
 		items.add(ingot_darkrunic = new ItemBase("ingot_darkrunic", true));
 
 		items.add(sword_darkrunic = new ItemSwordBase(tool_mat_darkrunic, "sword_darkrunic", true));
@@ -44,6 +63,7 @@ public class ModStuffs {
 
 		//Repair Materials
 		tool_mat_darkrunic.setRepairItem(new ItemStack(ingot_darkrunic));
+		armor_mat_darkrunic_cloth.repairMaterial = new ItemStack(Items.STRING, 1);
 	}
 
 	public static void registerRenderer() {

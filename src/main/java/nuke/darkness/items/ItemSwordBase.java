@@ -12,7 +12,7 @@ public class ItemSwordBase extends ItemSword implements IModeledItem {
 		super(tmat);
 		setUnlocalizedName(name);
 		setRegistryName(Darkness.prependModID(name));
-		if (addToTab) setCreativeTab(Darkness.darkness);
+		if (addToTab) setCreativeTab(Darkness.darkTab);
 		GameRegistry.register(this);
 	}
 	
@@ -20,7 +20,7 @@ public class ItemSwordBase extends ItemSword implements IModeledItem {
 		super(tmat);
 		setUnlocalizedName(name);
 		setRegistryName(Darkness.prependModID(name));
-		if (addToTab) setCreativeTab(Darkness.darkness);
+		if (addToTab) setCreativeTab(Darkness.darkTab);
 		GameRegistry.register(this);
 	}
 

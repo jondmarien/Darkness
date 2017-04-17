@@ -37,7 +37,7 @@ public class BlockBase extends Block implements IModeledBlock {
 		this.setHardness(hardness);
 		this.setResistance(resistance);
 		this.setSoundType(sound);
-		if (addToTab) this.setCreativeTab(Darkness.darkness);
+		if (addToTab) this.setCreativeTab(Darkness.darkTab);
 
 		GameRegistry.register(this);
 		GameRegistry.register(itemBlock = (new ItemBlock(this).setRegistryName(this.getRegistryName())));
@@ -64,7 +64,7 @@ public class BlockBase extends Block implements IModeledBlock {
 		this.setHardness(hardness);
 		this.setResistance(resistance);
 		this.setSoundType(sound);
-		if (addToTab) this.setCreativeTab(Darkness.darkness);
+		if (addToTab) this.setCreativeTab(Darkness.darkTab);
 		if (slippery) this.slipperiness = 0.98F;
 
 		GameRegistry.register(this);
@@ -86,7 +86,7 @@ public class BlockBase extends Block implements IModeledBlock {
 		this.setHardness(hardness);
 		this.setResistance(resistance);
 		this.setSoundType(sound);
-		if (addToTab) this.setCreativeTab(Darkness.darkness);
+		if (addToTab) this.setCreativeTab(Darkness.darkTab);
 
 		GameRegistry.register(this);
 		GameRegistry.register(itemBlock = (new ItemBlock(this).setRegistryName(this.getRegistryName())));
