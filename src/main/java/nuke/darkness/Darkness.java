@@ -7,7 +7,6 @@ import net.minecraftforge.fml.common.Mod.*;
 import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.relauncher.*;
 import nuke.darkness.proxy.*;
-import nuke.darkness.reg.*;
 
 @Mod(modid = References.MODID, name = References.VERSION, version = References.VERSION, clientSideOnly = false, serverSideOnly = false, dependencies = References.DEPENDENCIES)
 

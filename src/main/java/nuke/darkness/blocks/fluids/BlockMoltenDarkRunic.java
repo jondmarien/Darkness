@@ -14,7 +14,6 @@ import net.minecraftforge.fluids.*;
 import net.minecraftforge.fml.common.registry.*;
 import nuke.darkness.*;
 import nuke.darkness.blocks.*;
-import nuke.darkness.reg.*;
 
 public class BlockMoltenDarkRunic extends BlockFluidClassic implements IModeledBlock {
 	public static FluidStack fstack = new FluidStack(ModStuffs.fluid_molten_darkrunic, 1000);

@@ -1,7 +1,7 @@
 package nuke.darkness.proxy;
 
 import net.minecraftforge.fml.common.event.*;
-import nuke.darkness.reg.*;
+import nuke.darkness.*;
 
 public class ClientProxy extends CommonProxy {
 

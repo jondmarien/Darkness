@@ -5,7 +5,6 @@ import java.awt.*;
 import net.minecraft.util.*;
 import net.minecraftforge.fluids.*;
 import nuke.darkness.*;
-import nuke.darkness.reg.*;
 
 public class FluidMoltenDarkRunic extends Fluid {
 	public FluidMoltenDarkRunic() {
