@@ -1,6 +1,6 @@
 {
     "parent" : "item/handheld",
     "textures" : {
-        "layer0" : "darkness:items/item_test"
+        "layer0" : "darkness:items/hoe_darkrunic"
     }
 }

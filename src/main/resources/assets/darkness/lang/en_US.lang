@@ -5,12 +5,10 @@ tile.block_test.name=Test Block
 
 
 
-item.item_test.name=Test Item
+item.ingot_darkrunic.name=Dark Runic Ingot
 
-item.ingot_ness.name=Ness Ingot
-
-item.sword_ness.name=Ness Sword
-item.shovel_ness.name=Ness Shovel
-item.pickaxe_ness.name=Ness Pickaxe
-item.axe_ness.name=Ness Axe
-item.hoe_ness.name=Ness Hoe
+item.sword_darkrunic.name=Dark Runic Sword
+item.shovel_darkrunic.name=Dark Runic Shovel
+item.pickaxe_darkrunic.name=Dark Runic Pickaxe
+item.axe_darkrunic.name=Dark Runic Axe
+item.hoe_darkrunic.name=Dark Runic Hoe

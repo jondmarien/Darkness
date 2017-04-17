@@ -1,6 +1,6 @@
 {
     "parent" : "item/handheld",
     "textures" : {
-        "layer0" : "darkness:items/shovel_ness"
+        "layer0" : "darkness:items/sword_darkrunic"
     }
 }

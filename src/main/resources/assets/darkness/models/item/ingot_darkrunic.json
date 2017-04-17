@@ -1,6 +1,6 @@
 {
     "parent" : "item/generated",
     "textures" : {
-        "layer0" : "darkness:items/ingot_ness"
+        "layer0" : "darkness:items/ingot_darkrunic"
     }
 }
