@@ -44,13 +44,7 @@ public class Darkness {
 		@Override
 		@SideOnly(Side.CLIENT)
 		public ItemStack getTabIconItem() {
-			//return new ItemStack(Item.getItemFromBlock(ModStuffs.ingot_darkrunic));
 			return new ItemStack(ModStuffs.ingot_darkrunic);
-		}
-		
-		@Override
-		public boolean hasSearchBar() {
-			return true;
 		}
 	};
 
