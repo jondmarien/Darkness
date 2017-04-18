@@ -57,7 +57,7 @@ public class ModStuffs {
 
 		//Fluids
 		FluidRegistry.registerFluid(fluid_molten_darkrunic = new FluidMoltenDarkRunic());
-		blocks.add(block_molten_dark_runic = (new BlockMoltenDarkRunic("darkrunic", false)));
+		blocks.add(block_molten_dark_runic = (new BlockMoltenDarkRunic("darkrunic", true)));
 		FluidRegistry.addBucketForFluid(fluid_molten_darkrunic);
 
 		//Repair Materials
