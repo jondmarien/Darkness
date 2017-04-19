@@ -2,6 +2,7 @@ itemGroup.darkness=Darkness
 
 //Blocks
 tile.block_test.name=Test Block
+tile.block_rune.name=Rune Block
 
 
 //Items

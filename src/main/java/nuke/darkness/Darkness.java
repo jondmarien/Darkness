@@ -34,11 +34,16 @@ public class Darkness {
 		this.proxy.postInit(e);
 	}
 
-	public static CreativeTabs darkTab = new CreativeTabs("darkness") {
+	public static CreativeTabs darkTab = new CreativeTabs("darkness") {		
 		@Override
 		public String getTabLabel() {
 			return "darkness";
 		}
+		
+		@Override
+		public boolean hasSearchBar() {
+			return true;
+		};
 
 		@Override
 		@SideOnly(Side.CLIENT)

@@ -25,7 +25,7 @@ public class ModStuffs {
 
 	public static EnumRarity tool_rarity_darkrunic;
 
-	public static Block block_test, block_molten_dark_runic;
+	public static Block block_test, block_molten_dark_runic, block_rune;
 
 	public static Fluid fluid_molten_darkrunic;
 
@@ -43,6 +43,8 @@ public class ModStuffs {
 		// Blocks
 		blocks.add(block_test = (new BlockTest(Material.ROCK, "block_test", "pickaxe", 1, 1.0F, 10.0F, SoundType.STONE,
 		        true)).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16));
+		blocks.add(block_rune = (new BlockRune(Material.ROCK, "block_rune", "pickaxe", 1, 1.0F, 11.0F, SoundType.STONE,
+		        true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16)));
 
 		// Items
 		items.add(bag = new ItemScrollBag());
