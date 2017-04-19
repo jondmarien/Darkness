@@ -29,8 +29,8 @@ public class ModStuffs {
 
 	public static Fluid fluid_molten_darkrunic;
 
-	public static Item bag, sword_darkrunic, pickaxe_darkrunic, axe_darkrunic, hoe_darkrunic, shovel_darkrunic,
-	        ingot_darkrunic, droplet_darkrunic;
+	public static Item compendium, book_binding, scroll_bag, darkened_string, sword_darkrunic, pickaxe_darkrunic,
+	        axe_darkrunic, hoe_darkrunic, shovel_darkrunic, ingot_darkrunic, droplet_darkrunic;
 
 	public static void init() {
 		// Tool Materials
@@ -47,10 +47,15 @@ public class ModStuffs {
 		        true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16)));
 
 		// Items
-		items.add(bag = new ItemScrollBag());
+		items.add(compendium = new ItemCompendium());
+		items.add(scroll_bag = new ItemScrollBag());
+
+		items.add(book_binding = new ItemBase("book_binding", true));
+		items.add(darkened_string = new ItemBase("darkened_string", true));
 
 		items.add(droplet_darkrunic = new ItemBase("droplet_darkrunic", true));
 		items.add(ingot_darkrunic = new ItemBase("ingot_darkrunic", true));
+		
 		items.add(sword_darkrunic = new ItemSwordBase(tool_mat_darkrunic, "sword_darkrunic", true));
 		items.add(pickaxe_darkrunic = new ItemPickaxeBase(tool_mat_darkrunic, "pickaxe_darkrunic", true));
 		items.add(axe_darkrunic = new ItemAxeBase(tool_mat_darkrunic, "axe_darkrunic", true));
@@ -64,7 +69,7 @@ public class ModStuffs {
 
 		//Repair Materials
 		tool_mat_darkrunic.setRepairItem(new ItemStack(ingot_darkrunic));
-		armor_mat_darkrunic_cloth.repairMaterial = new ItemStack(Items.STRING, 1);
+		armor_mat_darkrunic_cloth.repairMaterial = new ItemStack(darkened_string, 1);
 	}
 
 	public static void registerRenderer() {

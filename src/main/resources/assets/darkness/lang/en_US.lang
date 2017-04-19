@@ -6,7 +6,10 @@ tile.block_rune.name=Rune Block
 
 
 //Items
+item.compendium.name=The Dark Compendium
 item.scroll_bag.name=Scroll Bag
+item.book_binding.name=Book Binding
+item.darkened_string.name=Darkened String
 
 item.droplet_darkrunic.name=Dark Runic Droplet
 item.ingot_darkrunic.name=Dark Runic Ingot

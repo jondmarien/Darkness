@@ -2,12 +2,12 @@ package nuke.darkness.gui;
 
 import net.minecraft.client.gui.*;
 
-public class GuiScrollBag extends GuiScreen {
+public class GuiCompendium extends GuiScreen {
 
-	public GuiScrollBag() {
+	public GuiCompendium() {
 		super();
 	}
-	
+
 	@Override
 	public boolean doesGuiPauseGame() {
 		return false;

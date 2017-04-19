@@ -9,11 +9,11 @@ public class CommonProxy {
 
 	public void preInit( FMLPreInitializationEvent e ) {
 		ModStuffs.init();
+		ModRecipes.init(); 
 	}
 
 	public void init( FMLInitializationEvent e ) {
 		//TERegistry.registerTEs();
-		//ModRecipes.registerRecipes(); 
 	}
 
 	public void postInit( FMLPostInitializationEvent e ) {
