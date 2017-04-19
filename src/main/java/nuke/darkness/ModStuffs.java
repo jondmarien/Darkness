@@ -25,7 +25,7 @@ public class ModStuffs {
 
 	public static EnumRarity tool_rarity_darkrunic;
 
-	public static Block block_test, block_molten_dark_runic, block_rune;
+	public static Block block_rune, block_molten_dark_runic;
 
 	public static Fluid fluid_molten_darkrunic;
 
@@ -41,8 +41,6 @@ public class ModStuffs {
 		tool_rarity_darkrunic = EnumHelper.addRarity("rare", TextFormatting.DARK_PURPLE, "Rare");
 
 		// Blocks
-		blocks.add(block_test = (new BlockTest(Material.ROCK, "block_test", "pickaxe", 1, 1.0F, 10.0F, SoundType.STONE,
-		        true)).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16));
 		blocks.add(block_rune = (new BlockRune(Material.ROCK, "block_rune", "pickaxe", 1, 1.0F, 11.0F, SoundType.STONE,
 		        true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16)));
 
@@ -55,7 +53,7 @@ public class ModStuffs {
 
 		items.add(droplet_darkrunic = new ItemBase("droplet_darkrunic", true));
 		items.add(ingot_darkrunic = new ItemBase("ingot_darkrunic", true));
-		
+
 		items.add(sword_darkrunic = new ItemSwordBase(tool_mat_darkrunic, "sword_darkrunic", true));
 		items.add(pickaxe_darkrunic = new ItemPickaxeBase(tool_mat_darkrunic, "pickaxe_darkrunic", true));
 		items.add(axe_darkrunic = new ItemAxeBase(tool_mat_darkrunic, "axe_darkrunic", true));
