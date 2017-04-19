@@ -12,6 +12,7 @@ public class ModRecipes {
 		OreDictionary.registerOre("dropletDarkRunic", ModStuffs.droplet_darkrunic);
 		OreDictionary.registerOre("ingotDarkRunic", ModStuffs.ingot_darkrunic); 
 		OreDictionary.registerOre("blockDarkRunic", ModStuffs.block_rune);
+		OreDictionary.registerOre("woolDarkened", ModStuffs.block_darkened_wool);
 		
 		//Shaped Recipes
 		//Blocks & Ores
@@ -50,6 +51,10 @@ public class ModRecipes {
 				" L ",
 				'L', Items.LEATHER,
 				'S', Items.STRING}));
+		
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModStuffs.darkened_string, 9), new Object[] {
+				ModStuffs.block_darkened_wool}));
+		
 		// Tools
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModStuffs.sword_darkrunic, 1), true, new Object[]{
 				" D ",

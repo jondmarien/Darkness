@@ -3,6 +3,8 @@ itemGroup.darkness=Darkness
 //Blocks
 tile.block_test.name=Test Block
 tile.block_rune.name=Rune Block
+tile.block_darkened_web.name=Darkened Web
+tile.block_darkened_wool.name=Darkened Wool
 
 
 //Items

@@ -5,10 +5,8 @@ import java.util.*;
 import net.minecraft.block.*;
 import net.minecraft.block.material.*;
 import net.minecraft.block.state.*;
-import net.minecraft.entity.player.*;
 import net.minecraft.item.*;
-import net.minecraft.util.math.*;
-import net.minecraft.world.*;
+import nuke.darkness.*;
 
 public class BlockRune extends BlockBase {
 	public BlockRune(Material mat, String name, String toolUsed, int toolStrength, float hardness, float resistance,
@@ -18,12 +16,7 @@ public class BlockRune extends BlockBase {
 	}
 
 	@Override
-	public void onBlockHarvested( World world, BlockPos pos, IBlockState state, EntityPlayer player ) {
-		super.onBlockHarvested(world, pos, state, player);
-	}
-
-	@Override
-	public List<ItemStack> getDrops( IBlockAccess world, BlockPos pos, IBlockState state, int fortune ) {
-		return super.getDrops(world, pos, state, fortune);
+	public Item getItemDropped( IBlockState state, Random rand, int fortune ) {
+		return Item.getItemFromBlock(ModStuffs.block_rune);
 	}
 }
