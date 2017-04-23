@@ -1,3 +1,3 @@
 # Darkness
 
-A darkness to take a way the light.
+A darkness to take away the light.
