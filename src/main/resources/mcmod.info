@@ -2,8 +2,8 @@
 {
   "modid": "darkness",
   "name": "Darkness",
-  "description": "A Darkness to steal the light.",
-  "version": "0.01",
+  "description": "A Darkness to steal away the Light.",
+  "version": "0.0.1",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",

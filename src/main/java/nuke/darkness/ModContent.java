@@ -8,6 +8,7 @@ import net.minecraft.init.*;
 import net.minecraft.item.*;
 import net.minecraft.item.Item.*;
 import net.minecraft.item.ItemArmor.*;
+import net.minecraft.util.*;
 import net.minecraft.util.text.*;
 import net.minecraftforge.common.util.*;
 import net.minecraftforge.fluids.*;
@@ -15,8 +16,9 @@ import nuke.darkness.blocks.*;
 import nuke.darkness.blocks.fluids.*;
 import nuke.darkness.fluids.*;
 import nuke.darkness.items.*;
+import nuke.darkness.util.*;
 
-public class ModStuffs {
+public class ModContent {
 	public static ArrayList<Block> blocks = new ArrayList<Block>();
 	public static ArrayList<Item> items = new ArrayList<Item>();
 
@@ -25,14 +27,19 @@ public class ModStuffs {
 
 	public static EnumRarity tool_rarity_darkrunic;
 
+	public static DamageSource damage_darkness;
+
 	public static Block block_rune, block_molten_dark_runic, block_darkened_web, block_darkened_wool;
 
 	public static Fluid fluid_molten_darkrunic;
 
 	public static Item compendium, book_binding, scroll_bag, darkened_string, sword_darkrunic, pickaxe_darkrunic,
-	        axe_darkrunic, hoe_darkrunic, shovel_darkrunic, ingot_darkrunic, droplet_darkrunic;
+	        axe_darkrunic, hoe_darkrunic, shovel_darkrunic, ingot_darkrunic, droplet_darkrunic, black_hole;
 
 	public static void init() {
+		// Dark(ness) Damage
+		damage_darkness = new DamageDarkness();
+
 		// Tool Materials
 		tool_mat_darkrunic = EnumHelper.addToolMaterial(Darkness.prependModID("darkrunic"), 4, 290, 6.3f, 2.1f, 20);
 		armor_mat_darkrunic_cloth = EnumHelper.addArmorMaterial(Darkness.prependModID("darkrunic_cloth"),
@@ -63,6 +70,8 @@ public class ModStuffs {
 		items.add(axe_darkrunic = new ItemAxeBase(tool_mat_darkrunic, "axe_darkrunic", true));
 		items.add(hoe_darkrunic = new ItemHoeBase(tool_mat_darkrunic, "hoe_darkrunic", true));
 		items.add(shovel_darkrunic = new ItemShovelBase(tool_mat_darkrunic, "shovel_darkrunic", true));
+
+		items.add(black_hole = new ItemBlackHole());
 
 		//Fluids
 		FluidRegistry.registerFluid(fluid_molten_darkrunic = new FluidMoltenDarkRunic());

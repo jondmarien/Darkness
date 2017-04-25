@@ -48,11 +48,15 @@ public class Darkness {
 		@Override
 		@SideOnly(Side.CLIENT)
 		public ItemStack getTabIconItem() {
-			return new ItemStack(ModStuffs.ingot_darkrunic);
+			return new ItemStack(ModContent.ingot_darkrunic);
 		}
 	};
 
 	public static String prependModID( String name ) {
 		return References.MODID + ":" + name;
+	}
+	
+	public static String prependModIDCapacity( String name ) {
+		return References.MODID + ":" + name + "Capacity";
 	}
 }

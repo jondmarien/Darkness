@@ -6,6 +6,8 @@ tile.block_rune.name=Rune Block
 tile.block_darkened_web.name=Darkened Web
 tile.block_darkened_wool.name=Darkened Wool
 
+tile.null.name=Null Fluid
+
 
 //Items
 item.compendium.name=The Dark Compendium
@@ -20,3 +22,5 @@ item.shovel_darkrunic.name=Dark Runic Shovel
 item.pickaxe_darkrunic.name=Dark Runic Pickaxe
 item.axe_darkrunic.name=Dark Runic Axe
 item.hoe_darkrunic.name=Dark Runic Hoe
+
+item.black_hole.name=Black Hole

@@ -13,6 +13,7 @@ buildscript {
     }
 }
 
+
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 
@@ -28,7 +29,7 @@ compileJava {
 minecraft {
     version = "1.11.2-13.20.0.2279"
     runDir = "run"
-    mappings = "snapshot_20170416"
+    mappings = "snapshot_20170423"
     
     // makeObfSourceJar = false
 }
@@ -39,12 +40,16 @@ repositories {
         name = 'DVS1 Maven FS'
         url = 'http://dvs1.progwml6.com/files/maven'
     }
+     maven {
+        // where to find the GuideBook API Files
+        url 'http://tehnut.info/maven/'
+    }
 }
 
 dependencies {
     deobfCompile "mezz.jei:jei_1.11.2:4.3.1.257"
-    //deobfCompile "com.github.Azanor:Baubles:${version_baubles}"
-    compile files('libs/')
+    deobfCompile "info.amerifrance.guideapi:Guide-API:1.11-2.1.0-51"
+    //compile files('libs/')
 }
 
 processResources {

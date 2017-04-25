@@ -2,24 +2,23 @@ package nuke.darkness.proxy;
 
 import net.minecraftforge.fml.common.event.*;
 import nuke.darkness.*;
+import nuke.darkness.util.*;
 
 public class ClientProxy extends CommonProxy {
 
-	//Creates Items, Blocks & Models (+configs)
 	@Override
 	public void preInit( FMLPreInitializationEvent e ) {
 		super.preInit(e);
-		ModStuffs.registerRenderer();
+		KeybindHandler.init();
+		ModContent.registerRenderer();
 	}
 
-	//Recipes
 	@Override
 	public void init( FMLInitializationEvent e ) {
 		super.init(e);
 
 	}
 
-	//Interaction with other mods
 	@Override
 	public void postInit( FMLPostInitializationEvent e ) {
 		super.postInit(e);

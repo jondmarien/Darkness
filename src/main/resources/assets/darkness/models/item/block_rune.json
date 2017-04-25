@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "darkness:blocks/block_rune_var_1",
-    "particle": "darkness:blocks/block_rune_var_1"
+    "all": "darkness:blocks/block_rune",
+    "particle": "darkness:blocks/block_rune"
   }
 }

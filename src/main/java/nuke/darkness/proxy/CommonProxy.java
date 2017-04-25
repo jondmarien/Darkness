@@ -3,12 +3,13 @@ package nuke.darkness.proxy;
 import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.network.*;
 import nuke.darkness.*;
+import nuke.darkness.crafting.*;
 import nuke.darkness.gui.*;
 
 public class CommonProxy {
 
 	public void preInit( FMLPreInitializationEvent e ) {
-		ModStuffs.init();
+		ModContent.init();
 		ModRecipes.init(); 
 	}
 

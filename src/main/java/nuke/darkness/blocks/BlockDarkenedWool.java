@@ -25,6 +25,6 @@ public class BlockDarkenedWool extends BlockBase{
 
 	@Override
 	public Item getItemDropped( IBlockState state, Random rand, int fortune ) {
-		return ModStuffs.darkened_string;
+		return ModContent.darkened_string;
 	}
 }

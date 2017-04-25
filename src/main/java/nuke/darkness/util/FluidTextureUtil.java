@@ -1,4 +1,4 @@
-package nuke.darkness.libs;
+package nuke.darkness.util;
 
 import java.util.*;
 

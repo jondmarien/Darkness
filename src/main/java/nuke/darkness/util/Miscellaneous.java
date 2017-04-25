@@ -1,15 +1,23 @@
-package nuke.darkness.libs;
+package nuke.darkness.util;
 
+import java.util.*;
+
+import net.minecraft.client.*;
 import net.minecraft.entity.item.*;
 import net.minecraft.inventory.*;
 import net.minecraft.item.*;
 import net.minecraft.item.Item.*;
 import net.minecraft.util.*;
+import net.minecraft.util.math.*;
 import net.minecraft.world.*;
 import net.minecraftforge.items.*;
 import net.minecraftforge.oredict.*;
 
 public class Miscellaneous {
+	
+	public static final AxisAlignedBB standardBlockAABB = new AxisAlignedBB(0, 0, 0, 1, 1, 1);
+	static HashMap<String, ResourceLocation> resourceMap = new HashMap<String, ResourceLocation>();
+	
 	public static ItemStack getRepairItem( ItemStack stack ) {
 		// for Axes
 		if (stack.getItem() instanceof ItemTool) {
@@ -44,7 +52,7 @@ public class Miscellaneous {
 		else if (face == EnumFacing.UP) return EnumFacing.DOWN;
 		else return face.getOpposite();
 	}
-	
+
 	public static EnumFacing getOppositeHorizontalFace( EnumFacing face ) {
 		if (face == EnumFacing.DOWN) return EnumFacing.DOWN;
 		else if (face == EnumFacing.UP) return EnumFacing.UP;
@@ -111,6 +119,15 @@ public class Miscellaneous {
 		}
 	}
 
+	public static boolean compareItemNBT( ItemStack stack1, ItemStack stack2 ) {
+		if ((stack1 == null) != (stack2 == null)) return false;
+		boolean empty1 = (stack1.getTagCompound() == null || stack1.getTagCompound().hasNoTags());
+		boolean empty2 = (stack2.getTagCompound() == null || stack2.getTagCompound().hasNoTags());
+		if (empty1 != empty2) return false;
+		if (!empty1 && !stack1.getTagCompound().equals(stack2.getTagCompound())) return false;
+		return stack1.areCapsCompatible(stack2);
+	}
+
 	public static boolean matchOreDict( ItemStack stackOne, ItemStack stackTwo ) {
 		int[] keysOne = OreDictionary.getOreIDs(stackOne);
 		int[] keysTwo = OreDictionary.getOreIDs(stackTwo);
@@ -124,5 +141,24 @@ public class Miscellaneous {
 
 	public static int intColor( int r, int g, int b ) {
 		return (r * 65536 + g * 256 + b);
+	}
+	
+	public static Minecraft mc()
+	{
+		return Minecraft.getMinecraft();
+	}
+
+	public static void bindTexture(String path)
+	{
+		mc().getTextureManager().bindTexture(getResource(path));
+	}
+
+
+	public static ResourceLocation getResource(String path)
+	{
+		ResourceLocation rl = resourceMap.containsKey(path) ? resourceMap.get(path) : new ResourceLocation(path);
+		if(!resourceMap.containsKey(path))
+			resourceMap.put(path, rl);
+		return rl;
 	}
 }

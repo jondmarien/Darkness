@@ -16,14 +16,14 @@ import nuke.darkness.*;
 import nuke.darkness.blocks.*;
 
 public class BlockMoltenDarkRunic extends BlockFluidClassic implements IModeledBlock {
-	public static FluidStack fstack = new FluidStack(ModStuffs.fluid_molten_darkrunic, 1000);
+	public static FluidStack fstack = new FluidStack(ModContent.fluid_molten_darkrunic, 1000);
 
 	public BlockMoltenDarkRunic(String name, boolean addToTab) {
-		super(ModStuffs.fluid_molten_darkrunic, Material.LAVA);
+		super(ModContent.fluid_molten_darkrunic, Material.LAVA);
 		setRegistryName(Darkness.prependModID(name));
 		if (addToTab) this.setCreativeTab(Darkness.darkTab);
 		this.setQuantaPerBlock(7);
-		ModStuffs.fluid_molten_darkrunic.setBlock(this);
+		ModContent.fluid_molten_darkrunic.setBlock(this);
 		GameRegistry.register(this);
 		GameRegistry.register(new ItemBlock(this).setRegistryName(this.getRegistryName()));
 	}
@@ -54,7 +54,7 @@ public class BlockMoltenDarkRunic extends BlockFluidClassic implements IModeledB
 
 	@Override
 	public void initModel() {
-		Block block = ModStuffs.block_molten_dark_runic;
+		Block block = ModContent.block_molten_dark_runic;
 		Item item = Item.getItemFromBlock(block);
 
 		ModelBakery.registerItemVariants(item);
