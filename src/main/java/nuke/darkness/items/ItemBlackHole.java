@@ -59,7 +59,7 @@ public class ItemBlackHole extends ItemBase implements IInventoryDarknessPod, IH
 		if (DarknessEnergyUtil.getDarknessTotal(player) >= 100.0 || player.capabilities.isCreativeMode) {
 			DarknessEnergyUtil.removeDarkness(player, 100.0);
 			player.setActiveHand(hand);
-			player.dropItem(stack, false);
+			player.dropItem(true);
 			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
 		}
 

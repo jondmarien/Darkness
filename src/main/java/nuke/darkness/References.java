@@ -26,7 +26,7 @@ public class References {
 	public static final String MODID = "darkness";
 	public static final String NAME = "Darkness";
 	public static final String VERSION = MCVERSION + "-" + MAJOR + "." + MINOR + "." + PATCH + "";
-	public static final String DEPENDENCIES = "";
+	public static final String DEPENDENCIES = "before:guideapi";
 
 	public static final String CLIENT_PROXY_CLASS = "nuke.darkness.proxy.ClientProxy";
 	public static final String SERVER_PROXY_CLASS = "nuke.darkness.proxy.ServerProxy";

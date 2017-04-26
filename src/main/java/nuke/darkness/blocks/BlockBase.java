@@ -6,6 +6,8 @@ import net.minecraft.block.state.*;
 import net.minecraft.client.renderer.block.model.*;
 import net.minecraft.item.*;
 import net.minecraft.util.*;
+import net.minecraft.util.math.*;
+import net.minecraft.world.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
 import net.minecraftforge.fml.relauncher.*;
@@ -13,7 +15,7 @@ import nuke.darkness.*;
 
 public class BlockBase extends Block implements IModeledBlock {
 
-	public boolean isOpaqueCube = true, isFullCube = true;
+	public boolean isOpaqueCube = true, isFullCube = true, isBeaconBase = false;
 	public BlockRenderLayer brlayer = BlockRenderLayer.SOLID;
 	public Item itemBlock = null;
 
@@ -100,6 +102,16 @@ public class BlockBase extends Block implements IModeledBlock {
 	public BlockBase setIsFullCube( boolean bool ) {
 		isFullCube = bool;
 		return this;
+	}
+
+	public BlockBase setBeaconBase( boolean bool ) {
+		isBeaconBase = bool;
+		return this;
+	}
+
+	@Override
+	public boolean isBeaconBase( IBlockAccess world, BlockPos pos, BlockPos beacon ) {
+		return isBeaconBase;
 	}
 
 	@Override

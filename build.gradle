@@ -49,7 +49,7 @@ repositories {
 dependencies {
     deobfCompile "mezz.jei:jei_1.11.2:4.3.1.257"
     deobfCompile "info.amerifrance.guideapi:Guide-API:1.11-2.1.0-51"
-    //compile files('libs/')
+    compile files('libs/')
 }
 
 processResources {
