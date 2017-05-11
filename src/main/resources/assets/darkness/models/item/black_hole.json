@@ -2,6 +2,6 @@
     "parent": "item/generated",
     "textures": 
     {
-        "layer0": "darkness:items/droplet_darkrunic"
+        "layer0": "darkness:items/black_hole_v1"
     }
 }

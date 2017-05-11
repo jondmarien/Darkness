@@ -34,12 +34,12 @@ public class Darkness {
 		this.proxy.postInit(e);
 	}
 
-	public static CreativeTabs darkTab = new CreativeTabs("darkness") {		
+	public static CreativeTabs darkTab = new CreativeTabs("darkness") {
 		@Override
 		public String getTabLabel() {
 			return "darkness";
 		}
-		
+
 		@Override
 		public boolean hasSearchBar() {
 			return true;
@@ -55,7 +55,7 @@ public class Darkness {
 	public static String prependModID( String name ) {
 		return References.MODID + ":" + name;
 	}
-	
+
 	public static String prependModIDCapacity( String name ) {
 		return References.MODID + ":" + name + "Capacity";
 	}
