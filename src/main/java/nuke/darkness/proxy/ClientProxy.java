@@ -10,7 +10,7 @@ public class ClientProxy extends CommonProxy {
 	public void preInit( FMLPreInitializationEvent e ) {
 		super.preInit(e);
 		KeybindHandler.init();
-		ModContent.registerRenderer();
+		DarknessContent.registerRenderer();
 	}
 
 	@Override

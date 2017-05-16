@@ -38,7 +38,7 @@ public class BlockDarkenedWeb extends BlockBase implements IShearable {
 
 	@Override
 	public Item getItemDropped( IBlockState state, Random rand, int fortune ) {
-		return ModContent.darkened_string;
+		return DarknessContent.darkened_string;
 	}
 
 	@Override

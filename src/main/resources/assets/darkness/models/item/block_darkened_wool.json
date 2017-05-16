@@ -1,6 +1,6 @@
 {
-    "parent" : "block/cube_all",
+    "parent" : "item/handheld",
     "textures" : {
-        "layer0" : "darkness:blocks/block_darkened_wool"
+        "layer0" : "darkness:blocks/darkened_wool"
     }
 }

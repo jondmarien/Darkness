@@ -1,6 +1,6 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "darkness:blocks/block_darkened_web"
+    "cross": "darkness:blocks/darkened_web"
   }
 }

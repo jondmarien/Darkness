@@ -9,7 +9,7 @@ import nuke.darkness.gui.*;
 public class CommonProxy {
 
 	public void preInit( FMLPreInitializationEvent e ) {
-		ModContent.init();
+		DarknessContent.init();
 		ModRecipes.init(); 
 	}
 

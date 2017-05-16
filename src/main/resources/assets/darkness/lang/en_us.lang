@@ -1,18 +1,22 @@
+# Tabs
 itemGroup.darkness=Darkness
 
-//Blocks
-tile.block_test.name=Test Block
-tile.block_rune.name=Rune Block
+# Blocks
+tile.block_rune_null.name=Null Rune
 tile.block_darkened_web.name=Darkened Web
 tile.block_darkened_wool.name=Darkened Wool
 
+tile.ore_duo.name=Duo Ore
+tile.ore_tri.name=Tri Ore
+
 tile.null.name=Null Fluid
 
-
-//Items
+# Items
 item.compendium.name=The Dark Compendium
 item.guidebook.name=The Dark Compendium
 item.scroll_bag.name=Scroll Bag
+item.black_hole.name=Black Hole
+
 item.book_binding.name=Book Binding
 item.darkened_string.name=Darkened String
 
@@ -24,4 +28,7 @@ item.pickaxe_darkrunic.name=Dark Runic Pickaxe
 item.axe_darkrunic.name=Dark Runic Axe
 item.hoe_darkrunic.name=Dark Runic Hoe
 
-item.black_hole.name=Black Hole
+item.gem_duo.name=Duo Gem
+item.gem_tri.name=Tri Gem
+item.rune_duo.name=Duo Rune
+item.rune_tri.name=Tri Rune

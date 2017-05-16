@@ -17,7 +17,7 @@ public class ContainerScrollBag {
 
 	public boolean canInsert( ItemStack stack, int slotNum, Slot slot ) {
 		if (stack == null) return true;
-		if (ModContent.scroll_bag.equals(stack.getItem())) return false;
+		if (DarknessContent.scroll_bag.equals(stack.getItem())) return false;
 		else return true;
 	}
 

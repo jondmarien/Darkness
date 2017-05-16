@@ -2,6 +2,7 @@ package nuke.darkness;
 
 import net.minecraft.creativetab.*;
 import net.minecraft.item.*;
+import net.minecraftforge.common.*;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.Mod.*;
 import net.minecraftforge.fml.common.event.*;
@@ -21,6 +22,8 @@ public class Darkness {
 
 	@EventHandler
 	public void preInit( FMLPreInitializationEvent e ) {
+		MinecraftForge.EVENT_BUS.register(new DarknessConfig());
+		DarknessConfig.init(e.getSuggestedConfigurationFile());
 		this.proxy.preInit(e);
 	}
 
@@ -41,14 +44,9 @@ public class Darkness {
 		}
 
 		@Override
-		public boolean hasSearchBar() {
-			return true;
-		};
-
-		@Override
 		@SideOnly(Side.CLIENT)
 		public ItemStack getTabIconItem() {
-			return new ItemStack(ModContent.ingot_darkrunic);
+			return new ItemStack(DarknessContent.ingot_darkrunic);
 		}
 	};
 

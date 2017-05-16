@@ -40,16 +40,16 @@ repositories {
         name = 'DVS1 Maven FS'
         url = 'http://dvs1.progwml6.com/files/maven'
     }
-     maven {
-        // where to find the GuideBook API Files
-        url 'http://tehnut.info/maven/'
+    maven { 
+        // Where to find baubles
+        url 'https://jitpack.io' 
     }
 }
 
 dependencies {
     deobfCompile "mezz.jei:jei_1.11.2:4.3.1.257"
-    deobfCompile "info.amerifrance.guideapi:Guide-API:1.11-2.1.0-51"
-    compile files('libs/')
+    compile 'com.github.Azanor:Baubles:ba2355c23d'
+    //compile files('libs/')
 }
 
 processResources {

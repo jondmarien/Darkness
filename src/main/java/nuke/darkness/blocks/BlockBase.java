@@ -93,6 +93,11 @@ public class BlockBase extends Block implements IModeledBlock {
 		GameRegistry.register(this);
 		GameRegistry.register(itemBlock = (new ItemBlock(this).setRegistryName(this.getRegistryName())));
 	}
+	
+	public BlockBase setHarvestProps(String type, int level){
+		super.setHarvestLevel(type, level);
+		return this;
+	}
 
 	public BlockBase setIsOpaqueCube( boolean bool ) {
 		isOpaqueCube = bool;

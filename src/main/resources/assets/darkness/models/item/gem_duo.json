@@ -1,6 +1,6 @@
 {
     "parent" : "item/handheld",
     "textures" : {
-        "layer0" : "darkness:items/darkened_wool"
+        "layer0" : "darkness:items/gem_duo"
     }
 }
