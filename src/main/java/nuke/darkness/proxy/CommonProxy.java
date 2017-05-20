@@ -8,9 +8,13 @@ import nuke.darkness.gui.*;
 
 public class CommonProxy {
 
+	public void serverStarting( FMLServerStartingEvent e ) {
+		
+	}
+
 	public void preInit( FMLPreInitializationEvent e ) {
 		DarknessContent.init();
-		ModRecipes.init(); 
+		ModRecipes.init();
 	}
 
 	public void init( FMLInitializationEvent e ) {
@@ -19,5 +23,9 @@ public class CommonProxy {
 
 	public void postInit( FMLPostInitializationEvent e ) {
 		NetworkRegistry.INSTANCE.registerGuiHandler(Darkness.instance, new GuiHandler());
+	}
+
+	public void serverStopping( FMLServerStoppingEvent e ) {
+		
 	}
 }

@@ -20,10 +20,17 @@ public class Darkness {
 	@SidedProxy(clientSide = References.CLIENT_PROXY_CLASS, serverSide = References.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
 
+	@Mod.EventHandler
+	public void onServerStarting( FMLServerStartingEvent event ) {
+		proxy.serverStarting(event);
+	}
+
 	@EventHandler
 	public void preInit( FMLPreInitializationEvent e ) {
+		System.out.println("Darkness is loading!");
 		MinecraftForge.EVENT_BUS.register(new DarknessConfig());
-		DarknessConfig.init(e.getSuggestedConfigurationFile());
+		DarknessConfig.initConfig(e.getSuggestedConfigurationFile());
+		System.out.println("Darkness Configuration is loaded!");
 		this.proxy.preInit(e);
 	}
 
@@ -36,6 +43,12 @@ public class Darkness {
 	public void postInit( FMLPostInitializationEvent e ) {
 		this.proxy.postInit(e);
 	}
+	
+	 @Mod.EventHandler
+	    public void onServerStopping(FMLServerStoppingEvent event) {
+	        proxy.serverStopping(event);
+	    }
+
 
 	public static CreativeTabs darkTab = new CreativeTabs("darkness") {
 		@Override

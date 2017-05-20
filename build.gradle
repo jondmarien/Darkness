@@ -46,10 +46,10 @@ repositories {
     }
 }
 
-dependencies {
+dependencies {  
     deobfCompile "mezz.jei:jei_1.11.2:4.3.1.257"
-    compile 'com.github.Azanor:Baubles:ba2355c23d'
-    //compile files('libs/')
+    //compile 'com.github.Azanor:Baubles:master-SNAPSHOT'
+    compile files('libs/')
 }
 
 processResources {
