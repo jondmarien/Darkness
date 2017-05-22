@@ -22,7 +22,7 @@ import nuke.darkness.common.items.armor.*;
 import nuke.darkness.common.world.*;
 import nuke.darkness.core.*;
 
-public class DarknessContent {
+public class Content {
 	public static ArrayList<Block> blocks = new ArrayList<Block>();
 	public static ArrayList<Item> items = new ArrayList<Item>();
 	public static ArrayList<ItemArmor> armor = new ArrayList<ItemArmor>();
@@ -70,9 +70,9 @@ public class DarknessContent {
 		        1.0F, SoundType.CLOTH, true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16));
 
 		blocks.add(ore_tri = new BlockTriGemOre().setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16)
-		        .setCreativeTab(Darkness.darkTab));
+		        .setCreativeTab(Darkness.darknessTab));
 		blocks.add(ore_duo = new BlockBase(Material.ROCK, "ore_duo", "pickaxe", 1, 2.0F, 13.0F, SoundType.STONE, true)
-		        .setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16).setCreativeTab(Darkness.darkTab));
+		        .setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16).setCreativeTab(Darkness.darknessTab));
 
 		// Items
 		items.add(compendium = new ItemCompendium());

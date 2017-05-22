@@ -3,11 +3,11 @@ package nuke.darkness.core;
 import net.minecraft.creativetab.*;
 import net.minecraft.item.*;
 import net.minecraftforge.common.*;
+import net.minecraftforge.fluids.*;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.Mod.*;
 import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.relauncher.*;
-import nuke.darkness.*;
 import nuke.darkness.client.util.*;
 import nuke.darkness.common.*;
 
@@ -22,17 +22,11 @@ public class Darkness {
 	@SidedProxy(clientSide = References.CLIENT_PROXY_CLASS, serverSide = References.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
 
-	@Mod.EventHandler
-	public void onServerStarting( FMLServerStartingEvent event ) {
-		proxy.serverStarting(event);
-	}
-
 	@EventHandler
 	public void preInit( FMLPreInitializationEvent e ) {
-		System.out.println("Darkness is loading!");
-		MinecraftForge.EVENT_BUS.register(new DarknessConfig());
-		DarknessConfig.initConfig(e.getSuggestedConfigurationFile());
-		System.out.println("Darkness Configuration is loaded!");
+		MinecraftForge.EVENT_BUS.register(new Config());
+		Config.initConfig(e.getSuggestedConfigurationFile());
+		References.LOGGER.info("Darkness Configuration is loaded!");
 		this.proxy.preInit(e);
 	}
 
@@ -43,26 +37,26 @@ public class Darkness {
 
 	@EventHandler
 	public void postInit( FMLPostInitializationEvent e ) {
+		References.LOGGER.info("Darkness has loaded!");
 		this.proxy.postInit(e);
 	}
 
-	@Mod.EventHandler
-	public void onServerStopping( FMLServerStoppingEvent event ) {
-		proxy.serverStopping(event);
-	}
-
-	public static CreativeTabs darkTab = new CreativeTabs("darkness") {
+	public static CreativeTabs darknessTab = new CreativeTabs("darkness.general") {
 		@Override
 		public String getTabLabel() {
-			return "darkness";
+			return "darkness.general";
 		}
 
 		@Override
 		@SideOnly(Side.CLIENT)
 		public ItemStack getTabIconItem() {
-			return new ItemStack(DarknessContent.ingot_darkrunic);
+			return new ItemStack(Content.compendium);
 		}
 	};
+
+	static {
+		FluidRegistry.enableUniversalBucket();
+	}
 
 	public static String prependModID( String name ) {
 		return References.MODID + ":" + name;

@@ -18,6 +18,6 @@ public class BlockRune extends BlockBase {
 
 	@Override
 	public Item getItemDropped( IBlockState state, Random rand, int fortune ) {
-		return Item.getItemFromBlock(DarknessContent.block_rune_null);
+		return Item.getItemFromBlock(Content.block_rune_null);
 	}
 }

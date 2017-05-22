@@ -16,7 +16,7 @@ public class FluidMoltenDarkRunic extends Fluid {
 		this.setDensity(1250);
 		this.setLuminosity(6);
 		this.setTemperature(600);
-		this.setBlock(DarknessContent.block_molten_dark_runic);
+		this.setBlock(Content.block_molten_dark_runic);
 		this.setUnlocalizedName("darkrunic");
 	}
 	

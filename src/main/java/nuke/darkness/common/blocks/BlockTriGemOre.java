@@ -20,7 +20,7 @@ public class BlockTriGemOre extends BlockBase {
 
 	@Override
 	public Item getItemDropped( IBlockState state, Random rand, int fortune ) {
-		return DarknessContent.gem_tri;
+		return Content.gem_tri;
 	}
 
 	@Override
@@ -47,6 +47,6 @@ public class BlockTriGemOre extends BlockBase {
 
 	@Override
 	protected ItemStack getSilkTouchDrop( IBlockState state ) {
-		return new ItemStack(DarknessContent.ore_tri);
+		return new ItemStack(Content.ore_tri);
 	}
 }

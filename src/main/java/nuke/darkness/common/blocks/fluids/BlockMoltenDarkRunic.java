@@ -10,20 +10,19 @@ import net.minecraft.util.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fluids.*;
 import net.minecraftforge.fml.common.registry.*;
-import nuke.darkness.*;
 import nuke.darkness.common.*;
 import nuke.darkness.common.blocks.*;
 import nuke.darkness.core.*;
 
 public class BlockMoltenDarkRunic extends BlockFluidClassic implements IModeledBlock {
-	public static FluidStack fstack = new FluidStack(DarknessContent.fluid_molten_darkrunic, 1000);
+	public static FluidStack fstack = new FluidStack(Content.fluid_molten_darkrunic, 1000);
 
 	public BlockMoltenDarkRunic(String name, boolean addToTab) {
-		super(DarknessContent.fluid_molten_darkrunic, Material.LAVA);
+		super(Content.fluid_molten_darkrunic, Material.AIR);
 		setRegistryName(Darkness.prependModID(name));
-		if (addToTab) this.setCreativeTab(Darkness.darkTab);
+		if (addToTab) this.setCreativeTab(Darkness.darknessTab);
 		this.setQuantaPerBlock(7);
-		DarknessContent.fluid_molten_darkrunic.setBlock(this);
+		Content.fluid_molten_darkrunic.setBlock(this);
 		GameRegistry.register(this);
 		GameRegistry.register(new ItemBlock(this).setRegistryName(this.getRegistryName()));
 	}
@@ -49,7 +48,7 @@ public class BlockMoltenDarkRunic extends BlockFluidClassic implements IModeledB
 
 	@Override
 	public void initModel() {
-		Block block = DarknessContent.block_molten_dark_runic;
+		Block block = Content.block_molten_dark_runic;
 		Item item = Item.getItemFromBlock(block);
 
 		ModelBakery.registerItemVariants(item);

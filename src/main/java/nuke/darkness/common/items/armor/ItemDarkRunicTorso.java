@@ -14,7 +14,7 @@ import nuke.darkness.common.*;
 public class ItemDarkRunicTorso extends ItemArmorBase {
 
 	public ItemDarkRunicTorso() {
-		super("darkrunic_torso", true, DarknessContent.armor_mat_darkrunic_cloth, 0, EntityEquipmentSlot.CHEST);
+		super("darkrunic_torso", true, Content.armor_mat_darkrunic_cloth, 0, EntityEquipmentSlot.CHEST);
 	}
 
 	@Override

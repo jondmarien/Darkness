@@ -15,7 +15,6 @@ import net.minecraft.world.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
 import net.minecraftforge.fml.relauncher.*;
-import nuke.darkness.*;
 import nuke.darkness.core.*;
 
 public class BlockDoubleSlabBase extends BlockSlab implements IModeledBlock {
@@ -31,7 +30,7 @@ public class BlockDoubleSlabBase extends BlockSlab implements IModeledBlock {
 		super(mat);
 		setUnlocalizedName(name);
 		setRegistryName(Darkness.prependModID(name));
-		if (addToTab) setCreativeTab(Darkness.darkTab);
+		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		GameRegistry.register(this);
 		GameRegistry.register(itemBlock = (new ItemBlock(this).setRegistryName(this.getRegistryName())));
 	}

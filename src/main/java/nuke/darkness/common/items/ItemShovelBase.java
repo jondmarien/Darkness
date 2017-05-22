@@ -4,7 +4,6 @@ import net.minecraft.client.renderer.block.model.*;
 import net.minecraft.item.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
-import nuke.darkness.*;
 import nuke.darkness.core.*;
 
 public class ItemShovelBase extends ItemSpade implements IModeledItem {
@@ -13,7 +12,7 @@ public class ItemShovelBase extends ItemSpade implements IModeledItem {
 		super(tmat);
 		setUnlocalizedName(name);
 		setRegistryName(Darkness.prependModID(name));
-		if (addToTab) setCreativeTab(Darkness.darkTab);
+		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		GameRegistry.register(this);
 	}
 	
@@ -21,7 +20,7 @@ public class ItemShovelBase extends ItemSpade implements IModeledItem {
 		super(tmat);
 		setUnlocalizedName(name);
 		setRegistryName(Darkness.prependModID(name));
-		if (addToTab) setCreativeTab(Darkness.darkTab);
+		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		GameRegistry.register(this);
 	}
 

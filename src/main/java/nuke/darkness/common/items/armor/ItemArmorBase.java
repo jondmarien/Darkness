@@ -5,7 +5,6 @@ import net.minecraft.inventory.*;
 import net.minecraft.item.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
-import nuke.darkness.*;
 import nuke.darkness.core.*;
 
 public class ItemArmorBase extends ItemArmor implements IModeledItemArmor {
@@ -14,7 +13,7 @@ public class ItemArmorBase extends ItemArmor implements IModeledItemArmor {
 		super(mat, index, slot);
 		setUnlocalizedName(name);
 		this.setRegistryName(Darkness.prependModID(name));
-		if(addToTab) setCreativeTab(Darkness.darkTab);
+		if(addToTab) setCreativeTab(Darkness.darknessTab);
 		GameRegistry.register(this);
 	}
 

@@ -14,7 +14,7 @@ import nuke.darkness.common.*;
 public class ItemDarkRunicHood extends ItemArmorBase {
 
 	public ItemDarkRunicHood() {
-		super("darkrunic_hood", true, DarknessContent.armor_mat_darkrunic_cloth, 0, EntityEquipmentSlot.HEAD);
+		super("darkrunic_hood", true, Content.armor_mat_darkrunic_cloth, 0, EntityEquipmentSlot.HEAD);
 	}
 
 	@Override

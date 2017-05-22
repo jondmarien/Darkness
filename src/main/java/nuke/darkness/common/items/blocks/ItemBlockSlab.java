@@ -13,7 +13,6 @@ import net.minecraft.world.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
 import net.minecraftforge.fml.relauncher.*;
-import nuke.darkness.*;
 import nuke.darkness.common.items.*;
 import nuke.darkness.core.*;
 
@@ -26,7 +25,7 @@ public class ItemBlockSlab extends ItemBlock implements IModeledItem {
 		super(block);
 		doubleSlab = doubleSlabBlock;
 		setRegistryName(block.getRegistryName());
-		darkTab = Darkness.darkTab;
+		darkTab = Darkness.darknessTab;
 		GameRegistry.register(this);
 	}
 

@@ -11,7 +11,6 @@ import net.minecraft.world.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
 import net.minecraftforge.fml.relauncher.*;
-import nuke.darkness.*;
 import nuke.darkness.core.*;
 
 public class BlockBase extends Block implements IModeledBlock {
@@ -40,7 +39,7 @@ public class BlockBase extends Block implements IModeledBlock {
 		this.setHardness(hardness);
 		this.setResistance(resistance);
 		this.setSoundType(sound);
-		if (addToTab) this.setCreativeTab(Darkness.darkTab);
+		if (addToTab) this.setCreativeTab(Darkness.darknessTab);
 
 		GameRegistry.register(this);
 		GameRegistry.register(itemBlock = (new ItemBlock(this).setRegistryName(this.getRegistryName())));
@@ -67,7 +66,7 @@ public class BlockBase extends Block implements IModeledBlock {
 		this.setHardness(hardness);
 		this.setResistance(resistance);
 		this.setSoundType(sound);
-		if (addToTab) this.setCreativeTab(Darkness.darkTab);
+		if (addToTab) this.setCreativeTab(Darkness.darknessTab);
 		if (slippery) this.slipperiness = 0.98F;
 
 		GameRegistry.register(this);
@@ -89,7 +88,7 @@ public class BlockBase extends Block implements IModeledBlock {
 		this.setHardness(hardness);
 		this.setResistance(resistance);
 		this.setSoundType(sound);
-		if (addToTab) this.setCreativeTab(Darkness.darkTab);
+		if (addToTab) this.setCreativeTab(Darkness.darknessTab);
 
 		GameRegistry.register(this);
 		GameRegistry.register(itemBlock = (new ItemBlock(this).setRegistryName(this.getRegistryName())));

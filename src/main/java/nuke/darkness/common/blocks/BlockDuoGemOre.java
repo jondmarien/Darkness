@@ -20,7 +20,7 @@ public class BlockDuoGemOre extends BlockBase {
 
 	@Override
 	public Item getItemDropped( IBlockState state, Random rand, int fortune ) {
-		return DarknessContent.gem_duo;
+		return Content.gem_duo;
 	}
 
 	@Override
@@ -47,6 +47,6 @@ public class BlockDuoGemOre extends BlockBase {
 
 	@Override
 	protected ItemStack getSilkTouchDrop( IBlockState state ) {
-		return new ItemStack(DarknessContent.ore_duo);
+		return new ItemStack(Content.ore_duo);
 	}
 }

@@ -1,5 +1,5 @@
 # Tabs
-itemGroup.darkness=Darkness
+itemGroup.darkness.general=Darkness
 
 # Blocks
 tile.block_rune_null.name=Null Rune

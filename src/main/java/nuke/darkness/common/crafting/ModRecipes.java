@@ -11,40 +11,40 @@ import nuke.darkness.common.*;
 public class ModRecipes {
 
 	public static void oreDict() {
-		OreDictionary.registerOre("dropletDarkRunic", DarknessContent.droplet_darkrunic);
-		OreDictionary.registerOre("ingotDarkRunic", DarknessContent.ingot_darkrunic);
-		OreDictionary.registerOre("blockDarkRunic", DarknessContent.block_rune_null);
-		OreDictionary.registerOre("woolDarkened", DarknessContent.block_darkened_wool);
+		OreDictionary.registerOre("dropletDarkRunic", Content.droplet_darkrunic);
+		OreDictionary.registerOre("ingotDarkRunic", Content.ingot_darkrunic);
+		OreDictionary.registerOre("blockDarkRunic", Content.block_rune_null);
+		OreDictionary.registerOre("woolDarkened", Content.block_darkened_wool);
 	}
 
 	public static void init() {
 		oreDict();
 
 		GameRegistry
-		        .addRecipe(new ShapedOreRecipe(new ItemStack(DarknessContent.book_binding), true, new Object[] { 
+		        .addRecipe(new ShapedOreRecipe(new ItemStack(Content.book_binding), true, new Object[] { 
 		        		"Ss ", 
 		        		"Ss ",
 		        		"Ss ", 
 		        		'S', Items.STICK, 
 		        		's', Items.STRING }));
 		GameRegistry
-		        .addRecipe(new ShapedOreRecipe(new ItemStack(DarknessContent.compendium), true, new Object[]
-		        { "Bb ", "Bb ", "Bb ", 'B', DarknessContent.book_binding, 'b', Items.WRITABLE_BOOK }));
+		        .addRecipe(new ShapedOreRecipe(new ItemStack(Content.compendium), true, new Object[]
+		        { "Bb ", "Bb ", "Bb ", 'B', Content.book_binding, 'b', Items.WRITABLE_BOOK }));
 		GameRegistry
-		        .addRecipe(new ShapedOreRecipe(new ItemStack(DarknessContent.scroll_bag), true, new Object[]
+		        .addRecipe(new ShapedOreRecipe(new ItemStack(Content.scroll_bag), true, new Object[]
 		        { "   ", "LSL", " L ", 'L', Items.LEATHER, 'S', Items.STRING }));
 
 		GameRegistry
-		        .addRecipe(new ShapelessOreRecipe(new ItemStack(DarknessContent.darkened_string, 9), new Object[]
-		        { DarknessContent.block_darkened_wool }));
+		        .addRecipe(new ShapelessOreRecipe(new ItemStack(Content.darkened_string, 9), new Object[]
+		        { Content.block_darkened_wool }));
 
 		/*
 		 * Material Sets
 		 */
-		ModRecipes.regMatSet("ingotDarkRunic", "dropletDarkRunic", "blockDarkRunic", DarknessContent.ingot_darkrunic,
-		        DarknessContent.droplet_darkrunic, DarknessContent.block_rune_null, DarknessContent.pickaxe_darkrunic,
-		        DarknessContent.axe_darkrunic, DarknessContent.sword_darkrunic, DarknessContent.shovel_darkrunic,
-		        DarknessContent.hoe_darkrunic);
+		ModRecipes.regMatSet("ingotDarkRunic", "dropletDarkRunic", "blockDarkRunic", Content.ingot_darkrunic,
+		        Content.droplet_darkrunic, Content.block_rune_null, Content.pickaxe_darkrunic,
+		        Content.axe_darkrunic, Content.sword_darkrunic, Content.shovel_darkrunic,
+		        Content.hoe_darkrunic);
 	}
 
 	/**

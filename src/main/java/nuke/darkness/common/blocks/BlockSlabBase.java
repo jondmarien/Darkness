@@ -9,7 +9,6 @@ import net.minecraft.util.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
 import net.minecraftforge.fml.relauncher.*;
-import nuke.darkness.*;
 import nuke.darkness.core.*;
 
 public class BlockSlabBase extends BlockSlab {
@@ -22,7 +21,7 @@ public class BlockSlabBase extends BlockSlab {
 		super(block.getDefaultState().getMaterial());
 		setUnlocalizedName(name);
 		setRegistryName(Darkness.prependModID(name));
-		if (addToTab) setCreativeTab(Darkness.darkTab);
+		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		this.doubleSlab = block;
 		this.useNeighborBrightness = true;
 		GameRegistry.register(this);
