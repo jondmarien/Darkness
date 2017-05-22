@@ -1,6 +1,9 @@
 language: java
 
-script: /gradlew build
+before_install:
+ - chmod +x gradlew
+
+script: ./gradlew build
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
