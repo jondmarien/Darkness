@@ -5,8 +5,8 @@ import net.minecraft.client.renderer.*;
 import net.minecraft.entity.*;
 import net.minecraftforge.fml.relauncher.*;
 
-/**
- * Model & Texture of Robes by Ingoleth
+/*
+ * Model by Ingoleth
  */
 @SideOnly(Side.CLIENT)
 public class ModelDarkRunicHood extends ModelBiped {

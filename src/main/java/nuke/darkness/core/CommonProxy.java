@@ -10,7 +10,7 @@ public class CommonProxy {
 
 	public void preInit( FMLPreInitializationEvent e ) {
 		Content.init();
-		ModRecipes.init();
+		Recipes.init();
 	}
 
 	public void init( FMLInitializationEvent e ) {

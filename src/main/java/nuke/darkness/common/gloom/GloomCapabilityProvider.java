@@ -12,7 +12,7 @@ public class GloomCapabilityProvider implements ICapabilityProvider {
 
 	public GloomCapabilityProvider() {
 		capability = new DefaultGloomCapability();
-	}
+	} 
 
 	public GloomCapabilityProvider(IGloomCapability capability) {
 		this.capability = capability;

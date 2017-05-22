@@ -5,10 +5,9 @@ import net.minecraft.init.*;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.common.registry.*;
 import net.minecraftforge.oredict.*;
-import nuke.darkness.*;
 import nuke.darkness.common.*;
 
-public class ModRecipes {
+public class Recipes {
 
 	public static void oreDict() {
 		OreDictionary.registerOre("dropletDarkRunic", Content.droplet_darkrunic);
@@ -41,7 +40,7 @@ public class ModRecipes {
 		/*
 		 * Material Sets
 		 */
-		ModRecipes.regMatSet("ingotDarkRunic", "dropletDarkRunic", "blockDarkRunic", Content.ingot_darkrunic,
+		Recipes.regMatSet("ingotDarkRunic", "dropletDarkRunic", "blockDarkRunic", Content.ingot_darkrunic,
 		        Content.droplet_darkrunic, Content.block_rune_null, Content.pickaxe_darkrunic,
 		        Content.axe_darkrunic, Content.sword_darkrunic, Content.shovel_darkrunic,
 		        Content.hoe_darkrunic);
@@ -49,18 +48,18 @@ public class ModRecipes {
 
 	/**
 	 *  If there ever are too many materials this is an easier way of creating the recipes for the whole material set
-	 *  i.e. Block -> ingot (& reversed), ingot -> droplet (& reversed), tool set
-	 * @param ingotKey
-	 * @param dropletKey
-	 * @param blockKey
-	 * @param ingot
-	 * @param droplet
-	 * @param block
-	 * @param pickaxe
-	 * @param axe
-	 * @param sword
-	 * @param shovel
-	 * @param hoe
+	 *  i.e. Block to ingot (and reversed), ingot to droplet (and reversed), tool set
+	 * @param ingotKey ingot value
+	 * @param dropletKey nugget value
+	 * @param blockKey block value
+	 * @param ingot the ingot it will become
+	 * @param droplet the droplet it will become
+	 * @param block the block it will become
+	 * @param pickaxe the pickaxe it will become
+	 * @param axe the axe it will become
+	 * @param sword the sword it will become
+	 * @param shovel the shovel it will become
+	 * @param hoe the hoe it will become
 	 */
 	public static void regMatSet( String ingotKey, String dropletKey, String blockKey, Item ingot, Item droplet,
 	        Block block, Item pickaxe, Item axe, Item sword, Item shovel, Item hoe )
