@@ -18,12 +18,14 @@ import nuke.darkness.blocks.fluids.*;
 import nuke.darkness.blocks.ores.*;
 import nuke.darkness.fluids.*;
 import nuke.darkness.items.*;
+import nuke.darkness.items.armor.*;
 import nuke.darkness.util.*;
 import nuke.darkness.world.*;
 
 public class DarknessContent {
 	public static ArrayList<Block> blocks = new ArrayList<Block>();
 	public static ArrayList<Item> items = new ArrayList<Item>();
+	public static ArrayList<ItemArmor> armor = new ArrayList<ItemArmor>();
 
 	public static WorldGenOres world_gen_ores;
 
@@ -45,6 +47,8 @@ public class DarknessContent {
 
 	public static Item sword_darkrunic, pickaxe_darkrunic, axe_darkrunic, hoe_darkrunic, shovel_darkrunic,
 	        ingot_darkrunic, droplet_darkrunic;
+	
+	public static ItemArmor darkrunic_hood, darkrunic_torso, darkrunic_legs;
 
 	public static void init() {
 		// Shade (Darkness) Damage
@@ -91,13 +95,18 @@ public class DarknessContent {
 
 		items.add(rune_duo = new ItemRuneDuo());
 		items.add(rune_tri = new ItemRuneTri());
+		
+		// Armor
+		armor.add(darkrunic_hood = new ItemDarkRunicHood());
+		armor.add(darkrunic_torso = new ItemDarkRunicTorso());
+		armor.add(darkrunic_legs = new ItemDarkRunicLegs());
 
-		//Fluids
+		// Fluids
 		FluidRegistry.registerFluid(fluid_molten_darkrunic = new FluidMoltenDarkRunic());
 		blocks.add(block_molten_dark_runic = (new BlockMoltenDarkRunic("darkrunic", true)));
 		FluidRegistry.addBucketForFluid(fluid_molten_darkrunic);
 
-		//Repair Materials
+		// Repair Materials
 		tool_mat_darkrunic.setRepairItem(new ItemStack(ingot_darkrunic));
 		armor_mat_darkrunic_cloth.repairMaterial = new ItemStack(darkened_string, 1);
 
@@ -115,6 +124,12 @@ public class DarknessContent {
 		for (int i = 0; i < items.size(); i++) {
 			if (items.get(i) instanceof IModeledItem) {
 				((IModeledItem) items.get(i)).initModel();
+			}
+		}
+		
+		for (int i = 0; i < armor.size(); i++) {
+			if (armor.get(i) instanceof IModeledItemArmor) {
+				((IModeledItemArmor) armor.get(i)).initModel();
 			}
 		}
 	}
