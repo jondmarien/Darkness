@@ -1,6 +1,6 @@
 {
     "parent" : "item/generated",
     "textures" : {
-        "layer0" : "darkness:items/compendium"
+        "layer0" : "darkness:items/compendium_v2"
     }
 }

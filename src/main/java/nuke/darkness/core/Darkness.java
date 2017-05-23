@@ -19,7 +19,7 @@ public class Darkness {
 	@Instance(References.MODID)
 	public static Darkness instance;
 
-	@SidedProxy(clientSide = References.CLIENT_PROXY_CLASS, serverSide = References.SERVER_PROXY_CLASS)
+	@SidedProxy(clientSide = References.CLIENT_PROXY_CLASS)
 	public static CommonProxy proxy;
 
 	@EventHandler
