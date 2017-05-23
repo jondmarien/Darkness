@@ -11,7 +11,7 @@ import net.minecraftforge.fml.relauncher.*;
 import nuke.darkness.client.util.*;
 import nuke.darkness.common.*;
 
-@Mod(modid = References.MODID, name = References.NAME, version = References.VERSION, clientSideOnly = false, serverSideOnly = false, dependencies = References.DEPENDENCIES)
+@Mod(modid = References.MODID, name = References.NAME, version = References.VERSION)
 
 @Mod.EventBusSubscriber
 public class Darkness {
@@ -26,7 +26,7 @@ public class Darkness {
 	public void preInit( FMLPreInitializationEvent e ) {
 		MinecraftForge.EVENT_BUS.register(new Config());
 		Config.initConfig(e.getSuggestedConfigurationFile());
-		References.LOGGER.info("Darkness Configuration is loaded!");
+		References.LOGGER.info("Config is loaded!");
 		this.proxy.preInit(e);
 	}
 
