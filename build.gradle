@@ -5,7 +5,7 @@ buildscript {
         maven { 
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
-       }
+       } 
     }
     
     dependencies {
@@ -18,37 +18,44 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 
 group = "nuke.darkness" 
-archivesBaseName = "darkness"
-version = "0.0.1"
+archivesBaseName = "Darkness"
+version = "${mc_version}-${mod_version}"
 
-sourceCompatibility = targetCompatibility = "1.8"
+sourceCompatibility = targetCompatibility = "JavaVersion.VERSION_1_8"
 compileJava {
-    sourceCompatibility = targetCompatibility = "1.8"
+    sourceCompatibility = targetCompatibility = "JavaVersion.VERSION_1_8"
 }
 
 minecraft {
-    version = "1.11.2-13.20.0.2303"
+    version = "${mc_version}-${forge_version}"
     runDir = "run"
-    mappings = "snapshot_20170520"
-    
-    // makeObfSourceJar = false
+    if (project.hasProperty('mappings_version'))
+        mappings = project.mappings_version
 }
 
 repositories {
     maven {
-		// where to find the JEI files (runtime or api)
         name = 'DVS1 Maven FS'
         url = 'http://dvs1.progwml6.com/files/maven'
     }
     maven { 
-        // Where to find baubles
+        name = 'Baubles'
         url 'https://jitpack.io' 
+    }
+    maven {
+        name = 'Mobius Repo'
+        url = "http://tehnut.info/maven"
     }
 }
 
 dependencies {  
-    deobfCompile "mezz.jei:jei_1.11.2:4.3.1.257"
+    deobfProvided "mezz.jei:jei_${mc_version}:${jei_version}:api"
+    runtime "mezz.jei:jei_${mc_version}:${jei_version}"
+    
+    deobfProvided "mcp.mobius.waila:Hwyla:${hwyla_version}_1.11"
+    
     compile 'com.github.Azanor:Baubles:master-SNAPSHOT'
+    
     compile files('libs/')
 }
 
@@ -65,69 +72,4 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
-}
-
-//Pulls the build version from a Java file.
-String getVersionFromJava(File file) {
-
-    String release = "0";
-    String update = "0";
-    String patch = "0";
-
-    String build = System.getenv("BUILD_NUMBER") ? System.getenv("BUILD_NUMBER") : "0";
-    def outfile = "";
-    def ln = System.getProperty("line.separator")
-
-    String prefix = "public static final String VERSION_NUMBER = \"";
-    file.eachLine {
-        String s ->
-
-            String v = s.trim();
-
-        if (v.startsWith(prefix)) {
-
-            v = v.substring(prefix.length(), v.length() - 2);
-            String[] pts = v.split("\\.");
-
-            release = pts[0];
-            update = pts[1];
-            patch = pts[2];
-            s = s.replaceAll(".0\";", ".${build}\";");
-        }
-
-        outfile += (s + ln);
-    }
-
-    file.write(outfile);
-
-    return "${version_minecraft}-$release.$update.$patch.$build";
-}
-
-//Creates the source jar.
-task sourcesJar(type: Jar, dependsOn: classes) {
-
-    from sourceSets.main.allSource
-    classifier = 'sources'
-}
-
-//Creates the JavaDoc jar.
-task javadocJar(type: Jar, dependsOn: javadoc) {
-
-    from javadoc.destinationDir
-    classifier = 'javadoc'
-}
-
-//Creates the deobfuscated jar.
-task deobfJar(type: Jar) {
-
-    from sourceSets.main.output
-    classifier = "deobf"
-}
-
-//Adds the deobf, source and javadoc jars to the build artifacts.
-artifacts {
-
-    archives deobfJar
-    archives sourcesJar
-    archives javadocJar
 }
