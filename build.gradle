@@ -56,6 +56,8 @@ dependencies {
     
     compile 'com.github.Azanor:Baubles:master-SNAPSHOT'
     
+    compile 'com.github.Nuclearsmilz:Planar:-SNAPSHOT'
+    
     compile files('libs/')
 }
 
