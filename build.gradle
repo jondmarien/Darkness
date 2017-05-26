@@ -21,9 +21,9 @@ group = "nuke.darkness"
 archivesBaseName = "darkness"
 version = "${mc_version}-${mod_version}"
 
-sourceCompatibility = targetCompatibility = "JavaVersion.VERSION_1_8"
+sourceCompatibility = targetCompatibility = "1.8"
 compileJava {
-    sourceCompatibility = targetCompatibility = "JavaVersion.VERSION_1_8"
+    sourceCompatibility = targetCompatibility = "1.8"
 }
 
 minecraft {
