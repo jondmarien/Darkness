@@ -18,7 +18,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 
 group = "nuke.darkness" 
-archivesBaseName = "Darkness"
+archivesBaseName = "darkness"
 version = "${mc_version}-${mod_version}"
 
 sourceCompatibility = targetCompatibility = "JavaVersion.VERSION_1_8"

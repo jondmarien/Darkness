@@ -1,9 +1,12 @@
 language: java
+
+sudo: false
+
 jdk:
-  - oraclejdk8
+- oraclejdk8
 
 before_install:
- - chmod +x gradlew
+- chmod +x ./gradlew
 
 install: "./gradlew setupCIWorkspace"
 
@@ -11,13 +14,13 @@ script:
 - travis_wait 100 ./gradlew build
 
 before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+- rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+
 cache:
   directories:
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
-    
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+  
 deploy:
   provider: releases
   file_glob: true
@@ -26,7 +29,5 @@ deploy:
   - "./build/libs/Darkness-*-*.jar"
   - "./build/libs/Darkness-*-*-sources.jar"
   skip_cleanup: true
- on:
-    repo: Nuclearsmilz/Planar
+  on:
     tags: true
-    all_branches: true    
