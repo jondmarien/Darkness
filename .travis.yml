@@ -11,7 +11,7 @@ before_install:
 install: "./gradlew setupCIWorkspace"
 
 script: 
-- travis_wait 100 ./gradlew build
+- ./gradlew build
 
 before_cache:
 - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
