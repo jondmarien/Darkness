@@ -1,7 +1,6 @@
 package nuke.darkness.core;
 
 import net.minecraftforge.fml.common.event.*;
-import nuke.darkness.*;
 import nuke.darkness.client.util.*;
 import nuke.darkness.common.*;
 

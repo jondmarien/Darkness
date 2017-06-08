@@ -22,7 +22,7 @@ public class BlockSlabBase extends BlockSlab {
 		setUnlocalizedName(name);
 		setRegistryName(Darkness.prependModID(name));
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
-		this.doubleSlab = block;
+		this.setDoubleSlab(block);
 		this.useNeighborBrightness = true;
 		GameRegistry.register(this);
 	}
@@ -99,5 +99,13 @@ public class BlockSlabBase extends BlockSlab {
 	public void initModel() {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0,
 		        new ModelResourceLocation(getRegistryName().toString()));
+	}
+
+	public Block getDoubleSlab() {
+		return doubleSlab;
+	}
+
+	public void setDoubleSlab(Block doubleSlab) {
+		this.doubleSlab = doubleSlab;
 	}
 }

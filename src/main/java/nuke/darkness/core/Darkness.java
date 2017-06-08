@@ -23,22 +23,22 @@ public class Darkness {
 	public static CommonProxy proxy;
 
 	@EventHandler
-	public void preInit( FMLPreInitializationEvent e ) {
+	public void preInit(FMLPreInitializationEvent e) {
 		MinecraftForge.EVENT_BUS.register(new Config());
 		Config.initConfig(e.getSuggestedConfigurationFile());
 		References.LOGGER.info("Config is loaded!");
-		this.proxy.preInit(e);
+		Darkness.proxy.preInit(e);
 	}
 
 	@EventHandler
-	public void init( FMLInitializationEvent e ) {
-		this.proxy.init(e);
+	public void init(FMLInitializationEvent e) {
+		Darkness.proxy.init(e);
 	}
 
 	@EventHandler
-	public void postInit( FMLPostInitializationEvent e ) {
+	public void postInit(FMLPostInitializationEvent e) {
 		References.LOGGER.info("Darkness has loaded!");
-		this.proxy.postInit(e);
+		Darkness.proxy.postInit(e);
 	}
 
 	public static CreativeTabs darknessTab = new CreativeTabs("darkness.general") {
@@ -58,11 +58,11 @@ public class Darkness {
 		FluidRegistry.enableUniversalBucket();
 	}
 
-	public static String prependModID( String name ) {
+	public static String prependModID(String name) {
 		return References.MODID + ":" + name;
 	}
 
-	public static String prependModIDCapacity( String name ) {
+	public static String prependModIDCapacity(String name) {
 		return References.MODID + ":" + name + "Capacity";
 	}
 }

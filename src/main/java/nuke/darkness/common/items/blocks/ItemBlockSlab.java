@@ -40,6 +40,7 @@ public class ItemBlockSlab extends ItemBlock implements IModeledItem {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public EnumActionResult onItemUse( EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing,
 	        float hitX, float hitY, float hitZ )
@@ -116,6 +117,7 @@ public class ItemBlockSlab extends ItemBlock implements IModeledItem {
 		ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName().toString()));
 	}
 
+	@SuppressWarnings("deprecation")
 	private boolean tryPlace( ItemStack stack, World world, BlockPos pos ) {
 		IBlockState ibs = world.getBlockState(pos);
 		if (ibs.getBlock() == getBlock()) {

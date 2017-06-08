@@ -1,7 +1,6 @@
 package nuke.darkness.common.gloom;
 
 import net.minecraft.nbt.*;
-import nuke.darkness.*;
 import nuke.darkness.core.*;
 
 public class DefaultGloomCapability implements IGloomCapability {

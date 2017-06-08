@@ -6,7 +6,6 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.*;
 import net.minecraft.block.state.*;
 import net.minecraft.item.*;
-import nuke.darkness.*;
 import nuke.darkness.common.*;
 
 public class BlockRune extends BlockBase {

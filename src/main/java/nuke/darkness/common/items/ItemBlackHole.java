@@ -10,7 +10,6 @@ import net.minecraft.nbt.*;
 import net.minecraft.util.*;
 import net.minecraft.world.*;
 import net.minecraftforge.fml.relauncher.*;
-import nuke.darkness.*;
 import nuke.darkness.client.util.*;
 import nuke.darkness.common.gloom.*;
 import nuke.darkness.core.*;

@@ -7,7 +7,6 @@ import net.minecraft.item.*;
 import net.minecraft.util.*;
 import net.minecraft.util.text.*;
 import net.minecraft.world.*;
-import nuke.darkness.*;
 import nuke.darkness.client.util.*;
 import nuke.darkness.core.*;
 

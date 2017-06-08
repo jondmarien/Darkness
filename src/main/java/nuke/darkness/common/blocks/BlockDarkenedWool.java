@@ -9,7 +9,6 @@ import net.minecraft.entity.player.*;
 import net.minecraft.item.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.*;
-import nuke.darkness.*;
 import nuke.darkness.common.*;
 
 public class BlockDarkenedWool extends BlockBase{

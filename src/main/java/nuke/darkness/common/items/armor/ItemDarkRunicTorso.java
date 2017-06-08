@@ -8,7 +8,6 @@ import net.minecraft.entity.player.*;
 import net.minecraft.inventory.*;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.relauncher.*;
-import nuke.darkness.*;
 import nuke.darkness.common.*;
 
 public class ItemDarkRunicTorso extends ItemArmorBase {

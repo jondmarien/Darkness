@@ -4,7 +4,6 @@ import java.awt.*;
 
 import net.minecraft.util.*;
 import net.minecraftforge.fluids.*;
-import nuke.darkness.*;
 import nuke.darkness.common.*;
 import nuke.darkness.core.*;
 

@@ -7,7 +7,6 @@ import net.minecraft.world.*;
 import net.minecraft.world.chunk.*;
 import net.minecraft.world.gen.feature.*;
 import net.minecraftforge.fml.common.*;
-import nuke.darkness.*;
 import nuke.darkness.common.*;
 
 public class WorldGenOres implements IWorldGenerator {

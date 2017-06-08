@@ -2,7 +2,6 @@ package nuke.darkness.client.gui;
 
 import net.minecraft.client.gui.inventory.*;
 import net.minecraft.inventory.*;
-import nuke.darkness.*;
 import nuke.darkness.client.util.*;
 import nuke.darkness.core.*;
 

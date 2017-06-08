@@ -17,43 +17,41 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.*;
 import net.minecraftforge.common.*;
-import nuke.darkness.*;
 import nuke.darkness.common.*;
 
 public class BlockDarkenedWeb extends BlockBase implements IShearable {
 	public BlockDarkenedWeb(Material mat, String name, String toolUsed, int toolStrength, float hardness,
-	        float resistance, SoundType sound, boolean addToTab)
-	{
+			float resistance, SoundType sound, boolean addToTab) {
 		super(mat, name, toolUsed, toolStrength, hardness, resistance, sound, addToTab);
 	}
 
 	@Override
-	public void onEntityCollidedWithBlock( World world, BlockPos pos, IBlockState state, Entity entity ) {
+	public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
 		entity.setInWeb();
 	}
 
 	@Nullable
-	public AxisAlignedBB getCollisionBoundingBox( IBlockState blockState, IBlockAccess world, BlockPos pos ) {
+	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess world, BlockPos pos) {
 		return NULL_AABB;
 	}
 
 	@Override
-	public Item getItemDropped( IBlockState state, Random rand, int fortune ) {
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return Content.darkened_string;
 	}
 
 	@Override
-	public boolean canSilkHarvest( World world, BlockPos pos, IBlockState state, EntityPlayer player ) {
+	public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
 		return true;
 	}
 
 	@Override
-	public boolean isShearable( ItemStack item, IBlockAccess world, BlockPos pos ) {
+	public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public List<ItemStack> onSheared( ItemStack item, IBlockAccess world, BlockPos pos, int fortune ) {
+	public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
 		return com.google.common.collect.Lists.newArrayList(new ItemStack(Item.getItemFromBlock(this), 1));
 	}
 
@@ -64,9 +62,8 @@ public class BlockDarkenedWeb extends BlockBase implements IShearable {
 	}
 
 	@Override
-	public void harvestBlock( World world, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te,
-	        ItemStack stack )
-	{
+	public void harvestBlock(World world, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te,
+			ItemStack stack) {
 		if (!world.isRemote && stack.getItem() == Items.SHEARS) {
 			player.addStat(StatList.getBlockStats(this));
 			spawnAsEntity(world, pos, new ItemStack(Item.getItemFromBlock(this)));
