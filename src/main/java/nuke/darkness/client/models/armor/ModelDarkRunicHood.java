@@ -65,7 +65,7 @@ public class ModelDarkRunicHood extends ModelBiped {
 		this.hoodFrontOutlineLeft2 = new ModelRenderer(this, 23, 22);
 		this.hoodFrontOutlineLeft2.setRotationPoint(-5.0F, -5.0F, -5.0F);
 		this.hoodFrontOutlineLeft2.addBox(0.0F, 0.0F, 0.0F, 1, 2, 1);
-		
+
 		this.setRotationAngles(this.hoodFrontOutlineLeft2, 0.25132740562928074F, 0.0F, 0.0F);
 		this.hoodFrontOutlineLeft3 = new ModelRenderer(this, 28, 27);
 		this.hoodFrontOutlineLeft3.setRotationPoint(-5.0F, -3.4F, -5.5F);
@@ -76,7 +76,7 @@ public class ModelDarkRunicHood extends ModelBiped {
 		this.hoodFrontOutlineRight2 = new ModelRenderer(this, 23, 21);
 		this.hoodFrontOutlineRight2.setRotationPoint(4.0F, -5.0F, -5.0F);
 		this.hoodFrontOutlineRight2.addBox(0.0F, 0.0F, 0.0F, 1, 2, 1);
-		
+
 		this.setRotationAngles(this.hoodFrontOutlineRight2, 0.2513273889845239F, 0.0F, 0.0F);
 		this.hoodRightOutlineBottom = new ModelRenderer(this, 21, 35);
 		this.hoodRightOutlineBottom.setRotationPoint(4.0F, -0.4F, -4.5F);
@@ -105,12 +105,12 @@ public class ModelDarkRunicHood extends ModelBiped {
 		this.hoodBackOutlineRight2 = new ModelRenderer(this, 23, 27);
 		this.hoodBackOutlineRight2.setRotationPoint(4.0F, -2.4F, 4.5F);
 		this.hoodBackOutlineRight2.addBox(0.0F, -4.33F, 0.0F, 1, 4, 1);
-		
+
 		this.setRotationAngles(this.hoodBackOutlineRight2, -0.4845034043483675F, 0.0F, 0.0F);
 		this.hoodBackOutlineLeft2 = new ModelRenderer(this, 23, 27);
 		this.hoodBackOutlineLeft2.setRotationPoint(-5.0F, -2.4F, 4.5F);
 		this.hoodBackOutlineLeft2.addBox(0.0F, -4.33F, 0.0F, 1, 4, 1);
-		
+
 		this.setRotationAngles(this.hoodBackOutlineLeft2, -0.4845034043483675F, 0.0F, 0.0F);
 		this.hoodRightCloth2 = new ModelRenderer(this, 1, 15);
 		this.hoodRightCloth2.setRotationPoint(3.5F, -8.0F, 4.0F);
@@ -133,7 +133,7 @@ public class ModelDarkRunicHood extends ModelBiped {
 		this.hoodBackCloth2 = new ModelRenderer(this, 0, 30);
 		this.hoodBackCloth2.setRotationPoint(-4.0F, -5.0F, 6.5F);
 		this.hoodBackCloth2.addBox(0.0F, 0.0F, -1.0F, 8, 5, 1);
-		
+
 		this.setRotationAngles(this.hoodBackCloth2, -0.2780309551690189F, 0.0F, 0.0F);
 		this.hoodFrontOutlineTop = new ModelRenderer(this, 33, 32);
 		this.hoodFrontOutlineTop.setRotationPoint(-3.0F, -9.0F, -6.0F);
@@ -144,7 +144,7 @@ public class ModelDarkRunicHood extends ModelBiped {
 		this.hoodFold = new ModelRenderer(this, 0, 37);
 		this.hoodFold.setRotationPoint(-4.7F, -8.0F, -3.99F);
 		this.hoodFold.addBox(0.0F, -1.0F, 0.7F, 1, 2, 8);
-		
+
 		this.setRotationAngles(this.hoodFold, 0.0F, 1.5707963267948966F, 0.10402162408465232F);
 		this.hoodBackOutlineLeft1 = new ModelRenderer(this, 28, 22);
 		this.hoodBackOutlineLeft1.setRotationPoint(-5.0F, -2.7F, 3.5F);
@@ -158,48 +158,37 @@ public class ModelDarkRunicHood extends ModelBiped {
 	}
 
 	@Override
-	public void render( Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float rotationYaw,
-	        float rotationPitch, float scale )
-	{
+	public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float rotationYaw, float rotationPitch, float scale) {
 		this.hoodRightCloth1.render(scale);
 		this.hoodTopCloth.render(scale);
 		this.hoodLeftCloth1.render(scale);
 		this.hoodFrontOutlineRight1.render(scale);
 		this.hoodFrontOutlineLeft1.render(scale);
-		
+
 		GlStateManager.pushMatrix();
-		GlStateManager.translate(this.hoodFrontOutlineLeft2.offsetX, this.hoodFrontOutlineLeft2.offsetY,
-		        this.hoodFrontOutlineLeft2.offsetZ);
-		GlStateManager.translate(this.hoodFrontOutlineLeft2.rotationPointX * scale,
-		        this.hoodFrontOutlineLeft2.rotationPointY * scale, this.hoodFrontOutlineLeft2.rotationPointZ * scale);
+		GlStateManager.translate(this.hoodFrontOutlineLeft2.offsetX, this.hoodFrontOutlineLeft2.offsetY, this.hoodFrontOutlineLeft2.offsetZ);
+		GlStateManager.translate(this.hoodFrontOutlineLeft2.rotationPointX * scale, this.hoodFrontOutlineLeft2.rotationPointY * scale, this.hoodFrontOutlineLeft2.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 1.0F, 1.0F);
-		GlStateManager.translate(-this.hoodFrontOutlineLeft2.offsetX, -this.hoodFrontOutlineLeft2.offsetY,
-		        -this.hoodFrontOutlineLeft2.offsetZ);
-		GlStateManager.translate(-this.hoodFrontOutlineLeft2.rotationPointX * scale,
-		        -this.hoodFrontOutlineLeft2.rotationPointY * scale, -this.hoodFrontOutlineLeft2.rotationPointZ * scale);
+		GlStateManager.translate(-this.hoodFrontOutlineLeft2.offsetX, -this.hoodFrontOutlineLeft2.offsetY, -this.hoodFrontOutlineLeft2.offsetZ);
+		GlStateManager.translate(-this.hoodFrontOutlineLeft2.rotationPointX * scale, -this.hoodFrontOutlineLeft2.rotationPointY * scale, -this.hoodFrontOutlineLeft2.rotationPointZ * scale);
 		this.hoodFrontOutlineLeft2.render(scale);
-		
+
 		GlStateManager.popMatrix();
-		
+
 		this.hoodFrontOutlineLeft3.render(scale);
-		
+
 		this.hoodFrontOutlineRight3.render(scale);
-		
+
 		GlStateManager.pushMatrix();
-		GlStateManager.translate(this.hoodFrontOutlineRight2.offsetX, this.hoodFrontOutlineRight2.offsetY,
-		        this.hoodFrontOutlineRight2.offsetZ);
-		GlStateManager.translate(this.hoodFrontOutlineRight2.rotationPointX * scale,
-		        this.hoodFrontOutlineRight2.rotationPointY * scale, this.hoodFrontOutlineRight2.rotationPointZ * scale);
+		GlStateManager.translate(this.hoodFrontOutlineRight2.offsetX, this.hoodFrontOutlineRight2.offsetY, this.hoodFrontOutlineRight2.offsetZ);
+		GlStateManager.translate(this.hoodFrontOutlineRight2.rotationPointX * scale, this.hoodFrontOutlineRight2.rotationPointY * scale, this.hoodFrontOutlineRight2.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 1.0F, 1.0F);
-		GlStateManager.translate(-this.hoodFrontOutlineRight2.offsetX, -this.hoodFrontOutlineRight2.offsetY,
-		        -this.hoodFrontOutlineRight2.offsetZ);
-		GlStateManager.translate(-this.hoodFrontOutlineRight2.rotationPointX * scale,
-		        -this.hoodFrontOutlineRight2.rotationPointY * scale,
-		        -this.hoodFrontOutlineRight2.rotationPointZ * scale);
+		GlStateManager.translate(-this.hoodFrontOutlineRight2.offsetX, -this.hoodFrontOutlineRight2.offsetY, -this.hoodFrontOutlineRight2.offsetZ);
+		GlStateManager.translate(-this.hoodFrontOutlineRight2.rotationPointX * scale, -this.hoodFrontOutlineRight2.rotationPointY * scale, -this.hoodFrontOutlineRight2.rotationPointZ * scale);
 		this.hoodFrontOutlineRight2.render(scale);
-		
+
 		GlStateManager.popMatrix();
-		
+
 		this.hoodRightOutlineBottom.render(scale);
 		this.hoodLeftOutlineBottom.render(scale);
 		this.hoodLeftOutlineTop.render(scale);
@@ -208,74 +197,61 @@ public class ModelDarkRunicHood extends ModelBiped {
 		this.hoodBackOutlineRight1.render(scale);
 		this.hoodBackOutlineRight3.render(scale);
 		this.hoodBackOutlineLeft3.render(scale);
-		
+
 		GlStateManager.pushMatrix();
-		GlStateManager.translate(this.hoodBackOutlineRight2.offsetX, this.hoodBackOutlineRight2.offsetY,
-		        this.hoodBackOutlineRight2.offsetZ);
-		GlStateManager.translate(this.hoodBackOutlineRight2.rotationPointX * scale,
-		        this.hoodBackOutlineRight2.rotationPointY * scale, this.hoodBackOutlineRight2.rotationPointZ * scale);
+		GlStateManager.translate(this.hoodBackOutlineRight2.offsetX, this.hoodBackOutlineRight2.offsetY, this.hoodBackOutlineRight2.offsetZ);
+		GlStateManager.translate(this.hoodBackOutlineRight2.rotationPointX * scale, this.hoodBackOutlineRight2.rotationPointY * scale, this.hoodBackOutlineRight2.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 0.8F, 1.0F);
-		GlStateManager.translate(-this.hoodBackOutlineRight2.offsetX, -this.hoodBackOutlineRight2.offsetY,
-		        -this.hoodBackOutlineRight2.offsetZ);
-		GlStateManager.translate(-this.hoodBackOutlineRight2.rotationPointX * scale,
-		        -this.hoodBackOutlineRight2.rotationPointY * scale, -this.hoodBackOutlineRight2.rotationPointZ * scale);
+		GlStateManager.translate(-this.hoodBackOutlineRight2.offsetX, -this.hoodBackOutlineRight2.offsetY, -this.hoodBackOutlineRight2.offsetZ);
+		GlStateManager.translate(-this.hoodBackOutlineRight2.rotationPointX * scale, -this.hoodBackOutlineRight2.rotationPointY * scale, -this.hoodBackOutlineRight2.rotationPointZ * scale);
 		this.hoodBackOutlineRight2.render(scale);
-		
+
 		GlStateManager.popMatrix();
 		GlStateManager.pushMatrix();
-		GlStateManager.translate(this.hoodBackOutlineLeft2.offsetX, this.hoodBackOutlineLeft2.offsetY,
-		        this.hoodBackOutlineLeft2.offsetZ);
-		GlStateManager.translate(this.hoodBackOutlineLeft2.rotationPointX * scale,
-		        this.hoodBackOutlineLeft2.rotationPointY * scale, this.hoodBackOutlineLeft2.rotationPointZ * scale);
+		GlStateManager.translate(this.hoodBackOutlineLeft2.offsetX, this.hoodBackOutlineLeft2.offsetY, this.hoodBackOutlineLeft2.offsetZ);
+		GlStateManager.translate(this.hoodBackOutlineLeft2.rotationPointX * scale, this.hoodBackOutlineLeft2.rotationPointY * scale, this.hoodBackOutlineLeft2.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 0.8F, 1.0F);
-		GlStateManager.translate(-this.hoodBackOutlineLeft2.offsetX, -this.hoodBackOutlineLeft2.offsetY,
-		        -this.hoodBackOutlineLeft2.offsetZ);
-		GlStateManager.translate(-this.hoodBackOutlineLeft2.rotationPointX * scale,
-		        -this.hoodBackOutlineLeft2.rotationPointY * scale, -this.hoodBackOutlineLeft2.rotationPointZ * scale);
+		GlStateManager.translate(-this.hoodBackOutlineLeft2.offsetX, -this.hoodBackOutlineLeft2.offsetY, -this.hoodBackOutlineLeft2.offsetZ);
+		GlStateManager.translate(-this.hoodBackOutlineLeft2.rotationPointX * scale, -this.hoodBackOutlineLeft2.rotationPointY * scale, -this.hoodBackOutlineLeft2.rotationPointZ * scale);
 		this.hoodBackOutlineLeft2.render(scale);
-		
+
 		GlStateManager.popMatrix();
-		
+
 		this.hoodRightCloth2.render(scale);
 		this.hoodRightCloth3.render(scale);
 		this.hoodLeftCloth2.render(scale);
 		this.hoodLeftCLoth2.render(scale);
 		this.hoodBackOutlineBottom.render(scale);
 		this.hoodBackCloth1.render(scale);
-		
+
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(this.hoodBackCloth2.offsetX, this.hoodBackCloth2.offsetY, this.hoodBackCloth2.offsetZ);
-		GlStateManager.translate(this.hoodBackCloth2.rotationPointX * scale, this.hoodBackCloth2.rotationPointY * scale,
-		        this.hoodBackCloth2.rotationPointZ * scale);
+		GlStateManager.translate(this.hoodBackCloth2.rotationPointX * scale, this.hoodBackCloth2.rotationPointY * scale, this.hoodBackCloth2.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 1.0F, 1.0F);
-		GlStateManager.translate(-this.hoodBackCloth2.offsetX, -this.hoodBackCloth2.offsetY,
-		        -this.hoodBackCloth2.offsetZ);
-		GlStateManager.translate(-this.hoodBackCloth2.rotationPointX * scale,
-		        -this.hoodBackCloth2.rotationPointY * scale, -this.hoodBackCloth2.rotationPointZ * scale);
+		GlStateManager.translate(-this.hoodBackCloth2.offsetX, -this.hoodBackCloth2.offsetY, -this.hoodBackCloth2.offsetZ);
+		GlStateManager.translate(-this.hoodBackCloth2.rotationPointX * scale, -this.hoodBackCloth2.rotationPointY * scale, -this.hoodBackCloth2.rotationPointZ * scale);
 		this.hoodBackCloth2.render(scale);
-		
+
 		GlStateManager.popMatrix();
-		
+
 		this.hoodFrontOutlineTop.render(scale);
 		this.hoodTopOutline.render(scale);
-		
+
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(this.hoodFold.offsetX, this.hoodFold.offsetY, this.hoodFold.offsetZ);
-		GlStateManager.translate(this.hoodFold.rotationPointX * scale, this.hoodFold.rotationPointY * scale,
-		        this.hoodFold.rotationPointZ * scale);
+		GlStateManager.translate(this.hoodFold.rotationPointX * scale, this.hoodFold.rotationPointY * scale, this.hoodFold.rotationPointZ * scale);
 		GlStateManager.scale(0.5F, 1.0F, 1.0F);
 		GlStateManager.translate(-this.hoodFold.offsetX, -this.hoodFold.offsetY, -this.hoodFold.offsetZ);
-		GlStateManager.translate(-this.hoodFold.rotationPointX * scale, -this.hoodFold.rotationPointY * scale,
-		        -this.hoodFold.rotationPointZ * scale);
+		GlStateManager.translate(-this.hoodFold.rotationPointX * scale, -this.hoodFold.rotationPointY * scale, -this.hoodFold.rotationPointZ * scale);
 		this.hoodFold.render(scale);
 		GlStateManager.popMatrix();
-		
+
 		this.hoodBackOutlineLeft1.render(scale);
 		this.hoodLeftOutlineTop2.render(scale);
 		this.hoodRightOutlineTop2.render(scale);
 	}
 
-	private void setRotationAngles( ModelRenderer modelRenderer, float x, float y, float z ) {
+	private void setRotationAngles(ModelRenderer modelRenderer, float x, float y, float z) {
 		modelRenderer.rotateAngleX = x;
 		modelRenderer.rotateAngleY = y;
 		modelRenderer.rotateAngleZ = z;

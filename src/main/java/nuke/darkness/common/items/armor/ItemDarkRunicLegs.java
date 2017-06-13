@@ -18,7 +18,7 @@ public class ItemDarkRunicLegs extends ItemArmorBase {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void addInformation( ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced ) {
+	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 		tooltip.add(ChatFormatting.BOLD + "Dark Runic Legs");
 	}
 }

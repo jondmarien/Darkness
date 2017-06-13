@@ -13,8 +13,8 @@ public class ItemRuneDuo extends ItemBase {
 	}
 
 	@Override
-	public ActionResult<ItemStack> onItemRightClick( World world, EntityPlayer player, EnumHand hand ) {
-		if (!world.isRemote && player.isSneaking() && world.isRainingAt(new BlockPos(player.getPosition()))) {
+	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
+		if ( ! world.isRemote && player.isSneaking() && world.isRainingAt(new BlockPos(player.getPosition()))) {
 			world.setWorldTime(0);
 			world.setRainStrength(0);
 		}

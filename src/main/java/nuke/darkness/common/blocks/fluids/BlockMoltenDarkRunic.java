@@ -28,21 +28,21 @@ public class BlockMoltenDarkRunic extends BlockFluidClassic implements IModeledB
 	}
 
 	@Override
-	public boolean isOpaqueCube( IBlockState state ) {
+	public boolean isOpaqueCube(IBlockState state) {
 		return false;
 	}
 
 	@Override
-	public boolean isFullCube( IBlockState state ) {
+	public boolean isFullCube(IBlockState state) {
 		return false;
 	}
 
-	public EnumBlockRenderType getRenderType( IBlockState state ) {
+	public EnumBlockRenderType getRenderType(IBlockState state) {
 		return EnumBlockRenderType.MODEL;
 	}
 
 	@Override
-	public IBlockState getStateFromMeta( int meta ) {
+	public IBlockState getStateFromMeta(int meta) {
 		return getBlockState().getBaseState().withProperty(LEVEL, meta);
 	}
 
@@ -52,11 +52,10 @@ public class BlockMoltenDarkRunic extends BlockFluidClassic implements IModeledB
 		Item item = Item.getItemFromBlock(block);
 
 		ModelBakery.registerItemVariants(item);
-		ModelLoader.setCustomModelResourceLocation(item, 0,
-		        new ModelResourceLocation(Darkness.prependModID("fluid"), fstack.getFluid().getName()));
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(Darkness.prependModID("fluid"), fstack.getFluid().getName()));
 		ModelLoader.setCustomStateMapper(block, new StateMapperBase() {
 			@Override
-			protected ModelResourceLocation getModelResourceLocation( IBlockState p_178132_1_ ) {
+			protected ModelResourceLocation getModelResourceLocation(IBlockState p_178132_1_) {
 				return new ModelResourceLocation(Darkness.prependModID("fluid"), fstack.getFluid().getName());
 			}
 		});

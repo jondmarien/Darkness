@@ -7,7 +7,7 @@ import net.minecraftforge.fml.common.registry.*;
 import nuke.darkness.core.*;
 
 public class ItemSwordBase extends ItemSword implements IModeledItem {
-	
+
 	public ItemSwordBase(ToolMaterial tmat, String name, boolean addToTab) {
 		super(tmat);
 		setUnlocalizedName(name);
@@ -15,7 +15,7 @@ public class ItemSwordBase extends ItemSword implements IModeledItem {
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		GameRegistry.register(this);
 	}
-	
+
 	public ItemSwordBase(ToolMaterial tmat, EnumRarity rarity, String name, boolean addToTab) {
 		super(tmat);
 		setUnlocalizedName(name);

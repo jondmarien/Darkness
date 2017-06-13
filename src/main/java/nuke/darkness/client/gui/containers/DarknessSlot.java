@@ -15,7 +15,7 @@ public abstract class DarknessSlot extends Slot {
 	}
 
 	@Override
-	public boolean isItemValid( ItemStack itemStack ) {
+	public boolean isItemValid(ItemStack itemStack) {
 		return true;
 	}
 
@@ -28,15 +28,16 @@ public abstract class DarknessSlot extends Slot {
 		}
 
 		@Override
-		public boolean isItemValid( ItemStack itemStack ) {
+		public boolean isItemValid(ItemStack itemStack) {
 			return false;
 		}
 
 		@Override
-		public void onSlotChange( ItemStack p_75220_1_, ItemStack p_75220_2_ ) {
+		public void onSlotChange(ItemStack p_75220_1_, ItemStack p_75220_2_) {
 			super.onSlotChange(p_75220_1_, p_75220_2_);
 		}
 	}
+
 	public static class FluidContainer extends DarknessSlot {
 		boolean empty;
 
@@ -46,7 +47,7 @@ public abstract class DarknessSlot extends Slot {
 		}
 
 		@Override
-		public boolean isItemValid( ItemStack itemStack ) {
+		public boolean isItemValid(ItemStack itemStack) {
 			IFluidHandler handler = FluidUtil.getFluidHandler(itemStack);
 			if (handler == null || handler.getTankProperties() == null) return false;
 			IFluidTankProperties[] tank = handler.getTankProperties();
@@ -62,12 +63,12 @@ public abstract class DarknessSlot extends Slot {
 		}
 
 		@Override
-		public boolean isItemValid( ItemStack itemStack ) {
+		public boolean isItemValid(ItemStack itemStack) {
 			return false;
 		}
 
 		@Override
-		public boolean canTakeStack( EntityPlayer player ) {
+		public boolean canTakeStack(EntityPlayer player) {
 			return false;
 		}
 	}
@@ -78,22 +79,21 @@ public abstract class DarknessSlot extends Slot {
 		}
 
 		@Override
-		public boolean isItemValid( ItemStack itemStack ) {
-			if (this.container instanceof ICallbackContainer)
-			    return ((ICallbackContainer) this.container).canInsert(itemStack, slotNumber, this);
+		public boolean isItemValid(ItemStack itemStack) {
+			if (this.container instanceof ICallbackContainer) return ((ICallbackContainer) this.container).canInsert(itemStack, slotNumber, this);
 			return true;
 		}
 
 		@Override
-		public boolean canTakeStack( EntityPlayer player ) {
-			if (this.container instanceof ICallbackContainer)
-			    return ((ICallbackContainer) this.container).canTake(this.getStack(), slotNumber, this);
+		public boolean canTakeStack(EntityPlayer player) {
+			if (this.container instanceof ICallbackContainer) return ((ICallbackContainer) this.container).canTake(this.getStack(), slotNumber, this);
 			return true;
 		}
 	}
-	public interface ICallbackContainer {
-		boolean canInsert( ItemStack stack, int slotNum, Slot slot);
 
-		boolean canTake( ItemStack stack, int slotNum, Slot slot);
+	public interface ICallbackContainer {
+		boolean canInsert(ItemStack stack, int slotNum, Slot slot);
+
+		boolean canTake(ItemStack stack, int slotNum, Slot slot);
 	}
 }

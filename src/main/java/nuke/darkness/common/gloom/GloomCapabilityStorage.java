@@ -8,14 +8,11 @@ import net.minecraftforge.common.capabilities.Capability.*;
 public class GloomCapabilityStorage implements IStorage<IGloomCapability> {
 
 	@Override
-	public NBTBase writeNBT( Capability<IGloomCapability> capability, IGloomCapability instance,
-	        EnumFacing side )
-	{
+	public NBTBase writeNBT(Capability<IGloomCapability> capability, IGloomCapability instance, EnumFacing side) {
 		return null;
 	}
 
 	@Override
-	public void readNBT( Capability<IGloomCapability> capability, IGloomCapability instance, EnumFacing side,
-	        NBTBase nbt )
-	{}
+	public void readNBT(Capability<IGloomCapability> capability, IGloomCapability instance, EnumFacing side, NBTBase nbt) {
+	}
 }

@@ -18,7 +18,7 @@ public class ItemBaubleBase extends ItemBase implements IBauble {
 	 * https://github.com/Vazkii/Botania/blob/master/src/main/java/vazkii/botania/common/item/equipment/bauble/ItemBauble.java
 	 */
 	@Override
-	public ActionResult<ItemStack> onItemRightClick( World world, EntityPlayer player, EnumHand hand ) {
+	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
 		ItemStack stack = player.getHeldItem(hand);
 
 		ItemStack toEquip = stack.copy();
@@ -28,14 +28,14 @@ public class ItemBaubleBase extends ItemBase implements IBauble {
 			if (world.isRemote) return ActionResult.newResult(EnumActionResult.SUCCESS, stack);
 
 			IBaublesItemHandler baubles = BaublesApi.getBaublesHandler(player);
-			for (int i = 0; i < baubles.getSlots(); i++) {
+			for (int i = 0;i < baubles.getSlots();i ++ ) {
 				if (baubles.isItemValidForSlot(i, toEquip, player)) {
 					ItemStack stackInSlot = baubles.getStackInSlot(i);
 					if (stackInSlot.isEmpty() || ((IBauble) stackInSlot.getItem()).canUnequip(stackInSlot, player)) {
 						baubles.setStackInSlot(i, toEquip);
 						stack.shrink(1);
 
-						if (!stackInSlot.isEmpty()) {
+						if ( ! stackInSlot.isEmpty()) {
 							((IBauble) stackInSlot.getItem()).onUnequipped(stackInSlot, player);
 
 							if (stack.isEmpty()) {
@@ -58,7 +58,7 @@ public class ItemBaubleBase extends ItemBase implements IBauble {
 	}
 
 	@Override
-	public BaubleType getBaubleType( ItemStack arg0 ) {
+	public BaubleType getBaubleType(ItemStack arg0) {
 		return type;
 	}
 }

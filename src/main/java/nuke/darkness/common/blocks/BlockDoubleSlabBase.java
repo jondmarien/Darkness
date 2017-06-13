@@ -36,7 +36,7 @@ public class BlockDoubleSlabBase extends BlockSlab implements IModeledBlock {
 	}
 
 	@Override
-	public ArrayList<ItemStack> getDrops( IBlockAccess world, BlockPos pos, IBlockState state, int fortune ) {
+	public ArrayList<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 		ArrayList<ItemStack> drops = new ArrayList<ItemStack>();
 		drops.add(new ItemStack(Item.getItemFromBlock(this.slab), 1));
 		drops.add(new ItemStack(Item.getItemFromBlock(this.slab), 1));
@@ -44,27 +44,25 @@ public class BlockDoubleSlabBase extends BlockSlab implements IModeledBlock {
 	}
 
 	@Override
-	public ItemStack getPickBlock( IBlockState state, RayTraceResult target, World world, BlockPos pos,
-	        EntityPlayer player )
-	{
+	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
 		return new ItemStack(Item.getItemFromBlock(this.slab));
 	}
 
 	@Override
-	public AxisAlignedBB getBoundingBox( IBlockState state, IBlockAccess source, BlockPos pos ) {
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
 		return FULL_AABB;
 	}
 
-	public void setSlab( Block slab ) {
+	public void setSlab(Block slab) {
 		this.slab = slab;
 	}
 
 	@SideOnly(Side.CLIENT)
-	protected static boolean isHalfSlab( IBlockState state ) {
+	protected static boolean isHalfSlab(IBlockState state) {
 		return true;
 	}
 
-	public BlockDoubleSlabBase setHarvestProperties( String tool, int level ) {
+	public BlockDoubleSlabBase setHarvestProperties(String tool, int level) {
 		super.setHarvestLevel(tool, level);
 		return this;
 	}
@@ -74,41 +72,41 @@ public class BlockDoubleSlabBase extends BlockSlab implements IModeledBlock {
 		return new BlockStateContainer(this, HALF);
 	}
 
-	public IBlockState getStateFromMeta( int meta ) {
+	public IBlockState getStateFromMeta(int meta) {
 		IBlockState ibs = this.getDefaultState();
-		if (!this.isDouble()) {
-			ibs = ibs.withProperty(HALF, (meta) == 0 ? BlockSlab.EnumBlockHalf.BOTTOM : BlockSlab.EnumBlockHalf.TOP);
+		if ( ! this.isDouble()) {
+			ibs = ibs.withProperty(HALF, (meta) == 0 ? BlockSlab.EnumBlockHalf.BOTTOM: BlockSlab.EnumBlockHalf.TOP);
 		}
 		return ibs;
 	}
 
 	@Override
-	public int getMetaFromState( IBlockState state ) {
-		return state.getValue(HALF) == EnumBlockHalf.BOTTOM ? 0 : 1;
+	public int getMetaFromState(IBlockState state) {
+		return state.getValue(HALF) == EnumBlockHalf.BOTTOM ? 0: 1;
 	}
 
-	public BlockDoubleSlabBase setIsOpaqueCube( boolean bool ) {
+	public BlockDoubleSlabBase setIsOpaqueCube(boolean bool) {
 		isOpaqueCube = bool;
 		return this;
 	}
 
-	public BlockDoubleSlabBase setIsFullCube( boolean bool ) {
+	public BlockDoubleSlabBase setIsFullCube(boolean bool) {
 		isFullCube = bool;
 		return this;
 	}
 
 	@Override
-	public String getUnlocalizedName( int meta ) {
+	public String getUnlocalizedName(int meta) {
 		return null;
 	}
 
 	@Override
-	public boolean isOpaqueCube( IBlockState state ) {
+	public boolean isOpaqueCube(IBlockState state) {
 		return isOpaqueCube;
 	}
 
 	@Override
-	public boolean isFullCube( IBlockState state ) {
+	public boolean isFullCube(IBlockState state) {
 		return isFullCube;
 	}
 
@@ -118,19 +116,18 @@ public class BlockDoubleSlabBase extends BlockSlab implements IModeledBlock {
 	}
 
 	@Override
-	public IProperty<?> getVariantProperty() {
+	public IProperty< ? > getVariantProperty() {
 		return HALF;
 	}
 
 	@Override
-	public Comparable<?> getTypeForItem( ItemStack stack ) {
+	public Comparable< ? > getTypeForItem(ItemStack stack) {
 		return 0;
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void initModel() {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0,
-		        new ModelResourceLocation(getRegistryName().toString()));
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName().toString()));
 	}
 }

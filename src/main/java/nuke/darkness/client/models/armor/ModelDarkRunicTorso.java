@@ -239,9 +239,7 @@ public class ModelDarkRunicTorso extends ModelBiped {
 	}
 
 	@Override
-	public void render( Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float rotationYaw,
-	        float rotationPitch, float scale )
-	{
+	public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float rotationYaw, float rotationPitch, float scale) {
 		this.armorFront.render(scale);
 		this.armorBack.render(scale);
 		this.armorLeft.render(scale);
@@ -252,27 +250,20 @@ public class ModelDarkRunicTorso extends ModelBiped {
 		this.armorBackTail.render(scale);
 
 		GlStateManager.pushMatrix();
-		GlStateManager.translate(this.armorFrontTail2.offsetX, this.armorFrontTail2.offsetY,
-		        this.armorFrontTail2.offsetZ);
-		GlStateManager.translate(this.armorFrontTail2.rotationPointX * scale,
-		        this.armorFrontTail2.rotationPointY * scale, this.armorFrontTail2.rotationPointZ * scale);
+		GlStateManager.translate(this.armorFrontTail2.offsetX, this.armorFrontTail2.offsetY, this.armorFrontTail2.offsetZ);
+		GlStateManager.translate(this.armorFrontTail2.rotationPointX * scale, this.armorFrontTail2.rotationPointY * scale, this.armorFrontTail2.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 1.0F, 1.0F);
-		GlStateManager.translate(-this.armorFrontTail2.offsetX, -this.armorFrontTail2.offsetY,
-		        -this.armorFrontTail2.offsetZ);
-		GlStateManager.translate(-this.armorFrontTail2.rotationPointX * scale,
-		        -this.armorFrontTail2.rotationPointY * scale, -this.armorFrontTail2.rotationPointZ * scale);
+		GlStateManager.translate(-this.armorFrontTail2.offsetX, -this.armorFrontTail2.offsetY, -this.armorFrontTail2.offsetZ);
+		GlStateManager.translate(-this.armorFrontTail2.rotationPointX * scale, -this.armorFrontTail2.rotationPointY * scale, -this.armorFrontTail2.rotationPointZ * scale);
 		this.armorFrontTail2.render(scale);
 
 		GlStateManager.popMatrix();
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(this.armorBackTail2.offsetX, this.armorBackTail2.offsetY, this.armorBackTail2.offsetZ);
-		GlStateManager.translate(this.armorBackTail2.rotationPointX * scale, this.armorBackTail2.rotationPointY * scale,
-		        this.armorBackTail2.rotationPointZ * scale);
+		GlStateManager.translate(this.armorBackTail2.rotationPointX * scale, this.armorBackTail2.rotationPointY * scale, this.armorBackTail2.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 1.0F, 1.0F);
-		GlStateManager.translate(-this.armorBackTail2.offsetX, -this.armorBackTail2.offsetY,
-		        -this.armorBackTail2.offsetZ);
-		GlStateManager.translate(-this.armorBackTail2.rotationPointX * scale,
-		        -this.armorBackTail2.rotationPointY * scale, -this.armorBackTail2.rotationPointZ * scale);
+		GlStateManager.translate(-this.armorBackTail2.offsetX, -this.armorBackTail2.offsetY, -this.armorBackTail2.offsetZ);
+		GlStateManager.translate(-this.armorBackTail2.rotationPointX * scale, -this.armorBackTail2.rotationPointY * scale, -this.armorBackTail2.rotationPointZ * scale);
 		this.armorBackTail2.render(scale);
 
 		GlStateManager.popMatrix();
@@ -285,34 +276,28 @@ public class ModelDarkRunicTorso extends ModelBiped {
 
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(this.armorBackTop3.offsetX, this.armorBackTop3.offsetY, this.armorBackTop3.offsetZ);
-		GlStateManager.translate(this.armorBackTop3.rotationPointX * scale, this.armorBackTop3.rotationPointY * scale,
-		        this.armorBackTop3.rotationPointZ * scale);
+		GlStateManager.translate(this.armorBackTop3.rotationPointX * scale, this.armorBackTop3.rotationPointY * scale, this.armorBackTop3.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 1.0F, 1.0F);
 		GlStateManager.translate(-this.armorBackTop3.offsetX, -this.armorBackTop3.offsetY, -this.armorBackTop3.offsetZ);
-		GlStateManager.translate(-this.armorBackTop3.rotationPointX * scale, -this.armorBackTop3.rotationPointY * scale,
-		        -this.armorBackTop3.rotationPointZ * scale);
+		GlStateManager.translate(-this.armorBackTop3.rotationPointX * scale, -this.armorBackTop3.rotationPointY * scale, -this.armorBackTop3.rotationPointZ * scale);
 		this.armorBackTop3.render(scale);
 
 		GlStateManager.popMatrix();
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(this.armorBackTop4.offsetX, this.armorBackTop4.offsetY, this.armorBackTop4.offsetZ);
-		GlStateManager.translate(this.armorBackTop4.rotationPointX * scale, this.armorBackTop4.rotationPointY * scale,
-		        this.armorBackTop4.rotationPointZ * scale);
+		GlStateManager.translate(this.armorBackTop4.rotationPointX * scale, this.armorBackTop4.rotationPointY * scale, this.armorBackTop4.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 1.0F, 1.0F);
 		GlStateManager.translate(-this.armorBackTop4.offsetX, -this.armorBackTop4.offsetY, -this.armorBackTop4.offsetZ);
-		GlStateManager.translate(-this.armorBackTop4.rotationPointX * scale, -this.armorBackTop4.rotationPointY * scale,
-		        -this.armorBackTop4.rotationPointZ * scale);
+		GlStateManager.translate(-this.armorBackTop4.rotationPointX * scale, -this.armorBackTop4.rotationPointY * scale, -this.armorBackTop4.rotationPointZ * scale);
 		this.armorBackTop4.render(scale);
 
 		GlStateManager.popMatrix();
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(this.armorBackTop5.offsetX, this.armorBackTop5.offsetY, this.armorBackTop5.offsetZ);
-		GlStateManager.translate(this.armorBackTop5.rotationPointX * scale, this.armorBackTop5.rotationPointY * scale,
-		        this.armorBackTop5.rotationPointZ * scale);
+		GlStateManager.translate(this.armorBackTop5.rotationPointX * scale, this.armorBackTop5.rotationPointY * scale, this.armorBackTop5.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 1.0F, 1.0F);
 		GlStateManager.translate(-this.armorBackTop5.offsetX, -this.armorBackTop5.offsetY, -this.armorBackTop5.offsetZ);
-		GlStateManager.translate(-this.armorBackTop5.rotationPointX * scale, -this.armorBackTop5.rotationPointY * scale,
-		        -this.armorBackTop5.rotationPointZ * scale);
+		GlStateManager.translate(-this.armorBackTop5.rotationPointX * scale, -this.armorBackTop5.rotationPointY * scale, -this.armorBackTop5.rotationPointZ * scale);
 		this.armorBackTop5.render(scale);
 
 		GlStateManager.popMatrix();
@@ -321,18 +306,16 @@ public class ModelDarkRunicTorso extends ModelBiped {
 
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(this.armorBackTop7.offsetX, this.armorBackTop7.offsetY, this.armorBackTop7.offsetZ);
-		GlStateManager.translate(this.armorBackTop7.rotationPointX * scale, this.armorBackTop7.rotationPointY * scale,
-		        this.armorBackTop7.rotationPointZ * scale);
+		GlStateManager.translate(this.armorBackTop7.rotationPointX * scale, this.armorBackTop7.rotationPointY * scale, this.armorBackTop7.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 1.0F, 1.0F);
 		GlStateManager.translate(-this.armorBackTop7.offsetX, -this.armorBackTop7.offsetY, -this.armorBackTop7.offsetZ);
-		GlStateManager.translate(-this.armorBackTop7.rotationPointX * scale, -this.armorBackTop7.rotationPointY * scale,
-		        -this.armorBackTop7.rotationPointZ * scale);
+		GlStateManager.translate(-this.armorBackTop7.rotationPointX * scale, -this.armorBackTop7.rotationPointY * scale, -this.armorBackTop7.rotationPointZ * scale);
 		this.armorBackTop7.render(scale);
 
 		GlStateManager.popMatrix();
 	}
 
-	private void setRotationAngles( ModelRenderer modelRenderer, float x, float y, float z ) {
+	private void setRotationAngles(ModelRenderer modelRenderer, float x, float y, float z) {
 		modelRenderer.rotateAngleX = x;
 		modelRenderer.rotateAngleY = y;
 		modelRenderer.rotateAngleZ = z;

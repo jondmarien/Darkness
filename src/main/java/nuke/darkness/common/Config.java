@@ -9,10 +9,10 @@ import nuke.darkness.client.util.*;
 
 public class Config {
 	public static Configuration cfg;
-	
+
 	public static int duoVeinSize, duoMinY, duoMaxY, duoVeinsPerChunk;
 	public static int triVeinSize, triMinY, triMaxY, triVeinsPerChunk;
-	
+
 	private final static String CATEGORY_ORES = "ores";
 	
 	public static void initConfig(File file){

@@ -15,7 +15,7 @@ public class ItemShovelBase extends ItemSpade implements IModeledItem {
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		GameRegistry.register(this);
 	}
-	
+
 	public ItemShovelBase(ToolMaterial tmat, EnumRarity rarity, String name, boolean addToTab) {
 		super(tmat);
 		setUnlocalizedName(name);

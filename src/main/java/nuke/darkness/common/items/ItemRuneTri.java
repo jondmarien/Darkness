@@ -10,11 +10,11 @@ public class ItemRuneTri extends ItemBase {
 	public ItemRuneTri() {
 		super("rune_tri", true);
 	}
-	
+
 	@Override
-	public ActionResult<ItemStack> onItemRightClick( World world, EntityPlayer player, EnumHand hand) {
-		if(!world.isRemote && player.isSneaking()){
-			//world.setWorldTime(world.getWorldTime());
+	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
+		if ( ! world.isRemote && player.isSneaking()) {
+			// world.setWorldTime(world.getWorldTime());
 			world.setWorldTime(12500);
 		}
 		return super.onItemRightClick(world, player, hand);

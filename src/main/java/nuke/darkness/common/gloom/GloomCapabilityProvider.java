@@ -12,20 +12,19 @@ public class GloomCapabilityProvider implements ICapabilityProvider {
 
 	public GloomCapabilityProvider() {
 		setCapability(new DefaultGloomCapability());
-	} 
+	}
 
 	public GloomCapabilityProvider(IGloomCapability capability) {
 		this.setCapability(capability);
 	}
 
 	@Override
-	public boolean hasCapability( Capability<?> capability, EnumFacing facing ) {
+	public boolean hasCapability(Capability< ? > capability, EnumFacing facing) {
 		return capability == gloomCapability;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
-	public <T> T getCapability( Capability<T> capability, EnumFacing facing ) {
+	public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
 		if (gloomCapability != null && capability == gloomCapability) return (T) capability;
 		return null;
 	}

@@ -15,7 +15,7 @@ public class ItemPickaxeBase extends ItemPickaxe implements IModeledItem {
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		GameRegistry.register(this);
 	}
-	
+
 	public ItemPickaxeBase(ToolMaterial tmat, EnumRarity rarity, String name, boolean addToTab) {
 		super(tmat);
 		setUnlocalizedName(name);

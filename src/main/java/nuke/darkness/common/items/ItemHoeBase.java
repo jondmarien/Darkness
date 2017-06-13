@@ -15,7 +15,7 @@ public class ItemHoeBase extends ItemHoe implements IModeledItem {
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		GameRegistry.register(this);
 	}
-	
+
 	public ItemHoeBase(ToolMaterial tmat, EnumRarity rarity, String name, boolean addToTab) {
 		super(tmat);
 		setUnlocalizedName(name);

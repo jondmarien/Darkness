@@ -136,88 +136,69 @@ public class ModelDarkRunicLegs extends ModelBiped {
 	}
 
 	@Override
-	public void render( Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float rotationYaw,
-	        float rotationPitch, float scale )
-	{
+	public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float rotationYaw, float rotationPitch, float scale) {
 		this.robeRightSide1.render(scale);
 		this.robeLeftSide1.render(scale);
 		this.robeFront.render(scale);
 		this.robeBack.render(scale);
-		
+
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(this.robeLeftSide2.offsetX, this.robeLeftSide2.offsetY, this.robeLeftSide2.offsetZ);
-		GlStateManager.translate(this.robeLeftSide2.rotationPointX * scale, this.robeLeftSide2.rotationPointY * scale,
-		        this.robeLeftSide2.rotationPointZ * scale);
+		GlStateManager.translate(this.robeLeftSide2.rotationPointX * scale, this.robeLeftSide2.rotationPointY * scale, this.robeLeftSide2.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 1.0F, 1.0F);
 		GlStateManager.translate(-this.robeLeftSide2.offsetX, -this.robeLeftSide2.offsetY, -this.robeLeftSide2.offsetZ);
-		GlStateManager.translate(-this.robeLeftSide2.rotationPointX * scale, -this.robeLeftSide2.rotationPointY * scale,
-		        -this.robeLeftSide2.rotationPointZ * scale);
+		GlStateManager.translate(-this.robeLeftSide2.rotationPointX * scale, -this.robeLeftSide2.rotationPointY * scale, -this.robeLeftSide2.rotationPointZ * scale);
 		this.robeLeftSide2.render(scale);
 
 		GlStateManager.popMatrix();
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(this.robeBackRight1.offsetX, this.robeBackRight1.offsetY, this.robeBackRight1.offsetZ);
-		GlStateManager.translate(this.robeBackRight1.rotationPointX * scale, this.robeBackRight1.rotationPointY * scale,
-		        this.robeBackRight1.rotationPointZ * scale);
+		GlStateManager.translate(this.robeBackRight1.rotationPointX * scale, this.robeBackRight1.rotationPointY * scale, this.robeBackRight1.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 1.0F, 1.0F);
-		GlStateManager.translate(-this.robeBackRight1.offsetX, -this.robeBackRight1.offsetY,
-		        -this.robeBackRight1.offsetZ);
-		GlStateManager.translate(-this.robeBackRight1.rotationPointX * scale,
-		        -this.robeBackRight1.rotationPointY * scale, -this.robeBackRight1.rotationPointZ * scale);
+		GlStateManager.translate(-this.robeBackRight1.offsetX, -this.robeBackRight1.offsetY, -this.robeBackRight1.offsetZ);
+		GlStateManager.translate(-this.robeBackRight1.rotationPointX * scale, -this.robeBackRight1.rotationPointY * scale, -this.robeBackRight1.rotationPointZ * scale);
 		this.robeBackRight1.render(scale);
 
 		GlStateManager.popMatrix();
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(this.robeFrontLeft1.offsetX, this.robeFrontLeft1.offsetY, this.robeFrontLeft1.offsetZ);
-		GlStateManager.translate(this.robeFrontLeft1.rotationPointX * scale, this.robeFrontLeft1.rotationPointY * scale,
-		        this.robeFrontLeft1.rotationPointZ * scale);
+		GlStateManager.translate(this.robeFrontLeft1.rotationPointX * scale, this.robeFrontLeft1.rotationPointY * scale, this.robeFrontLeft1.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 1.0F, 1.0F);
-		GlStateManager.translate(-this.robeFrontLeft1.offsetX, -this.robeFrontLeft1.offsetY,
-		        -this.robeFrontLeft1.offsetZ);
-		GlStateManager.translate(-this.robeFrontLeft1.rotationPointX * scale,
-		        -this.robeFrontLeft1.rotationPointY * scale, -this.robeFrontLeft1.rotationPointZ * scale);
+		GlStateManager.translate(-this.robeFrontLeft1.offsetX, -this.robeFrontLeft1.offsetY, -this.robeFrontLeft1.offsetZ);
+		GlStateManager.translate(-this.robeFrontLeft1.rotationPointX * scale, -this.robeFrontLeft1.rotationPointY * scale, -this.robeFrontLeft1.rotationPointZ * scale);
 		this.robeFrontLeft1.render(scale);
 
 		GlStateManager.popMatrix();
 		GlStateManager.pushMatrix();
-		GlStateManager.translate(this.robeFrontRight1.offsetX, this.robeFrontRight1.offsetY,
-		        this.robeFrontRight1.offsetZ);
-		GlStateManager.translate(this.robeFrontRight1.rotationPointX * scale,
-		        this.robeFrontRight1.rotationPointY * scale, this.robeFrontRight1.rotationPointZ * scale);
+		GlStateManager.translate(this.robeFrontRight1.offsetX, this.robeFrontRight1.offsetY, this.robeFrontRight1.offsetZ);
+		GlStateManager.translate(this.robeFrontRight1.rotationPointX * scale, this.robeFrontRight1.rotationPointY * scale, this.robeFrontRight1.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 1.0F, 1.0F);
-		GlStateManager.translate(-this.robeFrontRight1.offsetX, -this.robeFrontRight1.offsetY,
-		        -this.robeFrontRight1.offsetZ);
-		GlStateManager.translate(-this.robeFrontRight1.rotationPointX * scale,
-		        -this.robeFrontRight1.rotationPointY * scale, -this.robeFrontRight1.rotationPointZ * scale);
+		GlStateManager.translate(-this.robeFrontRight1.offsetX, -this.robeFrontRight1.offsetY, -this.robeFrontRight1.offsetZ);
+		GlStateManager.translate(-this.robeFrontRight1.rotationPointX * scale, -this.robeFrontRight1.rotationPointY * scale, -this.robeFrontRight1.rotationPointZ * scale);
 		this.robeFrontRight1.render(scale);
 
 		GlStateManager.popMatrix();
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(this.robeRightSide2.offsetX, this.robeRightSide2.offsetY, this.robeRightSide2.offsetZ);
-		GlStateManager.translate(this.robeRightSide2.rotationPointX * scale, this.robeRightSide2.rotationPointY * scale,
-		        this.robeRightSide2.rotationPointZ * scale);
+		GlStateManager.translate(this.robeRightSide2.rotationPointX * scale, this.robeRightSide2.rotationPointY * scale, this.robeRightSide2.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 1.0F, 1.0F);
-		GlStateManager.translate(-this.robeRightSide2.offsetX, -this.robeRightSide2.offsetY,
-		        -this.robeRightSide2.offsetZ);
-		GlStateManager.translate(-this.robeRightSide2.rotationPointX * scale,
-		        -this.robeRightSide2.rotationPointY * scale, -this.robeRightSide2.rotationPointZ * scale);
+		GlStateManager.translate(-this.robeRightSide2.offsetX, -this.robeRightSide2.offsetY, -this.robeRightSide2.offsetZ);
+		GlStateManager.translate(-this.robeRightSide2.rotationPointX * scale, -this.robeRightSide2.rotationPointY * scale, -this.robeRightSide2.rotationPointZ * scale);
 		this.robeRightSide2.render(scale);
 
 		GlStateManager.popMatrix();
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(this.robeBackLeft1.offsetX, this.robeBackLeft1.offsetY, this.robeBackLeft1.offsetZ);
-		GlStateManager.translate(this.robeBackLeft1.rotationPointX * scale, this.robeBackLeft1.rotationPointY * scale,
-		        this.robeBackLeft1.rotationPointZ * scale);
+		GlStateManager.translate(this.robeBackLeft1.rotationPointX * scale, this.robeBackLeft1.rotationPointY * scale, this.robeBackLeft1.rotationPointZ * scale);
 		GlStateManager.scale(1.0F, 1.0F, 1.0F);
 		GlStateManager.translate(-this.robeBackLeft1.offsetX, -this.robeBackLeft1.offsetY, -this.robeBackLeft1.offsetZ);
-		GlStateManager.translate(-this.robeBackLeft1.rotationPointX * scale, -this.robeBackLeft1.rotationPointY * scale,
-		        -this.robeBackLeft1.rotationPointZ * scale);
+		GlStateManager.translate(-this.robeBackLeft1.rotationPointX * scale, -this.robeBackLeft1.rotationPointY * scale, -this.robeBackLeft1.rotationPointZ * scale);
 		this.robeBackLeft1.render(scale);
 
 		GlStateManager.popMatrix();
 	}
 
-	private void setRotationAngles( ModelRenderer modelRenderer, float x, float y, float z ) {
+	private void setRotationAngles(ModelRenderer modelRenderer, float x, float y, float z) {
 		modelRenderer.rotateAngleX = x;
 		modelRenderer.rotateAngleY = y;
 		modelRenderer.rotateAngleZ = z;

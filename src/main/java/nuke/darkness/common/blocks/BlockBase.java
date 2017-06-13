@@ -29,9 +29,7 @@ public class BlockBase extends Block implements IModeledBlock {
 	 * @param sound i.e SoundType.GROUND
 	 * @param addToTab i.e. true
 	 */
-	public BlockBase(Material mat, String name, String toolUsed, int toolStrength, float hardness, float resistance,
-	        SoundType sound, boolean addToTab)
-	{
+	public BlockBase(Material mat, String name, String toolUsed, int toolStrength, float hardness, float resistance, SoundType sound, boolean addToTab) {
 		super(mat);
 		this.setUnlocalizedName(name);
 		this.setRegistryName(Darkness.prependModID(name));
@@ -56,9 +54,7 @@ public class BlockBase extends Block implements IModeledBlock {
 	 * @param slippery i.e. true
 	 * @param addToTab i.e. true
 	 */
-	public BlockBase(Material mat, String name, String toolUsed, int toolStrength, float hardness, float resistance,
-	        SoundType sound, boolean addToTab, boolean slippery)
-	{
+	public BlockBase(Material mat, String name, String toolUsed, int toolStrength, float hardness, float resistance, SoundType sound, boolean addToTab, boolean slippery) {
 		super(mat);
 		this.setUnlocalizedName(name);
 		this.setRegistryName(Darkness.prependModID(name));
@@ -93,44 +89,44 @@ public class BlockBase extends Block implements IModeledBlock {
 		GameRegistry.register(this);
 		GameRegistry.register(itemBlock = (new ItemBlock(this).setRegistryName(this.getRegistryName())));
 	}
-	
-	public BlockBase setHarvestProps(String type, int level){
+
+	public BlockBase setHarvestProps(String type, int level) {
 		super.setHarvestLevel(type, level);
 		return this;
 	}
 
-	public BlockBase setIsOpaqueCube( boolean bool ) {
+	public BlockBase setIsOpaqueCube(boolean bool) {
 		isOpaqueCube = bool;
 		return this;
 	}
 
-	public BlockBase setIsFullCube( boolean bool ) {
+	public BlockBase setIsFullCube(boolean bool) {
 		isFullCube = bool;
 		return this;
 	}
 
-	public BlockBase setBeaconBase( boolean bool ) {
+	public BlockBase setBeaconBase(boolean bool) {
 		isBeaconBase = bool;
 		return this;
 	}
 
 	@Override
-	public boolean isBeaconBase( IBlockAccess world, BlockPos pos, BlockPos beacon ) {
+	public boolean isBeaconBase(IBlockAccess world, BlockPos pos, BlockPos beacon) {
 		return isBeaconBase;
 	}
 
 	@Override
-	public boolean isOpaqueCube( IBlockState ibs ) {
+	public boolean isOpaqueCube(IBlockState ibs) {
 		return isOpaqueCube;
 	}
 
 	@Override
-	public boolean isFullCube( IBlockState ibs ) {
+	public boolean isFullCube(IBlockState ibs) {
 		return isFullCube;
 	}
 
 	@Override
-	public boolean isFullBlock( IBlockState ibs ) {
+	public boolean isFullBlock(IBlockState ibs) {
 		return isFullCube;
 	}
 
@@ -141,7 +137,6 @@ public class BlockBase extends Block implements IModeledBlock {
 
 	@Override
 	public void initModel() {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0,
-		        new ModelResourceLocation(getRegistryName().toString(), "inventory"));
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName().toString(), "inventory"));
 	}
 }

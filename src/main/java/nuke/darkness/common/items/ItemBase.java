@@ -23,8 +23,8 @@ public class ItemBase extends Item implements IModeledItem {
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		GameRegistry.register(this);
 	}
-	
-	public void onUpdate( ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected ) {
+
+	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 		if (entityIn instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) entityIn;
 		}

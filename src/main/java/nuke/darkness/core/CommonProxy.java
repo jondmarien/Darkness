@@ -8,16 +8,16 @@ import nuke.darkness.common.crafting.*;
 
 public class CommonProxy {
 
-	public void preInit( FMLPreInitializationEvent e ) {
+	public void preInit(FMLPreInitializationEvent e) {
 		Content.init();
 		Recipes.init();
 	}
 
-	public void init( FMLInitializationEvent e ) {
-		//TERegistry.registerTEs();
+	public void init(FMLInitializationEvent e) {
+		// TERegistry.registerTEs();
 	}
 
-	public void postInit( FMLPostInitializationEvent e ) {
+	public void postInit(FMLPostInitializationEvent e) {
 		NetworkRegistry.INSTANCE.registerGuiHandler(Darkness.instance, new GuiHandler());
 	}
 

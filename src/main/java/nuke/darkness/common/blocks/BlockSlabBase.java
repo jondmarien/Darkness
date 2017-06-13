@@ -27,17 +27,17 @@ public class BlockSlabBase extends BlockSlab {
 		GameRegistry.register(this);
 	}
 
-	public IBlockState getStateFromMeta( int meta ) {
+	public IBlockState getStateFromMeta(int meta) {
 		IBlockState ibs = this.getDefaultState();
-		if (!this.isDouble()) {
-			ibs = ibs.withProperty(HALF, (meta) == 0 ? BlockSlab.EnumBlockHalf.BOTTOM : BlockSlab.EnumBlockHalf.TOP);
+		if ( ! this.isDouble()) {
+			ibs = ibs.withProperty(HALF, (meta) == 0 ? BlockSlab.EnumBlockHalf.BOTTOM: BlockSlab.EnumBlockHalf.TOP);
 		}
 		return ibs;
 	}
 
 	@Override
-	public int getMetaFromState( IBlockState state ) {
-		return state.getValue(HALF) == EnumBlockHalf.BOTTOM ? 0 : 1;
+	public int getMetaFromState(IBlockState state) {
+		return state.getValue(HALF) == EnumBlockHalf.BOTTOM ? 0: 1;
 	}
 
 	@Override
@@ -45,33 +45,33 @@ public class BlockSlabBase extends BlockSlab {
 		return new BlockStateContainer(this, HALF);
 	}
 
-	public BlockSlabBase setHarvestProperties( String tool, int level ) {
+	public BlockSlabBase setHarvestProperties(String tool, int level) {
 		super.setHarvestLevel(tool, level);
 		return this;
 	}
 
-	public BlockSlabBase setIsOpaqueCube( boolean bool ) {
+	public BlockSlabBase setIsOpaqueCube(boolean bool) {
 		isOpaqueCube = bool;
 		return this;
 	}
 
-	public BlockSlabBase setIsFullCube( boolean bool ) {
+	public BlockSlabBase setIsFullCube(boolean bool) {
 		isFullCube = bool;
 		return this;
 	}
 
 	@Override
-	public String getUnlocalizedName( int meta ) {
+	public String getUnlocalizedName(int meta) {
 		return null;
 	}
 
 	@Override
-	public boolean isOpaqueCube( IBlockState state ) {
+	public boolean isOpaqueCube(IBlockState state) {
 		return isOpaqueCube;
 	}
 
 	@Override
-	public boolean isFullCube( IBlockState state ) {
+	public boolean isFullCube(IBlockState state) {
 		return isFullCube;
 	}
 
@@ -81,24 +81,23 @@ public class BlockSlabBase extends BlockSlab {
 	}
 
 	@SideOnly(Side.CLIENT)
-	protected static boolean isHalfSlab( IBlockState state ) {
+	protected static boolean isHalfSlab(IBlockState state) {
 		return true;
 	}
 
 	@Override
-	public IProperty<?> getVariantProperty() {
+	public IProperty< ? > getVariantProperty() {
 		return HALF;
 	}
 
 	@Override
-	public Comparable<?> getTypeForItem( ItemStack stack ) {
+	public Comparable< ? > getTypeForItem(ItemStack stack) {
 		return 0;
 	}
 
 	@SideOnly(Side.CLIENT)
 	public void initModel() {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0,
-		        new ModelResourceLocation(getRegistryName().toString()));
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName().toString()));
 	}
 
 	public Block getDoubleSlab() {

@@ -20,8 +20,7 @@ import net.minecraftforge.common.*;
 import nuke.darkness.common.*;
 
 public class BlockDarkenedWeb extends BlockBase implements IShearable {
-	public BlockDarkenedWeb(Material mat, String name, String toolUsed, int toolStrength, float hardness,
-			float resistance, SoundType sound, boolean addToTab) {
+	public BlockDarkenedWeb(Material mat, String name, String toolUsed, int toolStrength, float hardness, float resistance, SoundType sound, boolean addToTab) {
 		super(mat, name, toolUsed, toolStrength, hardness, resistance, sound, addToTab);
 	}
 
@@ -62,9 +61,8 @@ public class BlockDarkenedWeb extends BlockBase implements IShearable {
 	}
 
 	@Override
-	public void harvestBlock(World world, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te,
-			ItemStack stack) {
-		if (!world.isRemote && stack.getItem() == Items.SHEARS) {
+	public void harvestBlock(World world, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te, ItemStack stack) {
+		if ( ! world.isRemote && stack.getItem() == Items.SHEARS) {
 			player.addStat(StatList.getBlockStats(this));
 			spawnAsEntity(world, pos, new ItemStack(Item.getItemFromBlock(this)));
 		} else {

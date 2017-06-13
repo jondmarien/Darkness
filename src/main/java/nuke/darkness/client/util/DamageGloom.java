@@ -11,9 +11,9 @@ public class DamageGloom extends DamageSource {
 		setMagicDamage();
 		setDifficultyScaled();
 	}
-	
+
 	@Override
-	public ITextComponent getDeathMessage( EntityLivingBase entityLivingBase ) {
+	public ITextComponent getDeathMessage(EntityLivingBase entityLivingBase) {
 		return super.getDeathMessage(entityLivingBase);
 	}
 }

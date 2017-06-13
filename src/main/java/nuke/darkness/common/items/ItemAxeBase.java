@@ -21,10 +21,10 @@ public class ItemAxeBase extends ItemTool implements IModeledItem {
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		setHarvestLevel("axe", this.toolMaterial.getHarvestLevel());
 		this.damageVsEntity = this.toolMaterial.getDamageVsEntity() + 4.0f;
-		this.attackSpeed = -2.7f;
+		this.attackSpeed = - 2.7f;
 		GameRegistry.register(this);
 	}
-	
+
 	public ItemAxeBase(ToolMaterial tmat, EnumRarity rarity, String name, boolean addToTab) {
 		super(tmat, Sets.newHashSet(new Block[] { Blocks.PLANKS }));
 		setUnlocalizedName(name);
@@ -32,16 +32,14 @@ public class ItemAxeBase extends ItemTool implements IModeledItem {
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		setHarvestLevel("axe", this.toolMaterial.getHarvestLevel());
 		this.damageVsEntity = this.toolMaterial.getDamageVsEntity() + 4.0f;
-		this.attackSpeed = -2.7f;
+		this.attackSpeed = - 2.7f;
 		GameRegistry.register(this);
 	}
 
 	@Override
-	public float getStrVsBlock( ItemStack stack, IBlockState state ) {
+	public float getStrVsBlock(ItemStack stack, IBlockState state) {
 		Material mat = state.getMaterial();
-		return mat != Material.WOOD && mat != Material.PLANTS && mat != Material.VINE
-		        ? super.getStrVsBlock(stack, state)
-		        : this.efficiencyOnProperMaterial;
+		return mat != Material.WOOD && mat != Material.PLANTS && mat != Material.VINE ? super.getStrVsBlock(stack, state): this.efficiencyOnProperMaterial;
 	}
 
 	@Override

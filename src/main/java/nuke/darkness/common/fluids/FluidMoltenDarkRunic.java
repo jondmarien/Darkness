@@ -9,8 +9,7 @@ import nuke.darkness.core.*;
 
 public class FluidMoltenDarkRunic extends Fluid {
 	public FluidMoltenDarkRunic() {
-		super("darkrunic", new ResourceLocation(Darkness.prependModID("blocks/molten_darkrunic_still")),
-		        new ResourceLocation(Darkness.prependModID("blocks/molten_darkrunic_flowing")));
+		super("darkrunic", new ResourceLocation(Darkness.prependModID("blocks/molten_darkrunic_still")), new ResourceLocation(Darkness.prependModID("blocks/molten_darkrunic_flowing")));
 		this.setViscosity(3750);
 		this.setDensity(1250);
 		this.setLuminosity(6);
@@ -18,7 +17,7 @@ public class FluidMoltenDarkRunic extends Fluid {
 		this.setBlock(Content.block_molten_dark_runic);
 		this.setUnlocalizedName("darkrunic");
 	}
-	
+
 	@Override
 	public int getColor() {
 		return Color.WHITE.getRGB();

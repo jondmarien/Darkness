@@ -45,8 +45,7 @@ public class Content {
 
 	public static Item compendium, book_binding, scroll_bag, darkened_string, black_hole;
 
-	public static Item sword_darkrunic, pickaxe_darkrunic, axe_darkrunic, hoe_darkrunic, shovel_darkrunic,
-	        ingot_darkrunic, droplet_darkrunic;
+	public static Item sword_darkrunic, pickaxe_darkrunic, axe_darkrunic, hoe_darkrunic, shovel_darkrunic, ingot_darkrunic, droplet_darkrunic;
 
 	public static ItemArmor darkrunic_hood, darkrunic_torso, darkrunic_legs;
 
@@ -56,23 +55,16 @@ public class Content {
 
 		// Tool Materials
 		tool_mat_darkrunic = EnumHelper.addToolMaterial(Darkness.prependModID("darkrunic"), 4, 290, 6.3f, 2.1f, 20);
-		armor_mat_darkrunic_cloth = EnumHelper.addArmorMaterial(Darkness.prependModID("darkrunic_cloth"),
-		        Darkness.prependModID("darkrunic_cloth"), 20, new int[]
-		{ 2, 4, 6, 3 }, 20, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
+		armor_mat_darkrunic_cloth = EnumHelper.addArmorMaterial(Darkness.prependModID("darkrunic_cloth"), Darkness.prependModID("darkrunic_cloth"), 20, new int[] { 2, 4, 6, 3 }, 20, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
 		tool_rarity_darkrunic = EnumHelper.addRarity("rare", TextFormatting.DARK_PURPLE, "Rare");
 
 		// Blocks
-		blocks.add(block_rune_null = new BlockRune(Material.ROCK, "block_rune_null", "pickaxe", 1, 1.0F, 11.0F,
-		        SoundType.STONE, true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16));
-		blocks.add(block_darkened_web = new BlockDarkenedWeb(Material.WEB, "block_darkened_web", "sword", 1, 1.0F, 1.0F,
-		        SoundType.CLOTH, true).setIsFullCube(false).setIsOpaqueCube(false).setLightOpacity(0));
-		blocks.add(block_darkened_wool = new BlockDarkenedWool(Material.CLOTH, "block_darkened_wool", "sword", 1, 1.0F,
-		        1.0F, SoundType.CLOTH, true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16));
+		blocks.add(block_rune_null = new BlockRune(Material.ROCK, "block_rune_null", "pickaxe", 1, 1.0F, 11.0F, SoundType.STONE, true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16));
+		blocks.add(block_darkened_web = new BlockDarkenedWeb(Material.WEB, "block_darkened_web", "sword", 1, 1.0F, 1.0F, SoundType.CLOTH, true).setIsFullCube(false).setIsOpaqueCube(false).setLightOpacity(0));
+		blocks.add(block_darkened_wool = new BlockDarkenedWool(Material.CLOTH, "block_darkened_wool", "sword", 1, 1.0F, 1.0F, SoundType.CLOTH, true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16));
 
-		blocks.add(ore_tri = new BlockTriGemOre().setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16)
-		        .setCreativeTab(Darkness.darknessTab));
-		blocks.add(ore_duo = new BlockBase(Material.ROCK, "ore_duo", "pickaxe", 1, 2.0F, 13.0F, SoundType.STONE, true)
-		        .setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16).setCreativeTab(Darkness.darknessTab));
+		blocks.add(ore_tri = new BlockTriGemOre().setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16).setCreativeTab(Darkness.darknessTab));
+		blocks.add(ore_duo = new BlockBase(Material.ROCK, "ore_duo", "pickaxe", 1, 2.0F, 13.0F, SoundType.STONE, true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16).setCreativeTab(Darkness.darknessTab));
 
 		// Items
 		items.add(compendium = new ItemCompendium());
@@ -115,19 +107,19 @@ public class Content {
 	}
 
 	public static void registerRenderer() {
-		for (int i = 0; i < blocks.size(); i++) {
+		for (int i = 0;i < blocks.size();i ++ ) {
 			if (blocks.get(i) instanceof IModeledBlock) {
 				((IModeledBlock) blocks.get(i)).initModel();
 			}
 		}
 
-		for (int i = 0; i < items.size(); i++) {
+		for (int i = 0;i < items.size();i ++ ) {
 			if (items.get(i) instanceof IModeledItem) {
 				((IModeledItem) items.get(i)).initModel();
 			}
 		}
 
-		for (int i = 0; i < armor.size(); i++) {
+		for (int i = 0;i < armor.size();i ++ ) {
 			if (armor.get(i) instanceof IModeledItemArmor) {
 				((IModeledItemArmor) armor.get(i)).initModel();
 			}
