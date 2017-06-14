@@ -11,7 +11,7 @@ import net.minecraftforge.fml.relauncher.*;
 import nuke.darkness.client.util.*;
 import nuke.darkness.common.*;
 
-@Mod(modid = References.MODID, name = References.NAME, version = References.VERSION)
+@Mod(modid = References.MODID, name = References.NAME, version = References.VERSION, acceptedMinecraftVersions = References.ACCEPTEDMCVERSIONS)
 
 @Mod.EventBusSubscriber
 public class Darkness {

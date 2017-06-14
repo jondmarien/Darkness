@@ -27,6 +27,7 @@ public class References {
 	public static final String NAME = "Darkness";
 	public static final String VERSION = MCVERSION + "-" + MAJOR + "." + MINOR + "." + PATCH + "";
 	public static final String DEPENDENCIES = "";
+	public static final String ACCEPTEDMCVERSIONS = "[1.11.2]";
 
 	public static final String CLIENT_PROXY_CLASS = "nuke.darkness.core.ClientProxy";
 	public static final String SERVER_PROXY_CLASS = "nuke.darkness.core.ServerProxy";
