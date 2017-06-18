@@ -6,9 +6,6 @@ tile.block_rune_null.name=Null Rune
 tile.block_darkened_web.name=Darkened Web
 tile.block_darkened_wool.name=Darkened Wool
 
-tile.ore_duo.name=Duo Ore
-tile.ore_tri.name=Tri Ore
-
 tile.null.name=Null Fluid
 
 # Items
@@ -28,7 +25,5 @@ item.pickaxe_darkrunic.name=Dark Runic Pickaxe
 item.axe_darkrunic.name=Dark Runic Axe
 item.hoe_darkrunic.name=Dark Runic Hoe
 
-item.gem_duo.name=Duo Gem
-item.gem_tri.name=Tri Gem
-item.rune_duo.name=Duo Rune
-item.rune_tri.name=Tri Rune
+item.slate_blank.name=Blank Slate
+item.rune_corrupt.name=Corrupt Rune

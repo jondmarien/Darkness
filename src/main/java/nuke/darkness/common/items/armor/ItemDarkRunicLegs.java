@@ -13,7 +13,7 @@ import nuke.darkness.common.*;
 public class ItemDarkRunicLegs extends ItemArmorBase {
 
 	public ItemDarkRunicLegs() {
-		super("darkrunic_legs", true, Content.armor_mat_darkrunic_cloth, 0, EntityEquipmentSlot.LEGS);
+		super("darkrunic_legs", true, Content.armor_mat_darkrunic, 0, EntityEquipmentSlot.LEGS);
 	}
 
 	@Override

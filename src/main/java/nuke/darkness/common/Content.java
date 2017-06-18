@@ -30,7 +30,7 @@ public class Content {
 	public static WorldGenOres world_gen_ores;
 
 	public static ToolMaterial tool_mat_darkrunic, tool_mat_darkerrunic, tool_mat_darkestrunic;
-	public static ArmorMaterial armor_mat_darkrunic_cloth;
+	public static ArmorMaterial armor_mat_darkrunic;
 	public static EnumRarity tool_rarity_darkrunic, tool_rarity_darkerrunic, tool_rarity_darkestrunic;
 
 	public static DamageSource damage_shade;
@@ -38,10 +38,12 @@ public class Content {
 	public static Fluid fluid_molten_darkrunic;
 
 	public static Block block_rune_null, block_molten_dark_runic, block_darkened_web, block_darkened_wool;
-	public static Block ore_duo, ore_tri;
+	//public static Block ore_duo, ore_tri;
 
-	public static Item rune_duo, rune_tri;
-	public static Item gem_duo, gem_tri;
+	//public static Item rune_duo, rune_tri;
+	//public static Item gem_duo, gem_tri;
+	
+	public static Item slate_blank, rune_corrupt;
 
 	public static Item compendium, book_binding, scroll_bag, darkened_string, black_hole;
 
@@ -55,7 +57,7 @@ public class Content {
 
 		// Tool Materials
 		tool_mat_darkrunic = EnumHelper.addToolMaterial(Darkness.prependModID("darkrunic"), 4, 290, 6.3f, 2.1f, 20);
-		armor_mat_darkrunic_cloth = EnumHelper.addArmorMaterial(Darkness.prependModID("darkrunic_cloth"), Darkness.prependModID("darkrunic_cloth"), 20, new int[] { 2, 4, 6, 3 }, 20, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
+		armor_mat_darkrunic = EnumHelper.addArmorMaterial(Darkness.prependModID("darkrunic_cloth"), Darkness.prependModID("darkrunic_cloth"), 20, new int[] { 2, 4, 6, 3 }, 20, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
 		tool_rarity_darkrunic = EnumHelper.addRarity("rare", TextFormatting.DARK_PURPLE, "Rare");
 
 		// Blocks
@@ -63,8 +65,8 @@ public class Content {
 		blocks.add(block_darkened_web = new BlockDarkenedWeb(Material.WEB, "block_darkened_web", "sword", 1, 1.0F, 1.0F, SoundType.CLOTH, true).setIsFullCube(false).setIsOpaqueCube(false).setLightOpacity(0));
 		blocks.add(block_darkened_wool = new BlockDarkenedWool(Material.CLOTH, "block_darkened_wool", "sword", 1, 1.0F, 1.0F, SoundType.CLOTH, true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16));
 
-		blocks.add(ore_tri = new BlockTriGemOre().setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16).setCreativeTab(Darkness.darknessTab));
-		blocks.add(ore_duo = new BlockBase(Material.ROCK, "ore_duo", "pickaxe", 1, 2.0F, 13.0F, SoundType.STONE, true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16).setCreativeTab(Darkness.darknessTab));
+		//blocks.add(ore_tri = new BlockTriGemOre().setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16).setCreativeTab(Darkness.darknessTab));
+		//blocks.add(ore_duo = new BlockBase(Material.ROCK, "ore_duo", "pickaxe", 1, 2.0F, 13.0F, SoundType.STONE, true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16).setCreativeTab(Darkness.darknessTab));
 
 		// Items
 		items.add(compendium = new ItemCompendium());
@@ -82,11 +84,14 @@ public class Content {
 		items.add(hoe_darkrunic = new ItemHoeBase(tool_mat_darkrunic, "hoe_darkrunic", true));
 		items.add(shovel_darkrunic = new ItemShovelBase(tool_mat_darkrunic, "shovel_darkrunic", true));
 
-		items.add(gem_duo = new ItemBase("gem_duo", true));
-		items.add(gem_tri = new ItemBase("gem_tri", true));
+		//items.add(gem_duo = new ItemBase("gem_duo", true));
+		//items.add(gem_tri = new ItemBase("gem_tri", true));
 
-		items.add(rune_duo = new ItemRuneDuo());
-		items.add(rune_tri = new ItemRuneTri());
+		//items.add(rune_duo = new ItemRuneDuo());
+		//items.add(rune_tri = new ItemRuneTri());
+		
+		items.add(slate_blank = new ItemBase("slate_blank", true));
+		items.add(rune_corrupt = new ItemBase("rune_corrupt", true));
 
 		// Armor
 		armor.add(darkrunic_hood = new ItemDarkRunicHood());
@@ -100,28 +105,28 @@ public class Content {
 
 		// Repair Materials
 		tool_mat_darkrunic.setRepairItem(new ItemStack(ingot_darkrunic));
-		armor_mat_darkrunic_cloth.repairMaterial = new ItemStack(darkened_string, 1);
+		armor_mat_darkrunic.repairMaterial = new ItemStack(darkened_string, 1);
 
 		world_gen_ores = new WorldGenOres();
 		GameRegistry.registerWorldGenerator(world_gen_ores, 1);
 	}
 
 	public static void registerRenderer() {
-		for (int i = 0;i < blocks.size();i ++ ) {
+		for (int i = 0; i < blocks.size(); i++) {
 			if (blocks.get(i) instanceof IModeledBlock) {
 				((IModeledBlock) blocks.get(i)).initModel();
 			}
 		}
 
-		for (int i = 0;i < items.size();i ++ ) {
+		for (int i = 0; i < items.size(); i++) {
 			if (items.get(i) instanceof IModeledItem) {
 				((IModeledItem) items.get(i)).initModel();
 			}
 		}
 
-		for (int i = 0;i < armor.size();i ++ ) {
-			if (armor.get(i) instanceof IModeledItemArmor) {
-				((IModeledItemArmor) armor.get(i)).initModel();
+		for (int i = 0; i < armor.size(); i++) {
+			if (armor.get(i) instanceof IModeledItem) {
+				((IModeledItem) armor.get(i)).initModel();
 			}
 		}
 	}

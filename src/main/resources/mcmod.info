@@ -5,11 +5,11 @@
   "description": "A Darkness to steal away the Light.",
   "version": "0.0.1",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://www.github.com/Nuclearsmilz/Darkness",
   "updateUrl": "",
   "authorList": ["Nuke"],
-  "credits": "The Forge, MCP, and FML guys, for making it possible",
-  "logoFile": "",
+  "credits": "Ingoleth for the models, Elucent for overall help and of course forge",
+  "logoFile": "logo.jpeg",
   "screenshots": [],
   "dependencies": []
 }
