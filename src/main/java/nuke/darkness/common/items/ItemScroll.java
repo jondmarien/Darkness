@@ -10,10 +10,10 @@ public class ItemScroll extends ItemBase {
 	public ItemScroll() {
 		super("scroll", true);
 	}
-	
+
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
 		return super.onItemRightClick(world, player, hand);
 	}
-	
+
 }

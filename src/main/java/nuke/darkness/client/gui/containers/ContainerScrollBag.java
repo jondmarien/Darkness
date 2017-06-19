@@ -8,24 +8,22 @@ import nuke.darkness.common.*;
 
 public class ContainerScrollBag {
 
-	public ContainerScrollBag(InventoryPlayer inventoryPlayer, World world, EntityEquipmentSlot entityEquipmentSlot,
-	        ItemStack itemHeld)
-	{
+	public ContainerScrollBag(InventoryPlayer inventoryPlayer, World world, EntityEquipmentSlot entityEquipmentSlot, ItemStack itemHeld) {
 		super();
 
 	}
 
-	public boolean canInsert( ItemStack stack, int slotNum, Slot slot ) {
+	public boolean canInsert(ItemStack stack, int slotNum, Slot slot) {
 		if (stack == null) return true;
 		if (Content.scroll_bag.equals(stack.getItem())) return false;
 		else return true;
 	}
 
-	public boolean canTake( ItemStack stack, int slotNum, Slot slot ) {
+	public boolean canTake(ItemStack stack, int slotNum, Slot slot) {
 		return true;
 	}
 
-	int addSlots( InventoryPlayer inventoryPlayer ) {
+	int addSlots(InventoryPlayer inventoryPlayer) {
 		int i = 0;
 		return i;
 	}

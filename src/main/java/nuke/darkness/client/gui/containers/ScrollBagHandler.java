@@ -4,13 +4,13 @@ import java.util.*;
 import java.util.function.*;
 
 import net.minecraft.item.*;
+import nuke.darkness.common.items.*;
 
 public class ScrollBagHandler {
 	private static final List<Predicate<ItemStack>> scrolls = new ArrayList<>();
 
-	// TODO: Change ItemTool to ItemScroll once implemented
 	static {
-		scrolls.add((s) -> (s.getItem() instanceof ItemTool));
+		scrolls.add((s) -> (s.getItem() instanceof ItemScroll));
 	}
 
 	public static boolean isScroll(ItemStack is) {

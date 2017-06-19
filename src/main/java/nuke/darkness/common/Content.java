@@ -11,7 +11,6 @@ import net.minecraft.item.ItemArmor.*;
 import net.minecraft.util.*;
 import net.minecraft.util.text.*;
 import net.minecraftforge.common.util.*;
-import net.minecraftforge.fluids.*;
 import net.minecraftforge.fml.common.registry.*;
 import nuke.darkness.client.util.*;
 import nuke.darkness.common.blocks.*;

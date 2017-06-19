@@ -17,8 +17,7 @@ public class GuiScrollBag extends GuiContainer {
 	}
 
 	@Override
-	protected void drawGuiContainerBackgroundLayer( float partialTicks, int mouseX, int mouseY ) {
-		//Miscellaneous.bindTexture("darkness:textures/gui/scrollbag.png");
+	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		MiscUtils.bindTexture(Darkness.prependModID("textures/gui/scrollbag.png"));
 	}
 }

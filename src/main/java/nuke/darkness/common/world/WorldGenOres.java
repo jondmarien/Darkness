@@ -2,12 +2,9 @@ package nuke.darkness.common.world;
 
 import java.util.*;
 
-import net.minecraft.util.math.*;
 import net.minecraft.world.*;
 import net.minecraft.world.chunk.*;
-import net.minecraft.world.gen.feature.*;
 import net.minecraftforge.fml.common.*;
-import nuke.darkness.common.*;
 
 public class WorldGenOres implements IWorldGenerator {
 

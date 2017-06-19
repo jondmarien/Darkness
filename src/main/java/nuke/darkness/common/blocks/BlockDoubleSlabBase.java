@@ -75,7 +75,7 @@ public class BlockDoubleSlabBase extends BlockSlab implements IModeledBlock {
 
 	public IBlockState getStateFromMeta(int meta) {
 		IBlockState ibs = this.getDefaultState();
-		if ( ! this.isDouble()) {
+		if (!this.isDouble()) {
 			ibs = ibs.withProperty(HALF, (meta) == 0 ? BlockSlab.EnumBlockHalf.BOTTOM: BlockSlab.EnumBlockHalf.TOP);
 		}
 		return ibs;

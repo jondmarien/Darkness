@@ -62,7 +62,7 @@ public class BlockDarkenedWeb extends BlockBase implements IShearable {
 
 	@Override
 	public void harvestBlock(World world, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te, ItemStack stack) {
-		if ( ! world.isRemote && stack.getItem() == Items.SHEARS) {
+		if (!world.isRemote && stack.getItem() == Items.SHEARS) {
 			player.addStat(StatList.getBlockStats(this));
 			spawnAsEntity(world, pos, new ItemStack(Item.getItemFromBlock(this)));
 		} else {

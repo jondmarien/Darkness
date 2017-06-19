@@ -13,7 +13,7 @@ public class ItemArmorBase extends ItemArmor implements IModeledItem {
 
 	public ItemArmorBase(String name, boolean addToTab, ArmorMaterial mat, int index, EntityEquipmentSlot slot) {
 		super(mat, index, slot);
-		setUnlocalizedName(References.MODID + ".robes." +name);
+		setUnlocalizedName(References.MODID + ".robes." + name);
 		this.setRegistryName(Darkness.prependModID(name));
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		GameRegistry.register(this);

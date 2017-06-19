@@ -1,12 +1,12 @@
 package nuke.darkness.common.items.blocks;
 
-import javax.annotation.Nullable;
+import javax.annotation.*;
 
 import net.minecraft.block.*;
 import net.minecraft.block.state.*;
 import net.minecraft.client.renderer.block.model.*;
 import net.minecraft.creativetab.*;
-import net.minecraft.entity.Entity;
+import net.minecraft.entity.*;
 import net.minecraft.entity.player.*;
 import net.minecraft.inventory.*;
 import net.minecraft.item.*;
@@ -33,7 +33,7 @@ public class ItemBlockSlab extends ItemBlock implements IModeledItem {
 	}
 
 	public void decrementHeldStack(EntityPlayer player, ItemStack stack, EnumHand hand) {
-		if ( ! player.capabilities.isCreativeMode) {
+		if (!player.capabilities.isCreativeMode) {
 			stack.shrink(1);
 			if (stack.getCount() == 0) {
 				player.setItemStackToSlot(hand == EnumHand.MAIN_HAND ? EntityEquipmentSlot.MAINHAND: EntityEquipmentSlot.OFFHAND, ItemStack.EMPTY);
@@ -47,7 +47,7 @@ public class ItemBlockSlab extends ItemBlock implements IModeledItem {
 
 		if (stack.getCount() == 0) {
 			return EnumActionResult.FAIL;
-		} else if ( ! player.canPlayerEdit(pos.offset(facing), facing, stack)) {
+		} else if (!player.canPlayerEdit(pos.offset(facing), facing, stack)) {
 			return EnumActionResult.FAIL;
 		} else {
 			IBlockState ibs = world.getBlockState(pos);
@@ -81,7 +81,7 @@ public class ItemBlockSlab extends ItemBlock implements IModeledItem {
 		if (ibs.getBlock() == getBlock()) {
 			boolean flag = ibs.getValue(BlockSlab.HALF) == BlockSlab.EnumBlockHalf.TOP;
 
-			if (side == EnumFacing.UP && ! flag || side == EnumFacing.DOWN && flag) return true;
+			if (side == EnumFacing.UP && !flag || side == EnumFacing.DOWN && flag) return true;
 		}
 
 		pos = pos.offset(side);

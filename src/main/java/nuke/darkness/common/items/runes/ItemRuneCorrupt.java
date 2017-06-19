@@ -7,7 +7,6 @@ import net.minecraft.entity.monster.*;
 import net.minecraft.entity.player.*;
 import net.minecraft.item.*;
 import net.minecraft.util.*;
-import net.minecraft.util.text.*;
 import net.minecraft.world.*;
 
 public class ItemRuneCorrupt extends ItemRuneBase {

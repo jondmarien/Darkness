@@ -88,10 +88,10 @@ public class MiscUtils {
 			count = 3;
 		}
 		if (stack.getItem() instanceof ItemTool) {
-			if (stack.getItem() instanceof ItemPickaxe || stack.getItem().getHarvestLevel(stack, "pickaxe", null, null) > - 1) {
+			if (stack.getItem() instanceof ItemPickaxe || stack.getItem().getHarvestLevel(stack, "pickaxe", null, null) > -1) {
 				count = 3;
 			}
-			if (stack.getItem() instanceof ItemAxe || stack.getItem().getHarvestLevel(stack, "axe", null, null) > - 1) {
+			if (stack.getItem() instanceof ItemAxe || stack.getItem().getHarvestLevel(stack, "axe", null, null) > -1) {
 				count = 3;
 			}
 			if (stack.getItem() instanceof ItemHoe) {
@@ -103,12 +103,12 @@ public class MiscUtils {
 			count = 1;
 		}
 		if (count > 0) { return (int) ((float) count * (1.0f - (float) stack.getItemDamage() / (float) stack.getMaxDamage())); }
-		return - 1;
+		return -1;
 	}
 
 	public static void spawnInventoryWorld(World world, double x, double y, double z, IItemHandler inventory) {
-		if (inventory != null && ! world.isRemote) {
-			for (int i = 0;i < inventory.getSlots();i ++ ) {
+		if (inventory != null && !world.isRemote) {
+			for (int i = 0; i < inventory.getSlots(); i++) {
 				if (inventory.getStackInSlot(i) != ItemStack.EMPTY) {
 					world.spawnEntity(new EntityItem(world, x, y, z, inventory.getStackInSlot(i)));
 				}
@@ -121,10 +121,10 @@ public class MiscUtils {
 		boolean empty1 = (stack1.getTagCompound() == null || stack1.getTagCompound().hasNoTags());
 		boolean empty2 = (stack2.getTagCompound() == null || stack2.getTagCompound().hasNoTags());
 		if (empty1 != empty2) return false;
-		if ( ! empty1 && ! stack1.getTagCompound().equals(stack2.getTagCompound())) return false;
+		if (!empty1 && !stack1.getTagCompound().equals(stack2.getTagCompound())) return false;
 		return stack1.areCapsCompatible(stack2);
 	}
-	
+
 	public static ItemStack hasNBT(ItemStack stack) {
 		if (stack.getTagCompound() == null) stack.setTagCompound(new NBTTagCompound());
 
@@ -134,8 +134,8 @@ public class MiscUtils {
 	public static boolean matchOreDict(ItemStack stackOne, ItemStack stackTwo) {
 		int[] keysOne = OreDictionary.getOreIDs(stackOne);
 		int[] keysTwo = OreDictionary.getOreIDs(stackTwo);
-		for (int i = 0;i < keysOne.length;i ++ ) {
-			for (int j = 0;j < keysTwo.length;j ++ ) {
+		for (int i = 0; i < keysOne.length; i++) {
+			for (int j = 0; j < keysTwo.length; j++) {
 				if (keysOne[i] == keysTwo[j]) return true;
 			}
 		}
@@ -156,7 +156,7 @@ public class MiscUtils {
 
 	public static ResourceLocation getResource(String path) {
 		ResourceLocation rl = resourceMap.containsKey(path) ? resourceMap.get(path): new ResourceLocation(path);
-		if ( ! resourceMap.containsKey(path)) resourceMap.put(path, rl);
+		if (!resourceMap.containsKey(path)) resourceMap.put(path, rl);
 		return rl;
 	}
 }

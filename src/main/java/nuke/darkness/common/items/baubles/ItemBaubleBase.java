@@ -28,14 +28,14 @@ public class ItemBaubleBase extends ItemBase implements IBauble {
 			if (world.isRemote) return ActionResult.newResult(EnumActionResult.SUCCESS, stack);
 
 			IBaublesItemHandler baubles = BaublesApi.getBaublesHandler(player);
-			for (int i = 0;i < baubles.getSlots();i ++ ) {
+			for (int i = 0; i < baubles.getSlots(); i++) {
 				if (baubles.isItemValidForSlot(i, toEquip, player)) {
 					ItemStack stackInSlot = baubles.getStackInSlot(i);
 					if (stackInSlot.isEmpty() || ((IBauble) stackInSlot.getItem()).canUnequip(stackInSlot, player)) {
 						baubles.setStackInSlot(i, toEquip);
 						stack.shrink(1);
 
-						if ( ! stackInSlot.isEmpty()) {
+						if (!stackInSlot.isEmpty()) {
 							((IBauble) stackInSlot.getItem()).onUnequipped(stackInSlot, player);
 
 							if (stack.isEmpty()) {
