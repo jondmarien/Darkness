@@ -6,7 +6,6 @@ import javax.management.*;
 
 import org.apache.commons.lang3.tuple.*;
 
-import lombok.*;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.common.registry.*;
 import nuke.darkness.client.util.*;
