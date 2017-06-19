@@ -56,10 +56,10 @@ public class ItemBlackHole extends ItemBase implements IInventoryShadeBlackhole,
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
 		ItemStack stack = player.getHeldItem(hand);
-		if (ShadeEnergyUtil.getShadeTotal(player) >= 100.0 || player.capabilities.isCreativeMode) {
-			ShadeEnergyUtil.removeShade(player, 100.0);
+		if (ShadeInventoryUtil.getShadeTotal(player) >= 100.0 || player.capabilities.isCreativeMode) {
+			ShadeInventoryUtil.removeShade(player, 100.0);
 			player.setActiveHand(hand);
-			if (KeybindHandler.charge.isKeyDown() && !(ShadeEnergyUtil.getShadeTotal(player) == 1000.0)) {
+			if (KeybindHandler.charge.isKeyDown() && !(ShadeInventoryUtil.getShadeTotal(player) == 1000.0)) {
 				addAmount(stack, 100, true); // TODO: Tick Refill more than once
 			}
 			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);

@@ -5,11 +5,10 @@ import net.minecraft.item.*;
 import net.minecraft.util.*;
 import nuke.darkness.common.items.*;
 
-public class ShadeEnergyUtil {
+public class ShadeInventoryUtil {
 	public static double getShadeCapacityTotal(EntityPlayer player) {
 		double val = 0;
-		// 36 for the amount of slots in the players inventory, hotbar included, armor
-		// slots excluded.
+		// 36 for the amount of slots in the players inventory, hotbar included, armor aka 36 slots excluded.
 		for (int i = 0; i < 36; i++) {
 			// Normal Item Slot
 			if (player.inventory.getStackInSlot(i) != ItemStack.EMPTY) {
@@ -35,8 +34,7 @@ public class ShadeEnergyUtil {
 
 	public static double getShadeTotal(EntityPlayer player) {
 		double val = 0;
-		// 36 for the amount of slots in the players inventory, hotbar included, armor
-		// slots excluded.
+		// 36 for the amount of slots in the players inventory, hotbar included, armor aka 36 slots excluded.
 		for (int i = 0; i < 36; i++) {
 			// Normal Item Slot
 			if (player.inventory.getStackInSlot(i) != ItemStack.EMPTY) {
@@ -75,8 +73,7 @@ public class ShadeEnergyUtil {
 			}
 		}
 
-		// 36 for the amount of slots in the players inventory, hotbar included, armor
-		// slots excluded.
+		// 36 for the amount of slots in the players inventory, hotbar included, armor aka 36 slots excluded.
 		for (int i = 0; i < 36; i++) {
 			// Normal Item Slot
 			if (player.inventory.getStackInSlot(i) != ItemStack.EMPTY) {
