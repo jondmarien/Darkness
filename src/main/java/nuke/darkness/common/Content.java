@@ -15,10 +15,9 @@ import net.minecraftforge.fluids.*;
 import net.minecraftforge.fml.common.registry.*;
 import nuke.darkness.client.util.*;
 import nuke.darkness.common.blocks.*;
-import nuke.darkness.common.blocks.fluids.*;
-import nuke.darkness.common.fluids.*;
 import nuke.darkness.common.items.*;
 import nuke.darkness.common.items.armor.*;
+import nuke.darkness.common.items.runes.*;
 import nuke.darkness.common.world.*;
 import nuke.darkness.core.*;
 
@@ -35,17 +34,11 @@ public class Content {
 
 	public static DamageSource damage_shade;
 
-	public static Fluid fluid_molten_darkrunic;
-
 	public static Block block_rune_null, block_molten_dark_runic, block_darkened_web, block_darkened_wool;
-	//public static Block ore_duo, ore_tri;
 
-	//public static Item rune_duo, rune_tri;
-	//public static Item gem_duo, gem_tri;
-	
 	public static Item slate_blank, rune_corrupt;
 
-	public static Item compendium, book_binding, scroll_bag, darkened_string, black_hole;
+	public static Item compendium, book_binding, scroll_bag, scroll, darkened_string, black_hole;
 
 	public static Item sword_darkrunic, pickaxe_darkrunic, axe_darkrunic, hoe_darkrunic, shovel_darkrunic, ingot_darkrunic, droplet_darkrunic;
 
@@ -53,7 +46,7 @@ public class Content {
 
 	public static void init() {
 		// Shade (Darkness) Damage
-		damage_shade = new DamageGloom();
+		damage_shade = new DamageShade();
 
 		// Tool Materials
 		tool_mat_darkrunic = EnumHelper.addToolMaterial(Darkness.prependModID("darkrunic"), 4, 290, 6.3f, 2.1f, 20);
@@ -65,12 +58,11 @@ public class Content {
 		blocks.add(block_darkened_web = new BlockDarkenedWeb(Material.WEB, "block_darkened_web", "sword", 1, 1.0F, 1.0F, SoundType.CLOTH, true).setIsFullCube(false).setIsOpaqueCube(false).setLightOpacity(0));
 		blocks.add(block_darkened_wool = new BlockDarkenedWool(Material.CLOTH, "block_darkened_wool", "sword", 1, 1.0F, 1.0F, SoundType.CLOTH, true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16));
 
-		//blocks.add(ore_tri = new BlockTriGemOre().setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16).setCreativeTab(Darkness.darknessTab));
-		//blocks.add(ore_duo = new BlockBase(Material.ROCK, "ore_duo", "pickaxe", 1, 2.0F, 13.0F, SoundType.STONE, true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16).setCreativeTab(Darkness.darknessTab));
-
 		// Items
 		items.add(compendium = new ItemCompendium());
 		items.add(scroll_bag = new ItemScrollBag());
+		items.add(scroll = new ItemScroll());
+
 		items.add(black_hole = new ItemBlackHole());
 
 		items.add(book_binding = new ItemBase("book_binding", true));
@@ -84,24 +76,15 @@ public class Content {
 		items.add(hoe_darkrunic = new ItemHoeBase(tool_mat_darkrunic, "hoe_darkrunic", true));
 		items.add(shovel_darkrunic = new ItemShovelBase(tool_mat_darkrunic, "shovel_darkrunic", true));
 
-		//items.add(gem_duo = new ItemBase("gem_duo", true));
-		//items.add(gem_tri = new ItemBase("gem_tri", true));
-
-		//items.add(rune_duo = new ItemRuneDuo());
-		//items.add(rune_tri = new ItemRuneTri());
-		
 		items.add(slate_blank = new ItemBase("slate_blank", true));
-		items.add(rune_corrupt = new ItemBase("rune_corrupt", true));
+
+		// Runes
+		items.add(rune_corrupt = new ItemRuneCorrupt());
 
 		// Armor
 		armor.add(darkrunic_hood = new ItemDarkRunicHood());
 		armor.add(darkrunic_torso = new ItemDarkRunicTorso());
 		armor.add(darkrunic_legs = new ItemDarkRunicLegs());
-
-		// Fluids
-		FluidRegistry.registerFluid(fluid_molten_darkrunic = new FluidMoltenDarkRunic());
-		blocks.add(block_molten_dark_runic = (new BlockMoltenDarkRunic("darkrunic", true)));
-		FluidRegistry.addBucketForFluid(fluid_molten_darkrunic);
 
 		// Repair Materials
 		tool_mat_darkrunic.setRepairItem(new ItemStack(ingot_darkrunic));

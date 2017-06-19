@@ -2,28 +2,34 @@
 itemGroup.darkness.general=Darkness
 
 # Blocks
-tile.block_rune_null.name=Null Rune
-tile.block_darkened_web.name=Darkened Web
-tile.block_darkened_wool.name=Darkened Wool
-
-tile.null.name=Null Fluid
+tile.darkness.block_rune_null.name=Null Rune
+tile.darkness.block_darkened_web.name=Darkened Web
+tile.darkness.block_darkened_wool.name=Darkened Wool
 
 # Items
-item.compendium.name=The Dark Compendium
-item.guidebook.name=The Dark Compendium
-item.scroll_bag.name=Scroll Bag
-item.black_hole.name=Black Hole
+item.darkness.compendium.name=The Dark Compendium
+item.darkness.guidebook.name=The Dark Compendium
+item.darkness.scroll_bag.name=Scroll Bag
+item.darkness.scroll.name=Scroll
+item.darkness.black_hole.name=Black Hole
 
-item.book_binding.name=Book Binding
-item.darkened_string.name=Darkened String
+item.darkness.book_binding.name=Book Binding
+item.darkness.darkened_string.name=Darkened String
 
-item.droplet_darkrunic.name=Dark Runic Droplet
-item.ingot_darkrunic.name=Dark Runic Ingot
-item.sword_darkrunic.name=Dark Runic Sword
-item.shovel_darkrunic.name=Dark Runic Shovel
-item.pickaxe_darkrunic.name=Dark Runic Pickaxe
-item.axe_darkrunic.name=Dark Runic Axe
-item.hoe_darkrunic.name=Dark Runic Hoe
+item.darkness.droplet_darkrunic.name=Dark Runic Droplet
+item.darkness.ingot_darkrunic.name=Dark Runic Ingot
+item.darkness.sword_darkrunic.name=Dark Runic Sword
+item.darkness.shovel_darkrunic.name=Dark Runic Shovel
+item.darkness.pickaxe_darkrunic.name=Dark Runic Pickaxe
+item.darkness.axe_darkrunic.name=Dark Runic Axe
+item.darkness.hoe_darkrunic.name=Dark Runic Hoe
 
-item.slate_blank.name=Blank Slate
-item.rune_corrupt.name=Corrupt Rune
+item.darkness.slate_blank.name=Blank Slate
+
+# Runes
+item.darkness.rune.corrupt.name=Corrupt Rune
+
+# Robes
+item.darkness.robes.darkrunic_hood.name=Dark Runic Hood
+item.darkness.robes.darkrunic_torso.name=Dark Runic Torso
+item.darkness.robes.darkrunic_legs.name=Dark Runic Legs

@@ -1,5 +1,7 @@
 {
     "variants":{
-        "normal":{"model": "darkness:block_darkened_web"}
+        "normal":{
+            "model": "darkness:block_darkened_web"
+        }
     }
 }

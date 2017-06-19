@@ -7,6 +7,7 @@ import net.minecraft.item.*;
 import net.minecraft.world.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
+import nuke.darkness.client.util.*;
 import nuke.darkness.core.*;
 
 public class ItemBase extends Item implements IModeledItem {
@@ -18,7 +19,7 @@ public class ItemBase extends Item implements IModeledItem {
 	 */
 	public ItemBase(String name, boolean addToTab) {
 		super();
-		setUnlocalizedName(name);
+		setUnlocalizedName(References.MODID + "." + name);
 		this.setRegistryName(Darkness.prependModID(name));
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		GameRegistry.register(this);

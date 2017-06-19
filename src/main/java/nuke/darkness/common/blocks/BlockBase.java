@@ -11,6 +11,7 @@ import net.minecraft.world.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
 import net.minecraftforge.fml.relauncher.*;
+import nuke.darkness.client.util.*;
 import nuke.darkness.core.*;
 
 public class BlockBase extends Block implements IModeledBlock {
@@ -31,12 +32,12 @@ public class BlockBase extends Block implements IModeledBlock {
 	 */
 	public BlockBase(Material mat, String name, String toolUsed, int toolStrength, float hardness, float resistance, SoundType sound, boolean addToTab) {
 		super(mat);
-		this.setUnlocalizedName(name);
-		this.setRegistryName(Darkness.prependModID(name));
-		this.setHarvestLevel(toolUsed, toolStrength);
-		this.setHardness(hardness);
-		this.setResistance(resistance);
-		this.setSoundType(sound);
+		setUnlocalizedName(References.MODID + "." + name);
+		setRegistryName(Darkness.prependModID(name));
+		setHarvestLevel(toolUsed, toolStrength);
+		setHardness(hardness);
+		setResistance(resistance);
+		setSoundType(sound);
 		if (addToTab) this.setCreativeTab(Darkness.darknessTab);
 
 		GameRegistry.register(this);
@@ -56,12 +57,12 @@ public class BlockBase extends Block implements IModeledBlock {
 	 */
 	public BlockBase(Material mat, String name, String toolUsed, int toolStrength, float hardness, float resistance, SoundType sound, boolean addToTab, boolean slippery) {
 		super(mat);
-		this.setUnlocalizedName(name);
-		this.setRegistryName(Darkness.prependModID(name));
-		this.setHarvestLevel(toolUsed, toolStrength);
-		this.setHardness(hardness);
-		this.setResistance(resistance);
-		this.setSoundType(sound);
+		setUnlocalizedName(References.MODID + "." + name);
+		setRegistryName(Darkness.prependModID(name));
+		setHarvestLevel(toolUsed, toolStrength);
+		setHardness(hardness);
+		setResistance(resistance);
+		setSoundType(sound);
 		if (addToTab) this.setCreativeTab(Darkness.darknessTab);
 		if (slippery) this.slipperiness = 0.98F;
 
@@ -79,11 +80,11 @@ public class BlockBase extends Block implements IModeledBlock {
 	 */
 	public BlockBase(Material mat, String name, float hardness, float resistance, SoundType sound, boolean addToTab) {
 		super(mat);
-		this.setUnlocalizedName(name);
-		this.setRegistryName(Darkness.prependModID(name));
-		this.setHardness(hardness);
-		this.setResistance(resistance);
-		this.setSoundType(sound);
+		setUnlocalizedName(References.MODID + "." + name);
+		setRegistryName(Darkness.prependModID(name));
+		setHardness(hardness);
+		setResistance(resistance);
+		setSoundType(sound);
 		if (addToTab) this.setCreativeTab(Darkness.darknessTab);
 
 		GameRegistry.register(this);

@@ -11,12 +11,12 @@ import net.minecraft.util.*;
 import net.minecraft.world.*;
 import net.minecraftforge.fml.relauncher.*;
 import nuke.darkness.client.util.*;
-import nuke.darkness.common.gloom.*;
+import nuke.darkness.common.shade.*;
 import nuke.darkness.core.*;
 
-public class ItemBlackHole extends ItemBase implements IInventoryGloomCapsule, IHeldGloomCapsule, IGloomItem {
+public class ItemBlackHole extends ItemBase implements IInventoryShadeBlackhole, IHeldShadeBlackhole, IShadeItem {
 
-	public GloomCapabilityStorage darkness = new GloomCapabilityStorage();
+	public ShadeCapabilityStorage shade = new ShadeCapabilityStorage();
 
 	public ItemBlackHole() {
 		super("black_hole", true);
@@ -33,33 +33,33 @@ public class ItemBlackHole extends ItemBase implements IInventoryGloomCapsule, I
 	public void getSubItems(Item item, CreativeTabs tab, NonNullList<ItemStack> subItems) {
 		ItemStack empty = new ItemStack(this, 1);
 		initNBT(empty);
-		setGloom(empty, 0.0);
-		setGloomCapacity(empty, 10000.0);
+		setShade(empty, 0.0);
+		setShadeCapacity(empty, 10000.0);
 		subItems.add(empty);
 
 		ItemStack full = new ItemStack(this, 1);
 		initNBT(full);
-		setGloom(full, 10000.0);
-		setGloomCapacity(full, 10000.0);
+		setShade(full, 10000.0);
+		setShadeCapacity(full, 10000.0);
 		subItems.add(full);
 	}
 
 	@Override
 	public void onUpdate(ItemStack stack, World world, Entity entity, int slot, boolean isSelected) {
-		if ( ! stack.hasTagCompound()) {
+		if (!stack.hasTagCompound()) {
 			initNBT(stack);
-			setGloom(stack, 0.0);
-			setGloomCapacity(stack, 10000.0);
+			setShade(stack, 0.0);
+			setShadeCapacity(stack, 10000.0);
 		}
 	}
 
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
 		ItemStack stack = player.getHeldItem(hand);
-		if (GloomEnergyUtil.getGloomTotal(player) >= 100.0 || player.capabilities.isCreativeMode) {
-			GloomEnergyUtil.removeGloom(player, 100.0);
+		if (ShadeEnergyUtil.getShadeTotal(player) >= 100.0 || player.capabilities.isCreativeMode) {
+			ShadeEnergyUtil.removeShade(player, 100.0);
 			player.setActiveHand(hand);
-			if (KeybindHandler.charge.isKeyDown() && ! (GloomEnergyUtil.getGloomTotal(player) == 1000.0)) {
+			if (KeybindHandler.charge.isKeyDown() && !(ShadeEnergyUtil.getShadeTotal(player) == 1000.0)) {
 
 			}
 			// TODO: set refill
@@ -89,14 +89,14 @@ public class ItemBlackHole extends ItemBase implements IInventoryGloomCapsule, I
 	@Override
 	public boolean showDurabilityBar(ItemStack stack) {
 		if (stack.hasTagCompound()) {
-			if (getGloom(stack) < getGloomCapacity(stack)) return true;
+			if (getShade(stack) < getShadeCapacity(stack)) return true;
 		}
 		return false;
 	}
 
 	@Override
 	public double getDurabilityForDisplay(ItemStack stack) {
-		if (stack.hasTagCompound()) return (getGloomCapacity(stack) - getGloom(stack)) / getGloomCapacity(stack);
+		if (stack.hasTagCompound()) return (getShadeCapacity(stack) - getShade(stack)) / getShadeCapacity(stack);
 
 		return 0.0;
 	}
@@ -104,74 +104,73 @@ public class ItemBlackHole extends ItemBase implements IInventoryGloomCapsule, I
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-		tooltip.add("Shift and hold right click to absorb darkness. (WIP)");
-		// tooltip.add("Hold 'C' to absorb darkness. (WIP)");
-		if (stack.hasTagCompound()) tooltip.add("" + getGloom(stack) + "/" + getGloomCapacity(stack));
+		tooltip.add("Shift and hold right click to absorb shade. (WIP)");
+		if (stack.hasTagCompound()) tooltip.add("" + getShade(stack) + "/" + getShadeCapacity(stack));
 	}
 
 	public void initNBT(ItemStack stack) {
 		stack.setTagCompound(new NBTTagCompound());
-		setGloom(stack, 0.0);
-		setGloomCapacity(stack, 10000.0);
+		setShade(stack, 0.0);
+		setShadeCapacity(stack, 10000.0);
 	}
 
 	@Override
-	public double getGloom(ItemStack stack) {
-		if ( ! stack.hasTagCompound()) initNBT(stack);
-		return stack.getTagCompound().getDouble(Darkness.prependModID("darkness"));
+	public double getShade(ItemStack stack) {
+		if (!stack.hasTagCompound()) initNBT(stack);
+		return stack.getTagCompound().getDouble(Darkness.prependModID("shade"));
 	}
 
 	@Override
-	public double getGloomCapacity(ItemStack stack) {
-		if ( ! stack.hasTagCompound()) initNBT(stack);
-		return stack.getTagCompound().getDouble(Darkness.prependModIDCapacity("darkness"));
+	public double getShadeCapacity(ItemStack stack) {
+		if (!stack.hasTagCompound()) initNBT(stack);
+		return stack.getTagCompound().getDouble(Darkness.prependModIDCapacity("shade"));
 	}
 
 	@Override
-	public void setGloom(ItemStack stack, double val) {
-		if ( ! stack.hasTagCompound()) initNBT(stack);
-		stack.getTagCompound().setDouble(Darkness.prependModID("darkness"), val);
+	public void setShade(ItemStack stack, double val) {
+		if (!stack.hasTagCompound()) initNBT(stack);
+		stack.getTagCompound().setDouble(Darkness.prependModID("shade"), val);
 	}
 
 	@Override
-	public void setGloomCapacity(ItemStack stack, double val) {
-		if ( ! stack.hasTagCompound()) initNBT(stack);
-		stack.getTagCompound().setDouble(Darkness.prependModIDCapacity("darkness"), val);
+	public void setShadeCapacity(ItemStack stack, double val) {
+		if (!stack.hasTagCompound()) initNBT(stack);
+		stack.getTagCompound().setDouble(Darkness.prependModIDCapacity("shade"), val);
 	}
 
 	@Override
 	public double addAmount(ItemStack stack, double val, boolean add) {
-		if ( ! stack.hasTagCompound()) initNBT(stack);
+		if (!stack.hasTagCompound()) initNBT(stack);
 
-		double darkness = stack.getTagCompound().getDouble(Darkness.prependModID("darkness"));
-		double capacity = stack.getTagCompound().getDouble(Darkness.prependModIDCapacity("darkness"));
+		double shade = stack.getTagCompound().getDouble(Darkness.prependModID("shade"));
+		double capacity = stack.getTagCompound().getDouble(Darkness.prependModIDCapacity("shade"));
 
-		if (darkness + val > capacity) {
-			double added = capacity - darkness;
+		if (shade + val > capacity) {
+			double added = capacity - shade;
 			if (add) {
-				setGloom(stack, capacity);
-				darkness = capacity;
+				setShade(stack, capacity);
+				shade = capacity;
 			}
 			return added;
 		}
-		if (add) setGloom(stack, darkness + val);
+		if (add) setShade(stack, shade + val);
 
 		return val;
 	}
 
 	@Override
 	public double removeAmount(ItemStack stack, double val, boolean remove) {
-		if ( ! stack.hasTagCompound()) initNBT(stack);
+		if (!stack.hasTagCompound()) initNBT(stack);
 
-		double darkness = stack.getTagCompound().getDouble(Darkness.prependModID("darkness"));
-		double capacity = stack.getTagCompound().getDouble(Darkness.prependModIDCapacity("darkness"));
+		double shade = stack.getTagCompound().getDouble(Darkness.prependModID("shade"));
+		double capacity = stack.getTagCompound().getDouble(Darkness.prependModIDCapacity("shade"));
 
-		if (darkness - val < 0) {
-			double removed = darkness;
-			if (remove) setGloom(stack, 0);
+		if (shade - val < 0) {
+			double removed = shade;
+			if (remove) setShade(stack, 0);
 			return removed;
 		}
-		if (remove) setGloom(stack, darkness - val);
+		if (remove) setShade(stack, shade - val);
 
 		return val;
 	}

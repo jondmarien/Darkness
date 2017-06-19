@@ -4,10 +4,10 @@ import net.minecraft.entity.*;
 import net.minecraft.util.*;
 import net.minecraft.util.text.*;
 
-public class DamageGloom extends DamageSource {
+public class DamageShade extends DamageSource {
 
-	public DamageGloom() {
-		super("gloom");
+	public DamageShade() {
+		super("shade");
 		setMagicDamage();
 		setDifficultyScaled();
 	}

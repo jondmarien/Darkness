@@ -10,29 +10,30 @@ import net.minecraft.init.*;
 import net.minecraft.item.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
+import nuke.darkness.client.util.*;
 import nuke.darkness.core.*;
 
 public class ItemAxeBase extends ItemTool implements IModeledItem {
 
 	public ItemAxeBase(ToolMaterial tmat, String name, boolean addToTab) {
 		super(tmat, Sets.newHashSet(new Block[] { Blocks.PLANKS }));
-		setUnlocalizedName(name);
+		setUnlocalizedName(References.MODID + "." + name);
 		setRegistryName(Darkness.prependModID(name));
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		setHarvestLevel("axe", this.toolMaterial.getHarvestLevel());
 		this.damageVsEntity = this.toolMaterial.getDamageVsEntity() + 4.0f;
-		this.attackSpeed = - 2.7f;
+		this.attackSpeed = -2.7f;
 		GameRegistry.register(this);
 	}
 
 	public ItemAxeBase(ToolMaterial tmat, EnumRarity rarity, String name, boolean addToTab) {
 		super(tmat, Sets.newHashSet(new Block[] { Blocks.PLANKS }));
-		setUnlocalizedName(name);
+		setUnlocalizedName(References.MODID + "." + name);
 		setRegistryName(Darkness.prependModID(name));
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		setHarvestLevel("axe", this.toolMaterial.getHarvestLevel());
 		this.damageVsEntity = this.toolMaterial.getDamageVsEntity() + 4.0f;
-		this.attackSpeed = - 2.7f;
+		this.attackSpeed = -2.7f;
 		GameRegistry.register(this);
 	}
 

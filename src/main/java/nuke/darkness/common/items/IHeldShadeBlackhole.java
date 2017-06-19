@@ -1,5 +1,5 @@
 package nuke.darkness.common.items;
 
-public interface IHeldGloomCapsule {
+public interface IHeldShadeBlackhole {
 
 }

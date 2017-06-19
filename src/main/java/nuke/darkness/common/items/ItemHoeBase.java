@@ -4,13 +4,14 @@ import net.minecraft.client.renderer.block.model.*;
 import net.minecraft.item.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
+import nuke.darkness.client.util.*;
 import nuke.darkness.core.*;
 
 public class ItemHoeBase extends ItemHoe implements IModeledItem {
 
 	public ItemHoeBase(ToolMaterial tmat, String name, boolean addToTab) {
 		super(tmat);
-		setUnlocalizedName(name);
+		setUnlocalizedName(References.MODID + "." + name);
 		setRegistryName(Darkness.prependModID(name));
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		GameRegistry.register(this);
@@ -18,7 +19,7 @@ public class ItemHoeBase extends ItemHoe implements IModeledItem {
 
 	public ItemHoeBase(ToolMaterial tmat, EnumRarity rarity, String name, boolean addToTab) {
 		super(tmat);
-		setUnlocalizedName(name);
+		setUnlocalizedName(References.MODID + "." + name);
 		setRegistryName(Darkness.prependModID(name));
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
 		GameRegistry.register(this);

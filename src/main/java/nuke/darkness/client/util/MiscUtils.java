@@ -7,13 +7,14 @@ import net.minecraft.entity.item.*;
 import net.minecraft.inventory.*;
 import net.minecraft.item.*;
 import net.minecraft.item.Item.*;
+import net.minecraft.nbt.*;
 import net.minecraft.util.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.*;
 import net.minecraftforge.items.*;
 import net.minecraftforge.oredict.*;
 
-public class Miscellaneous {
+public class MiscUtils {
 
 	public static final AxisAlignedBB standardBlockAABB = new AxisAlignedBB(0, 0, 0, 1, 1, 1);
 	static HashMap<String, ResourceLocation> resourceMap = new HashMap<String, ResourceLocation>();
@@ -122,6 +123,12 @@ public class Miscellaneous {
 		if (empty1 != empty2) return false;
 		if ( ! empty1 && ! stack1.getTagCompound().equals(stack2.getTagCompound())) return false;
 		return stack1.areCapsCompatible(stack2);
+	}
+	
+	public static ItemStack hasNBT(ItemStack stack) {
+		if (stack.getTagCompound() == null) stack.setTagCompound(new NBTTagCompound());
+
+		return stack;
 	}
 
 	public static boolean matchOreDict(ItemStack stackOne, ItemStack stackTwo) {

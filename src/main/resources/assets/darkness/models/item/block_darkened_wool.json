@@ -1,6 +1,3 @@
 {
-    "parent" : "item/handheld",
-    "textures" : {
-        "layer0" : "darkness:blocks/darkened_wool"
-    }
+  "parent": "darkness:block/block_darkened_wool"
 }
