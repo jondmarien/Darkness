@@ -1,6 +1,7 @@
 package nuke.darkness.common;
 
 import java.util.*;
+import java.util.logging.*;
 
 import net.minecraft.block.*;
 import net.minecraft.block.material.*;

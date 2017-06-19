@@ -60,9 +60,8 @@ public class ItemBlackHole extends ItemBase implements IInventoryShadeBlackhole,
 			ShadeEnergyUtil.removeShade(player, 100.0);
 			player.setActiveHand(hand);
 			if (KeybindHandler.charge.isKeyDown() && !(ShadeEnergyUtil.getShadeTotal(player) == 1000.0)) {
-
+				addAmount(stack, 100, true); // TODO: Tick Refill more than once
 			}
-			// TODO: set refill
 			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
 		}
 
@@ -73,12 +72,6 @@ public class ItemBlackHole extends ItemBase implements IInventoryShadeBlackhole,
 	public boolean onDroppedByPlayer(ItemStack item, EntityPlayer player) {
 		// TODO: spawn particles
 		return super.onDroppedByPlayer(item, player);
-	}
-
-	@Override
-	public void onUsingTick(ItemStack stack, EntityLivingBase player, int count) {
-		// TODO: set refill
-		super.onUsingTick(stack, player, count);
 	}
 
 	@Override
@@ -104,7 +97,7 @@ public class ItemBlackHole extends ItemBase implements IInventoryShadeBlackhole,
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-		tooltip.add("Shift and hold right click to absorb shade. (WIP)");
+		tooltip.add("Hold C to absorb shade. (WIP)");
 		if (stack.hasTagCompound()) tooltip.add("" + getShade(stack) + "/" + getShadeCapacity(stack));
 	}
 
@@ -144,6 +137,8 @@ public class ItemBlackHole extends ItemBase implements IInventoryShadeBlackhole,
 
 		double shade = stack.getTagCompound().getDouble(Darkness.prependModID("shade"));
 		double capacity = stack.getTagCompound().getDouble(Darkness.prependModIDCapacity("shade"));
+
+		System.out.println(shade + ", " + val + ", " + capacity + ", " + add);
 
 		if (shade + val > capacity) {
 			double added = capacity - shade;

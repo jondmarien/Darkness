@@ -12,7 +12,7 @@ import net.minecraft.world.*;
 public class ItemRuneCorrupt extends ItemRuneBase {
 
 	public ItemRuneCorrupt() {
-		super("rune_corrupt", true);
+		super("corrupt", true);
 		setMaxStackSize(1);
 		addPropertyOverride(new ResourceLocation("enabled"), new IItemPropertyGetter() {
 			@Override
