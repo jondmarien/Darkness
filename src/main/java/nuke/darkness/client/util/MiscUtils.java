@@ -2,8 +2,11 @@ package nuke.darkness.client.util;
 
 import java.util.*;
 
+import com.google.common.collect.*;
+
 import net.minecraft.client.*;
 import net.minecraft.entity.item.*;
+import net.minecraft.entity.player.*;
 import net.minecraft.inventory.*;
 import net.minecraft.item.*;
 import net.minecraft.item.Item.*;
@@ -11,6 +14,7 @@ import net.minecraft.nbt.*;
 import net.minecraft.util.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.*;
+import net.minecraftforge.common.util.*;
 import net.minecraftforge.items.*;
 import net.minecraftforge.oredict.*;
 
@@ -18,6 +22,7 @@ public class MiscUtils {
 
 	public static final AxisAlignedBB standardBlockAABB = new AxisAlignedBB(0, 0, 0, 1, 1, 1);
 	static HashMap<String, ResourceLocation> resourceMap = new HashMap<String, ResourceLocation>();
+	private static final ArrayList<String> knownFakePlayers = Lists.newArrayList();
 
 	public static ItemStack getRepairItem(ItemStack stack) {
 		// for Axes
@@ -158,5 +163,9 @@ public class MiscUtils {
 		ResourceLocation rl = resourceMap.containsKey(path) ? resourceMap.get(path): new ResourceLocation(path);
 		if (!resourceMap.containsKey(path)) resourceMap.put(path, rl);
 		return rl;
+	}
+
+	public static boolean isFakePlayer(EntityPlayer player) {
+		return player instanceof FakePlayer || (player != null && knownFakePlayers.contains(player.getClass().getCanonicalName()));
 	}
 }

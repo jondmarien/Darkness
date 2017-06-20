@@ -1,6 +1,6 @@
 {
     "parent" : "item/generated",
     "textures" : {
-        "layer0" : "darkness:items/rune_corrupt_enabled"
+        "layer0" : "darkness:items/rune_corrupt_energized"
     }
 }

@@ -1,0 +1,21 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "builtin/generated",
+    "transform": "forge:default-item"
+  },
+  "variants": {
+    "energize": {
+      "false": {
+        "textures": {
+          "layer0": "darkness:items/rune_corrupt_deenergized"
+        }
+      },
+      "true": {
+        "textures": {
+          "layer0": "darkness:items/rune_corrupt_energized"
+        }
+      }
+    }
+  }
+}

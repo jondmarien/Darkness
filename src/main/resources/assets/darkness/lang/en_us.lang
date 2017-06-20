@@ -2,7 +2,6 @@
 itemGroup.darkness.general=Darkness
 
 # Blocks
-tile.darkness.block_rune_null.name=Null Rune
 tile.darkness.block_darkened_web.name=Darkened Web
 tile.darkness.block_darkened_wool.name=Darkened Wool
 

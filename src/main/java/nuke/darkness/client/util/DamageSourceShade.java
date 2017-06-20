@@ -4,9 +4,9 @@ import net.minecraft.entity.*;
 import net.minecraft.util.*;
 import net.minecraft.util.text.*;
 
-public class DamageShade extends DamageSource {
+public class DamageSourceShade extends DamageSource {
 
-	public DamageShade() {
+	public DamageSourceShade() {
 		super("shade");
 		setMagicDamage();
 		setDifficultyScaled();

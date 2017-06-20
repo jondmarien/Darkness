@@ -1,7 +1,6 @@
 package nuke.darkness.common;
 
 import java.util.*;
-import java.util.logging.*;
 
 import net.minecraft.block.*;
 import net.minecraft.block.material.*;
@@ -13,6 +12,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.text.*;
 import net.minecraftforge.common.util.*;
 import net.minecraftforge.fml.common.registry.*;
+import nuke.darkness.api.items.*;
 import nuke.darkness.client.util.*;
 import nuke.darkness.common.blocks.*;
 import nuke.darkness.common.items.*;
@@ -24,6 +24,7 @@ import nuke.darkness.core.*;
 public class Content {
 	public static ArrayList<Block> blocks = new ArrayList<Block>();
 	public static ArrayList<Item> items = new ArrayList<Item>();
+	//public static ArrayList<ItemRune> runes = new ArrayList<ItemRune>();
 	public static ArrayList<ItemArmor> armor = new ArrayList<ItemArmor>();
 
 	public static WorldGenOres world_gen_ores;
@@ -34,7 +35,7 @@ public class Content {
 
 	public static DamageSource damage_shade;
 
-	public static Block block_rune_null, block_molten_dark_runic, block_darkened_web, block_darkened_wool;
+	public static Block block_darkened_web, block_darkened_wool;
 
 	public static Item slate_blank, rune_corrupt;
 
@@ -46,7 +47,7 @@ public class Content {
 
 	public static void init() {
 		// Shade (Darkness) Damage
-		damage_shade = new DamageShade();
+		damage_shade = new DamageSourceShade();
 
 		// Tool Materials
 		tool_mat_darkrunic = EnumHelper.addToolMaterial(Darkness.prependModID("darkrunic"), 4, 290, 6.3f, 2.1f, 20);
@@ -54,7 +55,6 @@ public class Content {
 		tool_rarity_darkrunic = EnumHelper.addRarity("rare", TextFormatting.DARK_PURPLE, "Rare");
 
 		// Blocks
-		blocks.add(block_rune_null = new BlockRune(Material.ROCK, "block_rune_null", "pickaxe", 1, 1.0F, 11.0F, SoundType.STONE, true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16));
 		blocks.add(block_darkened_web = new BlockDarkenedWeb(Material.WEB, "block_darkened_web", "sword", 1, 1.0F, 1.0F, SoundType.CLOTH, true).setIsFullCube(false).setIsOpaqueCube(false).setLightOpacity(0));
 		blocks.add(block_darkened_wool = new BlockDarkenedWool(Material.CLOTH, "block_darkened_wool", "sword", 1, 1.0F, 1.0F, SoundType.CLOTH, true).setIsFullCube(true).setIsOpaqueCube(true).setLightOpacity(16));
 

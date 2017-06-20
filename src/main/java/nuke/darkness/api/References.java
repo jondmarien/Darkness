@@ -1,4 +1,4 @@
-package nuke.darkness.client.util;
+package nuke.darkness.api;
 
 import java.util.*;
 
@@ -7,7 +7,6 @@ import org.apache.logging.log4j.*;
 import lombok.*;
 import net.minecraft.block.*;
 import net.minecraft.item.*;
-import nuke.darkness.api.*;
 
 public class References {
 
@@ -17,6 +16,7 @@ public class References {
 	public static final String NAME = "Darkness";
 	public static final String VERSION = MCVERSION + "-" + "0.0.1";
 	public static final String APIVERSION = MCVERSION + "-" + "1.0.0";
+	//public static final String DEPENDENCIES = "required-after:guideapi;";
 	public static final String DEPENDENCIES = "";
 	public static final String ACCEPTEDMCVERSIONS = "[1.11.2]";
 
@@ -24,7 +24,7 @@ public class References {
 	public static final String SERVER_PROXY_CLASS = "nuke.darkness.core.ServerProxy";
 
 	public static final Random RANDOM = new Random();
-	public static final Logger LOGGER = LogManager.getLogger(NAME);
+	public static final Logger logger = LogManager.getLogger(NAME);
 
 	public enum DarknessItem {
 		BLACK_HOLE("ItemBlackHole"), 
