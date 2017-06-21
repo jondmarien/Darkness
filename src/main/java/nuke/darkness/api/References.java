@@ -4,7 +4,6 @@ import java.util.*;
 
 import org.apache.logging.log4j.*;
 
-import lombok.*;
 import net.minecraft.block.*;
 import net.minecraft.item.*;
 
@@ -43,9 +42,12 @@ public class References {
 		SCROLL_BAG("ItemScrollBag"),
 		SLATE_BLANK("ItemSlateBlank");
 
-		@Getter
 		private final String regName;
 
+		public String getRegName() {
+			return regName;
+		}
+		
 		DarknessItem(String regName) {
 			this.regName = regName;
 		}
@@ -59,9 +61,12 @@ public class References {
 		DARKENED_WEB("BlockDarkenedWeb"),
 		DARKENED_WOOL("BlockDarkenedWool");
 
-		@Getter
 		private final String regName;
 
+		public String getRegName() {
+			return regName;
+		}
+		
 		DarknessBlock(String regName) {
 			this.regName = regName;
 		}

@@ -2,7 +2,6 @@ package nuke.darkness.api;
 
 import org.apache.logging.log4j.*;
 
-import lombok.*;
 import net.minecraft.block.*;
 import net.minecraft.item.*;
 import net.minecraft.util.*;
@@ -16,10 +15,8 @@ import nuke.darkness.client.util.*;
  */
 public class DarknessAPI {
 
-	@Getter
 	private static Logger logger = LogManager.getLogger("Darkness.API");
 
-	@Getter
 	private static DamageSource dmgSource = new DamageSourceShade();
 
 	/**
