@@ -12,9 +12,10 @@ import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
 import net.minecraftforge.fml.relauncher.*;
 import nuke.darkness.client.util.*;
+import nuke.darkness.common.*;
 import nuke.darkness.core.*;
 
-public class BlockBase extends Block implements IModeledBlock {
+public class BlockBase extends Block implements IModeledObject {
 
 	public boolean isOpaqueCube = true, isFullCube = true, isBeaconBase = false;
 	public BlockRenderLayer brlayer = BlockRenderLayer.SOLID;

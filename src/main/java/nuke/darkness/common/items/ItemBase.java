@@ -8,9 +8,10 @@ import net.minecraft.world.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
 import nuke.darkness.client.util.*;
+import nuke.darkness.common.*;
 import nuke.darkness.core.*;
 
-public class ItemBase extends Item implements IModeledItem {
+public class ItemBase extends Item implements IModeledObject {
 
 	/**
 	 * Basic Item

@@ -5,9 +5,10 @@ import net.minecraft.item.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
 import nuke.darkness.client.util.*;
+import nuke.darkness.common.*;
 import nuke.darkness.core.*;
 
-public class ItemShovelBase extends ItemSpade implements IModeledItem {
+public class ItemShovelBase extends ItemSpade implements IModeledObject {
 
 	public ItemShovelBase(ToolMaterial tmat, String name, boolean addToTab) {
 		super(tmat);

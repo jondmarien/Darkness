@@ -3,11 +3,13 @@ package nuke.darkness.common.tileentity;
 import net.minecraft.block.*;
 import net.minecraft.block.material.*;
 import net.minecraft.block.state.*;
+import net.minecraft.client.renderer.block.model.*;
 import net.minecraft.entity.player.*;
 import net.minecraft.tileentity.*;
 import net.minecraft.util.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.*;
+import net.minecraftforge.client.model.*;
 import nuke.darkness.common.blocks.*;
 
 public class BlockTEBase extends BlockBase implements ITileEntityProvider {

@@ -2,11 +2,13 @@ package nuke.darkness.common.items;
 
 import java.util.*;
 
+import net.minecraft.client.renderer.block.model.*;
 import net.minecraft.entity.player.*;
 import net.minecraft.item.*;
 import net.minecraft.util.*;
 import net.minecraft.util.text.*;
 import net.minecraft.world.*;
+import net.minecraftforge.client.model.*;
 import nuke.darkness.client.util.*;
 import nuke.darkness.core.*;
 

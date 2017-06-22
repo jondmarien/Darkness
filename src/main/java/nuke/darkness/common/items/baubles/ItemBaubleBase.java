@@ -2,10 +2,12 @@ package nuke.darkness.common.items.baubles;
 
 import baubles.api.*;
 import baubles.api.cap.*;
+import net.minecraft.client.renderer.block.model.*;
 import net.minecraft.entity.player.*;
 import net.minecraft.item.*;
 import net.minecraft.util.*;
 import net.minecraft.world.*;
+import net.minecraftforge.client.model.*;
 import net.minecraftforge.items.*;
 import nuke.darkness.common.items.*;
 

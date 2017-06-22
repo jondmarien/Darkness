@@ -6,10 +6,10 @@ import net.minecraft.item.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
 import nuke.darkness.client.util.*;
-import nuke.darkness.common.items.*;
+import nuke.darkness.common.*;
 import nuke.darkness.core.*;
 
-public class ItemArmorBase extends ItemArmor implements IModeledItem {
+public class ItemArmorBase extends ItemArmor implements IModeledObject {
 
 	public ItemArmorBase(String name, boolean addToTab, ArmorMaterial mat, int index, EntityEquipmentSlot slot) {
 		super(mat, index, slot);

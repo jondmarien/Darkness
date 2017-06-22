@@ -5,9 +5,10 @@ import net.minecraft.item.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
 import nuke.darkness.client.util.*;
+import nuke.darkness.common.*;
 import nuke.darkness.core.*;
 
-public class ItemHoeBase extends ItemHoe implements IModeledItem {
+public class ItemHoeBase extends ItemHoe implements IModeledObject {
 
 	public ItemHoeBase(ToolMaterial tmat, String name, boolean addToTab) {
 		super(tmat);

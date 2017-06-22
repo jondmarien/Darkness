@@ -24,8 +24,7 @@ import nuke.darkness.core.*;
 public class Content {
 	public static ArrayList<Block> blocks = new ArrayList<Block>();
 	public static ArrayList<Item> items = new ArrayList<Item>();
-	//public static ArrayList<ItemRune> runes = new ArrayList<ItemRune>();
-	public static ArrayList<ItemArmor> armor = new ArrayList<ItemArmor>();
+	// public static ArrayList<ItemRune> runes = new ArrayList<ItemRune>();
 
 	public static WorldGenOres world_gen_ores;
 
@@ -82,9 +81,9 @@ public class Content {
 		items.add(rune_corrupt = new ItemRuneCorrupt());
 
 		// Armor
-		armor.add(darkrunic_hood = new ItemDarkRunicHood());
-		armor.add(darkrunic_torso = new ItemDarkRunicTorso());
-		armor.add(darkrunic_legs = new ItemDarkRunicLegs());
+		items.add(darkrunic_hood = new ItemDarkRunicHood());
+		items.add(darkrunic_torso = new ItemDarkRunicTorso());
+		items.add(darkrunic_legs = new ItemDarkRunicLegs());
 
 		// Repair Materials
 		tool_mat_darkrunic.setRepairItem(new ItemStack(ingot_darkrunic));
@@ -95,21 +94,16 @@ public class Content {
 	}
 
 	public static void registerRenderer() {
-		for (int i = 0; i < blocks.size(); i++) {
-			if (blocks.get(i) instanceof IModeledBlock) {
-				((IModeledBlock) blocks.get(i)).initModel();
+
+		for (Item i : items) {
+			if (i instanceof IModeledObject) {
+				((IModeledObject) i).initModel();
 			}
 		}
 
-		for (int i = 0; i < items.size(); i++) {
-			if (items.get(i) instanceof IModeledItem) {
-				((IModeledItem) items.get(i)).initModel();
-			}
-		}
-
-		for (int i = 0; i < armor.size(); i++) {
-			if (armor.get(i) instanceof IModeledItem) {
-				((IModeledItem) armor.get(i)).initModel();
+		for (Block b : blocks) {
+			if (b instanceof IModeledObject) {
+				((IModeledObject) b).initModel();
 			}
 		}
 	}

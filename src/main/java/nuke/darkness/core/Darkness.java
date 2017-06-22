@@ -3,7 +3,6 @@ package nuke.darkness.core;
 import net.minecraft.creativetab.*;
 import net.minecraft.item.*;
 import net.minecraftforge.common.*;
-import net.minecraftforge.fluids.*;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.Mod.*;
 import net.minecraftforge.fml.common.event.*;
@@ -53,10 +52,6 @@ public class Darkness {
 			return new ItemStack(Content.compendium);
 		}
 	};
-
-	static {
-		FluidRegistry.enableUniversalBucket();
-	}
 
 	public static String prependModID(String name) {
 		return References.MODID + ":" + name;

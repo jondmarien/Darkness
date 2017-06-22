@@ -2,6 +2,7 @@ package nuke.darkness.common.items;
 
 import java.util.*;
 
+import net.minecraft.client.renderer.block.model.*;
 import net.minecraft.creativetab.*;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.*;
@@ -9,6 +10,7 @@ import net.minecraft.item.*;
 import net.minecraft.nbt.*;
 import net.minecraft.util.*;
 import net.minecraft.world.*;
+import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.relauncher.*;
 import nuke.darkness.client.util.*;
 import nuke.darkness.common.shade.*;

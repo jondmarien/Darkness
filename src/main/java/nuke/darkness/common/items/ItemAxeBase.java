@@ -11,9 +11,10 @@ import net.minecraft.item.*;
 import net.minecraftforge.client.model.*;
 import net.minecraftforge.fml.common.registry.*;
 import nuke.darkness.client.util.*;
+import nuke.darkness.common.*;
 import nuke.darkness.core.*;
 
-public class ItemAxeBase extends ItemTool implements IModeledItem {
+public class ItemAxeBase extends ItemTool implements IModeledObject {
 
 	public ItemAxeBase(ToolMaterial tmat, String name, boolean addToTab) {
 		super(tmat, Sets.newHashSet(new Block[] { Blocks.PLANKS }));
