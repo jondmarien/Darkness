@@ -49,7 +49,7 @@ public class Darkness {
 		@Override
 		@SideOnly(Side.CLIENT)
 		public ItemStack getTabIconItem() {
-			return new ItemStack(Content.compendium);
+			return new ItemStack(Content.scroll);
 		}
 	};
 
