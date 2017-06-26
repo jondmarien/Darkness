@@ -2,33 +2,51 @@
 itemGroup.darkness.general=Darkness
 
 # Blocks
-tile.darkness.block_darkened_web.name=Darkened Web
-tile.darkness.block_darkened_wool.name=Darkened Wool
+tile.darkened_web.name=Darkened Web
+tile.darkened_wool.name=Darkened Wool
 
 # Items
-item.darkness.compendium.name=The Dark Compendium
-item.darkness.guidebook.name=The Dark Compendium
-item.darkness.scroll_bag.name=Scroll Bag
-item.darkness.scroll.name=Scroll
-item.darkness.black_hole.name=Black Hole
+item.compendium.name=The Dark Compendium
+item.guidebook.name=The Dark Compendium (Guidebook ver.)
+item.scroll_bag.name=Scroll Bag
+item.scroll.name=Scroll
+item.black_hole.name=Black Hole
 
-item.darkness.book_binding.name=Book Binding
-item.darkness.darkened_string.name=Darkened String
+item.book_binding.name=Book Binding
+item.darkened_string.name=Darkened String
 
-item.darkness.droplet_darkrunic.name=Dark Runic Droplet
-item.darkness.ingot_darkrunic.name=Dark Runic Ingot
-item.darkness.sword_darkrunic.name=Dark Runic Sword
-item.darkness.shovel_darkrunic.name=Dark Runic Shovel
-item.darkness.pickaxe_darkrunic.name=Dark Runic Pickaxe
-item.darkness.axe_darkrunic.name=Dark Runic Axe
-item.darkness.hoe_darkrunic.name=Dark Runic Hoe
+item.darkrunic_axe.name=Dark Runic Axe
+item.darkrunic_droplet.name=Dark Runic Droplet
+item.darkrunic_hoe.name=Dark Runic Hoe
+item.darkrunic_ingot.name=Dark Runic Ingot
+item.darkrunic_pickaxe.name=Dark Runic Pickaxe
+item.darkrunic_sword.name=Dark Runic Sword
+item.darkrunic_shovel.name=Dark Runic Shovel
 
-item.darkness.slate_blank.name=Blank Slate
+item.slate_blank.name=Blank Slate
 
 # Runes
-item.darkness.rune.corrupt.name=Corrupt Rune
+item.rune.corrupt.name=Corrupt Rune
 
-# Robes
-item.darkness.robes.darkrunic_hood.name=Dark Runic Hood
-item.darkness.robes.darkrunic_torso.name=Dark Runic Torso
-item.darkness.robes.darkrunic_legs.name=Dark Runic Legs
+# Robes (Armour)
+item.robes.darkrunic_hood.name=Dark Runic Hood
+item.robes.darkrunic_torso.name=Dark Runic Torso
+item.robes.darkrunic_legs.name=Dark Runic Legs
+
+# Keybinds
+key.catgeory.darkness:general=Darkness
+
+# Tooltips
+tooltip.darkness:scroll.used=Scroll lore absorbed into compendium (not really, WIP)
+tooltip.darkness:compendium=Open to reveal the secrets of the darkness. (not really, WIP)
+tooltip.darkness:compendium_advanced=Testing Advanced Tooltips (not really, WIP)
+tooltip.darkness:blackhole=Hold C to absorb shade. (WIP)
+tooltip.darkness.energized=Energized
+tooltip.darkness.de-energized=De-Energized
+
+tooltip.darkness:darkrunic_hood=Hood
+tooltip.darkness:darkrunic_torso=Torso
+tooltip.darkness:darkrunic_legs=Legs
+
+#Config
+darkness.config.title=Darkness Config

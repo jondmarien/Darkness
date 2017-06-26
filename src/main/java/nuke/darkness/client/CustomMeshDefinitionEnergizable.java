@@ -4,8 +4,8 @@ import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.block.model.*;
 import net.minecraft.item.*;
 import net.minecraft.util.*;
-import nuke.darkness.api.*;
-import nuke.darkness.api.ifaces.*;
+import nuke.darkness.client.util.*;
+import nuke.darkness.common.item.iface.*;
 
 public class CustomMeshDefinitionEnergizable implements ItemMeshDefinition {
 	private final String name;
@@ -17,9 +17,9 @@ public class CustomMeshDefinitionEnergizable implements ItemMeshDefinition {
 	@Override
 	public ModelResourceLocation getModelLocation(ItemStack stack) {
 		if (stack != null && stack.getItem() instanceof IEnergizable) {
-			if (((IEnergizable) stack.getItem()).getEnergized(stack)) { return new ModelResourceLocation(new ResourceLocation(References.MODID, "item/" + name), "energize=true"); }
+			if (((IEnergizable) stack.getItem()).getEnergized(stack)) { return new ModelResourceLocation(new ResourceLocation(Vars.MODID, "item/" + name), "energize=true"); }
 		}
-		
-		return new ModelResourceLocation(new ResourceLocation(References.MODID, "item/" + name), "energize=false");
+
+		return new ModelResourceLocation(new ResourceLocation(Vars.MODID, "item/" + name), "energize=false");
 	}
 }

@@ -9,14 +9,14 @@ public class DefaultShadeCapability implements IShadeCapability {
 
 	@Override
 	public void writeToNBT(NBTTagCompound tag) {
-		tag.setDouble(Darkness.prependModID("shade"), shade);
-		tag.setDouble(Darkness.prependModIDCapacity("shade"), capacity);
+		tag.setDouble(Darkness.resourcePrefix("shade"), shade);
+		tag.setDouble(Darkness.resourcePrefixWithCapacity("shade"), capacity);
 	}
 
 	@Override
 	public void readFromNBT(NBTTagCompound tag) {
-		if (tag.hasKey(Darkness.prependModID("shade"))) shade = tag.getDouble(Darkness.prependModID("shade"));
-		if (tag.hasKey(Darkness.prependModIDCapacity("shade"))) capacity = tag.getDouble(Darkness.prependModID("shade"));
+		if (tag.hasKey(Darkness.resourcePrefix("shade"))) shade = tag.getDouble(Darkness.resourcePrefix("shade"));
+		if (tag.hasKey(Darkness.resourcePrefixWithCapacity("shade"))) capacity = tag.getDouble(Darkness.resourcePrefix("shade"));
 	}
 
 	@Override

@@ -1,63 +1,79 @@
 package nuke.darkness.core;
 
+import java.util.*;
+
 import net.minecraft.creativetab.*;
 import net.minecraft.item.*;
-import net.minecraftforge.common.*;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.Mod.*;
 import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.network.*;
+import net.minecraftforge.fml.common.network.simpleimpl.*;
 import net.minecraftforge.fml.relauncher.*;
+import nuke.darkness.client.gui.*;
 import nuke.darkness.client.util.*;
 import nuke.darkness.common.*;
+import nuke.darkness.common.reg.*;
 
-@Mod(modid = References.MODID, name = References.NAME, version = References.VERSION, acceptedMinecraftVersions = References.ACCEPTEDMCVERSIONS)
+@Mod(modid = Vars.MODID, name = Vars.NAME, version = Vars.VERSION, acceptedMinecraftVersions = Vars.ACCEPTEDMCVERSIONS)
 
 @Mod.EventBusSubscriber
 public class Darkness {
 
-	@Instance(References.MODID)
+	@Instance(Vars.MODID)
 	public static Darkness instance;
 
-	@SidedProxy(clientSide = References.CLIENT_PROXY_CLASS)
-	public static CommonProxy proxy;
+	public static SimpleNetworkWrapper network;
+
+	public static DarknessTab darknessTab = new DarknessTab();
+
+	@SidedProxy(clientSide = Vars.CLIENT_PROXY_CLASS)
+	public static IProxy proxy;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
-		MinecraftForge.EVENT_BUS.register(new Config());
-		Config.initConfig(e.getSuggestedConfigurationFile());
-		References.LOGGER.info("Config is loaded!");
-		Darkness.proxy.preInit(e);
+		Logger.setLogger(e.getModLog());
+		FMLLog.bigWarning("Random UUID: {}", UUID.randomUUID().toString());
+
+		// regMapGen
+		// regEntities
+		// regLootTables
+
+		proxy.preInit();
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
-		Darkness.proxy.init(e);
+		// regRecipes
+		// removeRecipes
+		// regWorldGens
+		// addEntitySpawns
+
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+
+		proxy.init();
 	}
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent e) {
-		References.LOGGER.info("Darkness has loaded!");
-		Darkness.proxy.postInit(e);
+		proxy.postInit();
 	}
 
-	public static CreativeTabs darknessTab = new CreativeTabs("darkness.general") {
-		@Override
-		public String getTabLabel() {
-			return "darkness.general";
-		}
-
-		@Override
-		@SideOnly(Side.CLIENT)
-		public ItemStack getTabIconItem() {
-			return new ItemStack(Content.scroll);
-		}
-	};
-
-	public static String prependModID(String name) {
-		return References.MODID + ":" + name;
+	@EventHandler
+	public void serverStarting(FMLServerStartingEvent event) {
+		// regCommands
 	}
 
-	public static String prependModIDCapacity(String name) {
-		return References.MODID + ":" + name + "Capacity";
+	@EventHandler
+	public void serverStopped(FMLServerStoppedEvent event) {
+		// ...
+	}
+
+	public static String resourcePrefix(String name) {
+		return Vars.MODID + ":" + name;
+	}
+
+	public static String resourcePrefixWithCapacity(String name) {
+		return Vars.MODID + ":" + name + "Capacity";
 	}
 }

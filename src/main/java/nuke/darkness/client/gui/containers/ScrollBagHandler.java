@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.function.*;
 
 import net.minecraft.item.*;
-import nuke.darkness.common.items.*;
+import nuke.darkness.common.item.*;
 
 public class ScrollBagHandler {
 	private static final List<Predicate<ItemStack>> scrolls = new ArrayList<>();

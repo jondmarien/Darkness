@@ -6,29 +6,37 @@ import net.minecraft.item.*;
 import net.minecraftforge.fml.common.registry.*;
 import net.minecraftforge.oredict.*;
 import nuke.darkness.common.*;
+import nuke.darkness.common.reg.*;
 
 public class Recipes {
 
 	public static void oreDict() {
-		OreDictionary.registerOre("nuggetDarkRunic", Content.droplet_darkrunic);
-		OreDictionary.registerOre("ingotDarkRunic", Content.ingot_darkrunic);
-		OreDictionary.registerOre("woolDarkened", Content.block_darkened_wool);
+		//OreDictionary.registerOre("nuggetDarkRunic", DItems.DARKRUNIC_DROPLET);
+		//OreDictionary.registerOre("ingotDarkRunic", DItems.DARKRUNIC_INGOT);
+		//OreDictionary.registerOre("woolDarkened", DBlocks.DARKENED_WOOL);
 	}
 
 	public static void init() {
 		oreDict();
 
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Content.book_binding), true, new Object[] { "Ss ", "Ss ", "Ss ", 'S', Items.STICK, 's', Items.STRING }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Content.compendium), true, new Object[] { "Bb ", "Bb ", "Bb ", 'B', Content.book_binding, 'b', Items.WRITABLE_BOOK }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Content.scroll_bag), true, new Object[] { "   ", "LSL", " L ", 'L', Items.LEATHER, 'S', Items.STRING }));
-//
-//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Content.darkened_string, 9), new Object[] { Content.block_darkened_wool }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new
+		// ItemStack(Content.book_binding), true, new Object[] { "Ss ", "Ss ", "Ss ",
+		// 'S', Items.STICK, 's', Items.STRING }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Content.compendium),
+		// true, new Object[] { "Bb ", "Bb ", "Bb ", 'B', Content.book_binding, 'b',
+		// Items.WRITABLE_BOOK }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Content.scroll_bag),
+		// true, new Object[] { " ", "LSL", " L ", 'L', Items.LEATHER, 'S', Items.STRING
+		// }));
+		//
+		// GameRegistry.addRecipe(new ShapelessOreRecipe(new
+		// ItemStack(Content.darkened_string, 9), new Object[] {
+		// Content.block_darkened_wool }));
 
 		/*
 		 * Material Sets
 		 */
-		Recipes.regMatSet("ingotDarkRunic", "nuggetDarkRunic", Content.ingot_darkrunic, Content.droplet_darkrunic, Content.pickaxe_darkrunic, Content.axe_darkrunic, Content.sword_darkrunic,
-				Content.shovel_darkrunic, Content.hoe_darkrunic);
+		//Recipes.regMatSet("ingotDarkRunic", "nuggetDarkRunic", Content.ingot_darkrunic, Content.droplet_darkrunic, Content.pickaxe_darkrunic, Content.axe_darkrunic, Content.sword_darkrunic, Content.shovel_darkrunic, Content.hoe_darkrunic);
 	}
 
 	/**
@@ -47,21 +55,32 @@ public class Recipes {
 	 * @param hoe the hoe it will become
 	 */
 	public static void regMatSet(String ingotKey, String dropletKey, String blockKey, Item ingot, Item droplet, Block block, Item pickaxe, Item axe, Item sword, Item shovel, Item hoe) {
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ingot), true, new Object[] { "XXX", "XXX", "XXX", 'X', droplet }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(block), true, new Object[] { "XXX", "XXX", "XXX", 'X', ingot }));
-//
-//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(droplet, 9), new Object[] { ingot }));
-//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ingot, 9), new Object[] { block }));
-//
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(pickaxe, 1), true, new Object[] { "XXX", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe, 1), true, new Object[] { " XX", " SX", " S ", 'X', ingotKey, 'S', "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe, 1), true, new Object[] { "XX ", "XS ", " S ", 'X', ingotKey, 'S', "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(sword, 1), true, new Object[] { " X ", " X ", " S ", 'X', ingotKey, 'S', "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shovel, 1), true, new Object[] { " X ", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe, 1), true, new Object[] { " XX", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe, 1), true, new Object[] { "XX ", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ingot), true, new
+		// Object[] { "XXX", "XXX", "XXX", 'X', droplet }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(block), true, new
+		// Object[] { "XXX", "XXX", "XXX", 'X', ingot }));
+		//
+		// GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(droplet, 9), new
+		// Object[] { ingot }));
+		// GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ingot, 9), new
+		// Object[] { block }));
+		//
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(pickaxe, 1), true,
+		// new Object[] { "XXX", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe, 1), true, new
+		// Object[] { " XX", " SX", " S ", 'X', ingotKey, 'S', "stickWood" }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe, 1), true, new
+		// Object[] { "XX ", "XS ", " S ", 'X', ingotKey, 'S', "stickWood" }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(sword, 1), true, new
+		// Object[] { " X ", " X ", " S ", 'X', ingotKey, 'S', "stickWood" }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shovel, 1), true,
+		// new Object[] { " X ", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe, 1), true, new
+		// Object[] { " XX", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe, 1), true, new
+		// Object[] { "XX ", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
 	}
-	
+
 	/**
 	 * Same but without block
 	 * @param ingotKey ingot value
@@ -75,16 +94,25 @@ public class Recipes {
 	 * @param hoe the hoe it will become
 	 */
 	public static void regMatSet(String ingotKey, String dropletKey, Item ingot, Item droplet, Item pickaxe, Item axe, Item sword, Item shovel, Item hoe) {
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ingot), true, new Object[] { "XXX", "XXX", "XXX", 'X', droplet }));
-//
-//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(droplet, 9), new Object[] { ingot }));
-//
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(pickaxe, 1), true, new Object[] { "XXX", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe, 1), true, new Object[] { " XX", " SX", " S ", 'X', ingotKey, 'S', "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe, 1), true, new Object[] { "XX ", "XS ", " S ", 'X', ingotKey, 'S', "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(sword, 1), true, new Object[] { " X ", " X ", " S ", 'X', ingotKey, 'S', "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shovel, 1), true, new Object[] { " X ", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe, 1), true, new Object[] { " XX", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe, 1), true, new Object[] { "XX ", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ingot), true, new
+		// Object[] { "XXX", "XXX", "XXX", 'X', droplet }));
+		//
+		// GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(droplet, 9), new
+		// Object[] { ingot }));
+		//
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(pickaxe, 1), true,
+		// new Object[] { "XXX", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe, 1), true, new
+		// Object[] { " XX", " SX", " S ", 'X', ingotKey, 'S', "stickWood" }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe, 1), true, new
+		// Object[] { "XX ", "XS ", " S ", 'X', ingotKey, 'S', "stickWood" }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(sword, 1), true, new
+		// Object[] { " X ", " X ", " S ", 'X', ingotKey, 'S', "stickWood" }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shovel, 1), true,
+		// new Object[] { " X ", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe, 1), true, new
+		// Object[] { " XX", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
+		// GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe, 1), true, new
+		// Object[] { "XX ", " S ", " S ", 'X', ingotKey, 'S', "stickWood" }));
 	}
 }

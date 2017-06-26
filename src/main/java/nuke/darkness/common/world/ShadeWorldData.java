@@ -17,7 +17,7 @@ public class ShadeWorldData extends WorldSavedData {
 	 * Needed for a constructor I can use to return with no parameters
 	 */
 	public ShadeWorldData() {
-		super(References.MODID);
+		super(Vars.MODID);
 	}
 
 	@Override
@@ -34,8 +34,8 @@ public class ShadeWorldData extends WorldSavedData {
 		ShadeWorldData swd = null;
 
 		if (world != null) {
-			if ((ShadeWorldData) world.loadData(ShadeWorldData.class, References.MODID) != null) {
-				swd = (ShadeWorldData) world.loadData(ShadeWorldData.class, References.MODID);
+			if ((ShadeWorldData) world.loadData(ShadeWorldData.class, Vars.MODID) != null) {
+				swd = (ShadeWorldData) world.loadData(ShadeWorldData.class, Vars.MODID);
 			}
 		}
 

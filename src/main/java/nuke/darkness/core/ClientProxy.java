@@ -1,26 +1,48 @@
 package nuke.darkness.core;
 
-import net.minecraftforge.fml.common.event.*;
-import nuke.darkness.client.util.*;
-import nuke.darkness.common.*;
+import javax.annotation.*;
 
-public class ClientProxy extends CommonProxy {
+import net.minecraft.client.*;
+import net.minecraft.client.settings.*;
+import net.minecraft.entity.player.*;
+import net.minecraft.world.*;
+import nuke.darkness.common.reg.*;
+
+public class ClientProxy implements IProxy {
+
+	private final Minecraft MC = Minecraft.getMinecraft();
 
 	@Override
-	public void preInit(FMLPreInitializationEvent e) {
-		super.preInit(e);
-		KeybindHandler.init();
-		Content.registerRenderer();
+	public void preInit() {
+		// regRenderers
+		// regClientCommands
+		DKeybinds.registerKeyBindings();
 	}
 
 	@Override
-	public void init(FMLInitializationEvent e) {
-		super.init(e);
+	public void init() {
+		// regColourHandlers
+	}
+
+	@Override
+	public void postInit() {
 
 	}
 
 	@Override
-	public void postInit(FMLPostInitializationEvent e) {
-		super.postInit(e);
+	public void doClientRightClick() {
+		KeyBinding.onTick(MC.gameSettings.keyBindUseItem.getKeyCode());
+	}
+
+	@Nullable
+	@Override
+	public EntityPlayer getClientPlayer() {
+		return MC.player;
+	}
+
+	@Nullable
+	@Override
+	public World getClientWorld() {
+		return MC.world;
 	}
 }

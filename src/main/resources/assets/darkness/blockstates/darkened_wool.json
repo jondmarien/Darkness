@@ -1,0 +1,16 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "transform": "forge:default-block"
+    },
+    "variants": {
+        "has_ender_pearl": {
+            "true": {
+                "model": "glass_white"
+            },
+            "false": {
+                "model": "darkness:darkened_wool"
+            }
+        }
+    }
+}

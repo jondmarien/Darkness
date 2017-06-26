@@ -3,7 +3,7 @@ package nuke.darkness.client.util;
 import net.minecraft.entity.player.*;
 import net.minecraft.item.*;
 import net.minecraft.util.*;
-import nuke.darkness.common.items.*;
+import nuke.darkness.common.item.*;
 
 public class ShadeInventoryUtil {
 	public static double getShadeCapacityTotal(EntityPlayer player) {
