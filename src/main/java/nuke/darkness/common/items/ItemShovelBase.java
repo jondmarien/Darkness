@@ -15,7 +15,7 @@ public class ItemShovelBase extends ItemSpade implements IModeledObject {
 		setUnlocalizedName(References.MODID + "." + name);
 		setRegistryName(Darkness.prependModID(name));
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
-		GameRegistry.register(this);
+		//GameRegistry.register(this);
 	}
 
 	public ItemShovelBase(ToolMaterial tmat, EnumRarity rarity, String name, boolean addToTab) {
@@ -23,7 +23,7 @@ public class ItemShovelBase extends ItemSpade implements IModeledObject {
 		setUnlocalizedName(References.MODID + "." + name);
 		setRegistryName(Darkness.prependModID(name));
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
-		GameRegistry.register(this);
+		//GameRegistry.register(this);
 	}
 
 	@Override

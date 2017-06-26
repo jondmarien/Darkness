@@ -27,7 +27,7 @@ public class MiscUtils {
 	public static ItemStack getRepairItem(ItemStack stack) {
 		// for Axes
 		if (stack.getItem() instanceof ItemTool) {
-			ItemStack is = ((ItemTool) stack.getItem()).getToolMaterial().getRepairItemStack();
+			ItemStack is = ToolMaterial.valueOf(((ItemTool) stack.getItem()).getToolMaterialName()).getRepairItemStack();
 			if (is.getItemDamage() == OreDictionary.WILDCARD_VALUE) {
 				is.setItemDamage(0);
 			}

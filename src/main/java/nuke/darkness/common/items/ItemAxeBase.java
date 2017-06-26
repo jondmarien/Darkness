@@ -24,7 +24,7 @@ public class ItemAxeBase extends ItemTool implements IModeledObject {
 		setHarvestLevel("axe", this.toolMaterial.getHarvestLevel());
 		this.damageVsEntity = this.toolMaterial.getDamageVsEntity() + 4.0f;
 		this.attackSpeed = -2.7f;
-		GameRegistry.register(this);
+		//GameRegistry.register(this);
 	}
 
 	public ItemAxeBase(ToolMaterial tmat, EnumRarity rarity, String name, boolean addToTab) {
@@ -35,7 +35,7 @@ public class ItemAxeBase extends ItemTool implements IModeledObject {
 		setHarvestLevel("axe", this.toolMaterial.getHarvestLevel());
 		this.damageVsEntity = this.toolMaterial.getDamageVsEntity() + 4.0f;
 		this.attackSpeed = -2.7f;
-		GameRegistry.register(this);
+		//GameRegistry.register(this);
 	}
 
 	@Override

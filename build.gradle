@@ -1,4 +1,4 @@
-buildscript {
+ buildscript {
     repositories {
         jcenter()
         
@@ -9,7 +9,7 @@ buildscript {
     }
     
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
 
@@ -29,6 +29,7 @@ compileJava {
 minecraft {
     version = "${mc_version}-${forge_version}"
     runDir = "run"
+    
     if (project.hasProperty('mappings_version'))
         mappings = project.mappings_version
 }
@@ -52,11 +53,9 @@ dependencies {
     deobfProvided "mezz.jei:jei_${mc_version}:${jei_version}:api"
     runtime "mezz.jei:jei_${mc_version}:${jei_version}"
     
-    deobfProvided "mcp.mobius.waila:Hwyla:${hwyla_version}_1.11"
+    deobfProvided "mcp.mobius.waila:Hwyla:${hwyla_version}_${mc_version}"
     
-    compile 'com.github.Azanor:Baubles:master-SNAPSHOT'
-    
-    compile files('libs/')
+    deobfCompile "com.github.mrAppleXZ:Baubles:${baubles_version}"
 }
 
 processResources {
@@ -72,4 +71,22 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.compilerArgs.add('-Xlint:unchecked')
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    from javadoc.destinationDir
+    classifier = 'javadoc'
+}
+
+artifacts {
+    archives javadocJar
 }

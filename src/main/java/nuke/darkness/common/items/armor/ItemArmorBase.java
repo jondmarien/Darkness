@@ -16,7 +16,7 @@ public class ItemArmorBase extends ItemArmor implements IModeledObject {
 		setUnlocalizedName(References.MODID + ".robes." + name);
 		this.setRegistryName(Darkness.prependModID(name));
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
-		GameRegistry.register(this);
+		//GameRegistry.register(this);
 	}
 
 	@Override

@@ -6,12 +6,11 @@ import javax.annotation.*;
 
 import org.apache.commons.lang3.text.*;
 
-import com.google.common.base.*;
-
 import net.minecraft.client.renderer.*;
-import net.minecraft.entity.player.*;
+import net.minecraft.client.util.*;
 import net.minecraft.item.*;
 import net.minecraft.util.*;
+import net.minecraft.world.*;
 import net.minecraftforge.fml.common.registry.*;
 import net.minecraftforge.fml.relauncher.*;
 import nuke.darkness.api.items.*;
@@ -30,7 +29,7 @@ public class ItemRuneSwitchableBase extends ItemRuneSwitchable implements IMeshH
 		setUnlocalizedName(References.MODID + ".rune." + name);
 		setRegistryName(Darkness.prependModID(name));
 		if(addToTab) setCreativeTab(Darkness.darknessTab);
-		GameRegistry.register(this);
+		//GameRegistry.register(this);
 
 		this.name = name;
 		this.tooltip = "tooltip.darkness.rune." + name + ".";
@@ -38,7 +37,7 @@ public class ItemRuneSwitchableBase extends ItemRuneSwitchable implements IMeshH
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack stack, EntityPlayer player, List<String> tooltip, boolean advanced) {
+	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 		super.addInformation(stack, player, tooltip, advanced);
 
 		if (!stack.hasTagCompound()) return;

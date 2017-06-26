@@ -3,6 +3,7 @@ package nuke.darkness.common.items;
 import java.util.*;
 
 import net.minecraft.client.renderer.block.model.*;
+import net.minecraft.client.util.*;
 import net.minecraft.creativetab.*;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.*;
@@ -32,7 +33,7 @@ public class ItemBlackHole extends ItemBase implements IInventoryShadeBlackhole,
 	}
 
 	@Override
-	public void getSubItems(Item item, CreativeTabs tab, NonNullList<ItemStack> subItems) {
+	public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> subItems) {
 		ItemStack empty = new ItemStack(this, 1);
 		initNBT(empty);
 		setShade(empty, 0.0);
@@ -98,7 +99,7 @@ public class ItemBlackHole extends ItemBase implements IInventoryShadeBlackhole,
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 		tooltip.add("Hold C to absorb shade. (WIP)");
 		if (stack.hasTagCompound()) tooltip.add("" + getShade(stack) + "/" + getShadeCapacity(stack));
 	}

@@ -4,6 +4,7 @@ import java.lang.ref.*;
 
 import net.minecraft.nbt.*;
 import net.minecraft.world.*;
+import net.minecraft.world.storage.*;
 import nuke.darkness.client.util.*;
 
 public class ShadeWorldData extends WorldSavedData {

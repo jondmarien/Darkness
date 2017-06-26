@@ -23,7 +23,7 @@ public class ItemBase extends Item implements IModeledObject {
 		setUnlocalizedName(References.MODID + "." + name);
 		this.setRegistryName(Darkness.prependModID(name));
 		if (addToTab) setCreativeTab(Darkness.darknessTab);
-		GameRegistry.register(this);
+		//GameRegistry.register(this);
 	}
 
 	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
